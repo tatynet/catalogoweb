@@ -31,6 +31,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const floatingCartBtn = document.getElementById('floatingCartBtn');
     const floatingCartBadge = document.getElementById('floatingCartBadge');
 
+    // Alert Modal
+    const alertModal = document.getElementById('alertModal');
+    const alertModalMessage = document.getElementById('alertModalMessage');
+    const closeAlertBtn = document.getElementById('closeAlertBtn');
+
+    function showAlert(message) {
+        if (alertModalMessage && alertModal) {
+            alertModalMessage.textContent = message;
+            alertModal.classList.add('active');
+        } else {
+            alert(message);
+        }
+    }
+
+    if (closeAlertBtn && alertModal) {
+        closeAlertBtn.addEventListener('click', () => {
+            alertModal.classList.remove('active');
+        });
+        alertModal.addEventListener('click', (e) => {
+            if (e.target === alertModal) {
+                alertModal.classList.remove('active');
+            }
+        });
+    }
+
     let allProducts = [];
     let currentFilteredProducts = []; // Productos después de aplicar filtros
     let configData = {}; // Variable para guardar la configuración
@@ -155,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let priceHtml = `<span>$</span>${product.precio.toFixed(2)}`;
 
             if (configData.promocion_activa && configData.promociones) {
-                const promo = configData.promociones.find(p => p.codigo_producto === product.codigo);
+                const promo = configData.promociones.find(p => p.codigo_producto === product.codigo && p.activa !== false);
                 if (promo) {
                     if (promo.solo_lista) {
                         promoBadge = `<div style="position: absolute; top: 12px; right: 12px; background: #f59e0b; color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800; z-index: 10; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.4);">¡PROMO LISTA!</div>`;
@@ -314,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // --- Botón especial de Ofertas ---
-        if (configData.promocion_activa && configData.promociones && configData.promociones.length > 0) {
+        if (configData.promocion_activa && configData.promociones && configData.promociones.filter(p => p.activa !== false).length > 0) {
             const promoBtn = document.createElement('button');
             promoBtn.classList.add('filter-btn');
             promoBtn.dataset.category = 'ofertas_especiales';
@@ -352,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 matchesCategory = true;
             } else if (activeCategory === 'ofertas_especiales') {
                 if (configData.promocion_activa && configData.promociones) {
-                    const promo = configData.promociones.find(p => p.codigo_producto === product.codigo);
+                    const promo = configData.promociones.find(p => p.codigo_producto === product.codigo && p.activa !== false);
                     if (promo) matchesCategory = true;
                 }
             } else {
@@ -471,7 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let priceHtml = `$${item.precio.toFixed(2)}`;
 
                 if (configData.promocion_activa && configData.promociones) {
-                    const promo = configData.promociones.find(p => p.codigo_producto === item.codigo);
+                    const promo = configData.promociones.find(p => p.codigo_producto === item.codigo && p.activa !== false);
                     if (promo && promo.precio_promocional) {
                         if (!promo.solo_lista || (promo.solo_lista && isPromoList)) {
                             finalItemPrice = promo.precio_promocional;
@@ -525,7 +550,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 7. Enviar Pedido (Checkout por WhatsApp) ---
     checkoutBtn.addEventListener('click', () => {
         if (cart.length === 0) {
-            alert('Agrega productos al carrito primero.');
+            showAlert('Agrega productos al carrito primero.');
             return;
         }
 
@@ -535,7 +560,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const address = customerAddress.value.trim();
 
         if (!name || !cedula || !phone) {
-            alert('Por favor, llena tus datos obligatorios (Nombre, Cédula y Teléfono) para enviar el pedido.');
+            showAlert('Por favor, llena tus datos obligatorios (Nombre, Cédula y Teléfono) para enviar el pedido.');
             return;
         }
 
@@ -605,8 +630,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (titleEl) titleEl.textContent = config.promocion_titulo || 'Promoción';
         if (subtitleEl) subtitleEl.textContent = config.promocion_subtitulo || '';
 
-        if (bodyEl && config.promociones && config.promociones.length > 0) {
-            bodyEl.innerHTML = config.promociones.map(promo => {
+        if (bodyEl && config.promociones && config.promociones.filter(p => p.activa !== false).length > 0) {
+            bodyEl.innerHTML = config.promociones.filter(p => p.activa !== false).map(promo => {
                 // Buscar el producto real para obtener su imagen
                 const matchedProduct = allProducts.find(p => p.codigo === promo.codigo_producto);
                 const imgSrc = (matchedProduct && matchedProduct.imagen) ? matchedProduct.imagen : null;
