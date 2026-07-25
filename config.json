@@ -1,0 +1,20 @@
+{
+    "whatsapp": "593999649381",
+    "nombre_tienda": "Tatynet",
+    "mensaje_saludo": "¡Hola! Quiero hacer un pedido",
+    "promocion_activa": true,
+    "promocion_titulo": "🎒 ¡Regreso a Clases!",
+    "promocion_subtitulo": "Aprovecha nuestras ofertas exclusivas de temporada.",
+    "promociones": [
+    
+        {
+            "icono": "fas fa-ruler",
+            "titulo": "LAPIZ DE COLOR BNNNN",
+            "descripcion": "¡Aprovecha! Descuento para todo público",
+            "precio_texto": "Antes $2.00 ahora ¡A solo $1.00!",
+            "codigo_producto": "1",
+            "precio_promocional": 1.00,
+            "solo_lista": false
+        }
+    ]
+}

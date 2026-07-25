@@ -1,0 +1,884 @@
+[
+    {
+        "id": 17,
+        "codigo": "7861185617970",
+        "nombre": "ACUARELA PASSOLA X 12 COLORES",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000076039.png"
+    },
+    {
+        "id": 40,
+        "codigo": "7861123905664",
+        "nombre": "ACUARELAS CON PINCEL 12 COL",
+        "descripcion": "",
+        "precio": 1.3,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083725.png"
+    },
+    {
+        "id": 96,
+        "codigo": "7861098362646",
+        "nombre": "APOYAMANOS A4 ACRICO ESTILO",
+        "descripcion": "",
+        "precio": 2.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100731.jpg"
+    },
+    {
+        "id": 54,
+        "codigo": "7861139818736",
+        "nombre": "ARENA MAGICA 500G CELINA COL AMARILLO",
+        "descripcion": "",
+        "precio": 1.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083860.png"
+    },
+    {
+        "id": 58,
+        "codigo": "7861139818774",
+        "nombre": "ARENA MAGICA 500G CELINA COL ANARANJADO",
+        "descripcion": "",
+        "precio": 1.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083911.png"
+    },
+    {
+        "id": 60,
+        "codigo": "7861139818729",
+        "nombre": "ARENA MAGICA 500G CELINA COL CAFE CLARO",
+        "descripcion": "",
+        "precio": 1.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000084005.png"
+    },
+    {
+        "id": 59,
+        "codigo": "7861139820432",
+        "nombre": "ARENA MAGICA 500G CELINA COL CAFE OSCURO",
+        "descripcion": "",
+        "precio": 1.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083916.png"
+    },
+    {
+        "id": 56,
+        "codigo": "7861139820425",
+        "nombre": "ARENA MAGICA 500G CELINA COL CELESTE",
+        "descripcion": "",
+        "precio": 1.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083896.png"
+    },
+    {
+        "id": 53,
+        "codigo": "7861139818811",
+        "nombre": "ARENA MAGICA 500G CELINA COL ROJO",
+        "descripcion": "",
+        "precio": 1.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083847.png"
+    },
+    {
+        "id": 55,
+        "codigo": "7861139818835",
+        "nombre": "ARENA MAGICA 500G CELINA COL ROSADO",
+        "descripcion": "",
+        "precio": 1.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083868.png"
+    },
+    {
+        "id": 57,
+        "codigo": "7861139818828",
+        "nombre": "ARENA MAGICA 500G CELINA COL VERDE",
+        "descripcion": "",
+        "precio": 1.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083906.png"
+    },
+    {
+        "id": 67,
+        "codigo": "7862140704476",
+        "nombre": "BANDERITAS LANCER DISNEY X100 HOJAS SH",
+        "descripcion": "",
+        "precio": 1.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000099570.jpg"
+    },
+    {
+        "id": 85,
+        "codigo": "7861185630948",
+        "nombre": "CARTULINA  HOLOGRAFICA PASSOLA X10 COBRE",
+        "descripcion": "",
+        "precio": 1.3,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100655.jpg"
+    },
+    {
+        "id": 70,
+        "codigo": "6981495658034",
+        "nombre": "CARTULINA METALIZADA A4 X 10 UNIDADES",
+        "descripcion": "",
+        "precio": 1.2,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000099596.jpg"
+    },
+    {
+        "id": 71,
+        "codigo": "7862022888133",
+        "nombre": "CARTULINA NEON + 2 METAL A4 10 UNIDADES",
+        "descripcion": "",
+        "precio": 1.2,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000099603.jpg"
+    },
+    {
+        "id": 61,
+        "codigo": "7862114753783",
+        "nombre": "CINTA DOBLE FAZ LANCER 18MM X 3MT",
+        "descripcion": "",
+        "precio": 0.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000099507.png"
+    },
+    {
+        "id": 90,
+        "codigo": "7750082072954",
+        "nombre": "CORRECTOR ARTESCO CINTA X 10M",
+        "descripcion": "",
+        "precio": 1.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100686.jpg"
+    },
+    {
+        "id": 16,
+        "codigo": "7750082002654",
+        "nombre": "CRAYON ARTESCO ESCOLAR 12 COLORES",
+        "descripcion": "",
+        "precio": 1.1,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000076036.png"
+    },
+    {
+        "id": 74,
+        "codigo": "7754111024754",
+        "nombre": "ESFERO FABER CASTELL TRILUX FUN X 10 COL",
+        "descripcion": "",
+        "precio": 2.3,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100590.jpg"
+    },
+    {
+        "id": 94,
+        "codigo": "7861098367283",
+        "nombre": "ESTILETE ESTILO 18MM GRANDE",
+        "descripcion": "",
+        "precio": 0.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100702.jpg"
+    },
+    {
+        "id": 41,
+        "codigo": "6938684620129",
+        "nombre": "FOMIX MOLDEABLE 12COL",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083735.png"
+    },
+    {
+        "id": 86,
+        "codigo": "7750082021532",
+        "nombre": "FOMIX MOLDEABLE ARTESCO GRANULADO",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100665.jpg"
+    },
+    {
+        "id": 64,
+        "codigo": "4894616021971",
+        "nombre": "GRAPADORA JEFF METALICA MEDIANA JR.GR",
+        "descripcion": "",
+        "precio": 2.4,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000099542.png"
+    },
+    {
+        "id": 76,
+        "codigo": "7862141614897",
+        "nombre": "JUEGO GEOMETRICO LANCER FLEXIBLE",
+        "descripcion": "",
+        "precio": 2.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100601.jpg"
+    },
+    {
+        "id": 75,
+        "codigo": "7868145753181",
+        "nombre": "LANA ESCOLAR LANCER 12GRS",
+        "descripcion": "",
+        "precio": 0.45,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100597.jpg"
+    },
+    {
+        "id": 30,
+        "codigo": "7862108181967",
+        "nombre": "LAPIZ 2B JUMBO CREATIV",
+        "descripcion": "",
+        "precio": 0.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083628.png"
+    },
+    {
+        "id": 83,
+        "codigo": "7750082055599",
+        "nombre": "LAPIZ ARTESCO BICOLOR JUMBO",
+        "descripcion": "",
+        "precio": 0.6,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100647.jpg"
+    },
+    {
+        "id": 82,
+        "codigo": "7750082003613",
+        "nombre": "LAPIZ ARTESCO CHEQUEO ROJO",
+        "descripcion": "",
+        "precio": 0.3,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100640.jpg"
+    },
+    {
+        "id": 98,
+        "codigo": "7861098370894",
+        "nombre": "LAPIZ CRAFT GRAFITO CARBONCILLO",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100737.jpg"
+    },
+    {
+        "id": 69,
+        "codigo": "7891360306016",
+        "nombre": "LAPIZ FABER CASTELL BICOLOR",
+        "descripcion": "",
+        "precio": 0.4,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000099586.jpg"
+    },
+    {
+        "id": 31,
+        "codigo": "7750082001268",
+        "nombre": "LAPIZ JUMBO ARTESCO",
+        "descripcion": "",
+        "precio": 0.6,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083635.png"
+    },
+    {
+        "id": 72,
+        "codigo": "7861228111892",
+        "nombre": "LAPIZ LANCER LAPIGOL 2HB",
+        "descripcion": "",
+        "precio": 30.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000099607.jpg"
+    },
+    {
+        "id": 1,
+        "codigo": "7861084203120",
+        "nombre": "LIBRETA N2 MARCA ESCRIBE 100H CUADRO",
+        "descripcion": "",
+        "precio": 0.8,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000075611.png"
+    },
+    {
+        "id": 89,
+        "codigo": "7750082028340",
+        "nombre": "MARCADOR ARTESCO JUMBO",
+        "descripcion": "",
+        "precio": 3.95,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100681.jpg"
+    },
+    {
+        "id": 19,
+        "codigo": "7750082007581",
+        "nombre": "MARCADOR ARTESCO X 12 COL. ESCOLAR",
+        "descripcion": "",
+        "precio": 2.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000076046.png"
+    },
+    {
+        "id": 25,
+        "codigo": "7861123900898",
+        "nombre": "MARCADOR BESTER 10 COL.",
+        "descripcion": "",
+        "precio": 1.9,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000076303.png"
+    },
+    {
+        "id": 22,
+        "codigo": "7861129511180",
+        "nombre": "MARCADOR CARIOCA 12 COL.",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000076155.png"
+    },
+    {
+        "id": 97,
+        "codigo": "7861098347131",
+        "nombre": "MARCADOR CRAFT LAVABLE X 12COL.",
+        "descripcion": "",
+        "precio": 2.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100733.jpg"
+    },
+    {
+        "id": 21,
+        "codigo": "7862108181295",
+        "nombre": "MARCADOR CREATIV X12 COL. ESCOLAR",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000076151.png"
+    },
+    {
+        "id": 23,
+        "codigo": "7861098367597",
+        "nombre": "MARCADOR ESTILO KIDS 24 COL.",
+        "descripcion": "",
+        "precio": 2.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000076164.png"
+    },
+    {
+        "id": 87,
+        "codigo": "7861185613170",
+        "nombre": "MARCADOR PASOLA JUMBO",
+        "descripcion": "",
+        "precio": 2.4,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100672.jpg"
+    },
+    {
+        "id": 88,
+        "codigo": "7861185633161",
+        "nombre": "MARCADOR PASSOLA MAGICO X 10 COL",
+        "descripcion": "",
+        "precio": 2.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100680.jpg"
+    },
+    {
+        "id": 26,
+        "codigo": "7861098356140",
+        "nombre": "MARCADORES ESTILO MAGICOS",
+        "descripcion": "",
+        "precio": 3.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000078854.png"
+    },
+    {
+        "id": 20,
+        "codigo": "7703064206755",
+        "nombre": "MARCADORES PELIKAN COLORELLA STAR 12 COL.",
+        "descripcion": "",
+        "precio": 2.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000076050.png"
+    },
+    {
+        "id": 24,
+        "codigo": "7861098367573",
+        "nombre": "MARCATODO ESTILO KIDS 12 COL.",
+        "descripcion": "",
+        "precio": 3.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000076167.png"
+    },
+    {
+        "id": 50,
+        "codigo": "7750082039100",
+        "nombre": "MASA MOLDEABLE 140G. ARTESCO COLOR VERDE",
+        "descripcion": "",
+        "precio": 0.95,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083799.png"
+    },
+    {
+        "id": 44,
+        "codigo": "7861098347261",
+        "nombre": "MASA MOLDEABLE 140G. CRAFT COLOR AMARILLO",
+        "descripcion": "",
+        "precio": 0.95,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083753.png"
+    },
+    {
+        "id": 46,
+        "codigo": "7861098347278",
+        "nombre": "MASA MOLDEABLE 140G. CRAFT COLOR AZUL",
+        "descripcion": "",
+        "precio": 0.95,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083769.png"
+    },
+    {
+        "id": 45,
+        "codigo": "7861098347285",
+        "nombre": "MASA MOLDEABLE 140G. CRAFT COLOR BLANCO",
+        "descripcion": "",
+        "precio": 0.95,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083758.png"
+    },
+    {
+        "id": 43,
+        "codigo": "7861098347292",
+        "nombre": "MASA MOLDEABLE 140G. CRAFT COLOR CAFE",
+        "descripcion": "",
+        "precio": 0.95,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083751.png"
+    },
+    {
+        "id": 48,
+        "codigo": "7861098347339",
+        "nombre": "MASA MOLDEABLE 140G. CRAFT COLOR ROJO",
+        "descripcion": "",
+        "precio": 0.95,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083784.png"
+    },
+    {
+        "id": 42,
+        "codigo": "7861098347346",
+        "nombre": "MASA MOLDEABLE 140G. CRAFT COLOR ROSADO",
+        "descripcion": "",
+        "precio": 0.95,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083747.png"
+    },
+    {
+        "id": 47,
+        "codigo": "7861098347360",
+        "nombre": "MASA MOLDEABLE 140G. CRAFT COLOR VERDE",
+        "descripcion": "",
+        "precio": 0.95,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083775.png"
+    },
+    {
+        "id": 51,
+        "codigo": "7750082075757",
+        "nombre": "MASA MOLDEABLE 142G. ARTESCO COLOR CELESTE",
+        "descripcion": "",
+        "precio": 0.95,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083806.png"
+    },
+    {
+        "id": 52,
+        "codigo": "7750082075764",
+        "nombre": "MASA MOLDEABLE 142G. ARTESCO COLOR LILA",
+        "descripcion": "",
+        "precio": 0.95,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083812.png"
+    },
+    {
+        "id": 49,
+        "codigo": "7750082043985",
+        "nombre": "MASA MOLDEABLE 142G. ARTESCO COLOR NEGRO",
+        "descripcion": "",
+        "precio": 0.95,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083791.png"
+    },
+    {
+        "id": 80,
+        "codigo": "6975222370283",
+        "nombre": "NOTAS ADHESIVAS LANCER NOTEBOOK",
+        "descripcion": "",
+        "precio": 1.3,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100638.jpg"
+    },
+    {
+        "id": 77,
+        "codigo": "4895137995116",
+        "nombre": "PERFORADORA LANCER FIGURAS",
+        "descripcion": "",
+        "precio": 2.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/WhatsApp_Image_2026-07-24_at_6.02.40_PM.jpeg"
+    },
+    {
+        "id": 15,
+        "codigo": "7750082150843",
+        "nombre": "PINTURA ARTESCO SUPERPUNTA 15 COL. PRO BLACK",
+        "descripcion": "",
+        "precio": 4.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000075852.png"
+    },
+    {
+        "id": 9,
+        "codigo": "7861098338603",
+        "nombre": "PINTURA CRAFT TRIANG 13L 16C LARGA",
+        "descripcion": "",
+        "precio": 5.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000075772.png"
+    },
+    {
+        "id": 13,
+        "codigo": "7862108181936",
+        "nombre": "PINTURA CREATIV 12 COL BORRABLE LARG.",
+        "descripcion": "",
+        "precio": 2.4,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000075834.png"
+    },
+    {
+        "id": 11,
+        "codigo": "7862108180892",
+        "nombre": "PINTURA CREATIV 12 COLORES JUMBO LARGA",
+        "descripcion": "",
+        "precio": 3.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000075828.png"
+    },
+    {
+        "id": 14,
+        "codigo": "7862108181929",
+        "nombre": "PINTURA CREATIV 12 COLORES PASTEL LARGA",
+        "descripcion": "",
+        "precio": 1.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000075837.png"
+    },
+    {
+        "id": 33,
+        "codigo": "7862108180502",
+        "nombre": "PINTURA CREATIV 12 LAP. 15 COL.",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083669.png"
+    },
+    {
+        "id": 12,
+        "codigo": "7862108180908",
+        "nombre": "PINTURA CREATIV 20 COLORES NEON LARGA",
+        "descripcion": "",
+        "precio": 3.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000075831.png"
+    },
+    {
+        "id": 35,
+        "codigo": "7702111506220",
+        "nombre": "PINTURA NORMA 12 LAPIZ 15 COL",
+        "descripcion": "",
+        "precio": 4.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083699.png"
+    },
+    {
+        "id": 10,
+        "codigo": "7702111603523",
+        "nombre": "PINTURA NORMA KIUT LARG D/P 26 COLORES",
+        "descripcion": "",
+        "precio": 7.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000075774.png"
+    },
+    {
+        "id": 37,
+        "codigo": "7750840000229",
+        "nombre": "PINTURA PELIKAN 12 COL TRIANGULAR",
+        "descripcion": "",
+        "precio": 3.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083714.png"
+    },
+    {
+        "id": 38,
+        "codigo": "7750082082731",
+        "nombre": "PINTURAS ARTESCO BORRABLE 12COL",
+        "descripcion": "",
+        "precio": 3.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083717.png"
+    },
+    {
+        "id": 28,
+        "codigo": "7861123903431",
+        "nombre": "PINTURAS BESTER 12 COL JUMBO",
+        "descripcion": "",
+        "precio": 3.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000078870.png"
+    },
+    {
+        "id": 36,
+        "codigo": "7784310156680",
+        "nombre": "PINTURAS CHIFON 12COL.",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083709.png"
+    },
+    {
+        "id": 8,
+        "codigo": "7861098338610",
+        "nombre": "PINTURAS CRAFT TRIANG X13 16C LARGA JUMBO",
+        "descripcion": "",
+        "precio": 7.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000075760.png"
+    },
+    {
+        "id": 39,
+        "codigo": "7862108181950",
+        "nombre": "PINTURAS CREATIV PREMIUM 15 COL",
+        "descripcion": "",
+        "precio": 3.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083721.png"
+    },
+    {
+        "id": 34,
+        "codigo": "7861098314522",
+        "nombre": "PINTURAS ESTILO KIDS 12 COL",
+        "descripcion": "",
+        "precio": 1.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083672.png"
+    },
+    {
+        "id": 29,
+        "codigo": "7702111588585",
+        "nombre": "PINTURAS NORMA 15 COL PREMIUM",
+        "descripcion": "",
+        "precio": 5.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000078873.png"
+    },
+    {
+        "id": 32,
+        "codigo": "5901234123457",
+        "nombre": "PINTURAS PASSOLA 12 COL",
+        "descripcion": "",
+        "precio": 1.2,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083644.png"
+    },
+    {
+        "id": 27,
+        "codigo": "7861185628952",
+        "nombre": "PINTURAS PASSOLA 12 COL. JUMBO",
+        "descripcion": "",
+        "precio": 3.3,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000078865.png"
+    },
+    {
+        "id": 81,
+        "codigo": "7861228107581",
+        "nombre": "PISTOLA SILICONA LANCER PEQ 10W",
+        "descripcion": "",
+        "precio": 4.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100639.jpg"
+    },
+    {
+        "id": 18,
+        "codigo": "7501015211120",
+        "nombre": "PLASTILINA PELIKAN JUMBO X10 COL. PASTEL",
+        "descripcion": "",
+        "precio": 1.2,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000076043.png"
+    },
+    {
+        "id": 79,
+        "codigo": "6941032911114",
+        "nombre": "PORTA CREDENCIALES LANCER",
+        "descripcion": "",
+        "precio": 1.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100634.jpg"
+    },
+    {
+        "id": 2,
+        "codigo": "7862138010169",
+        "nombre": "REGLA APOLO PLASTICA 30CM",
+        "descripcion": "",
+        "precio": 0.35,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000075615.png"
+    },
+    {
+        "id": 93,
+        "codigo": "7750082164673",
+        "nombre": "REGLA ARTESCO PLASTICA 30 CM",
+        "descripcion": "",
+        "precio": 0.3,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100701.jpg"
+    },
+    {
+        "id": 66,
+        "codigo": "3154147420362",
+        "nombre": "RESALTADOR MAPED GLITTER PASTEL V/ COLORES",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/371719.jpg"
+    },
+    {
+        "id": 4,
+        "codigo": "7792700005975",
+        "nombre": "RESALTADOR PELIKAN FLASH AMARRILLO",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000075622.png"
+    },
+    {
+        "id": 7,
+        "codigo": "77963970",
+        "nombre": "RESALTADOR PELIKAN FLASH PASTEL DURAZNO",
+        "descripcion": "NOTA VERIFICAR EL CODIGO EN LA CAJA EL CODIGO ESCANEADO POR PRODUCTO",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000075637.png"
+    },
+    {
+        "id": 5,
+        "codigo": "7792700005920",
+        "nombre": "RESALTADOR PELIKAN FLASH PASTEL LAVANDA",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/WhatsApp_Image_2026-05-31_at_6.14.10_PM.jpeg"
+    },
+    {
+        "id": 6,
+        "codigo": "77968807",
+        "nombre": "RESALTADOR PELIKAN FLASH PLOMO-ACERO",
+        "descripcion": "TOCA VERFICAR  CODIGO EN CAJA SOLO ESTA INGRESADO CODIGO DIRECTO DE PRODUCTO",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000075629.png"
+    },
+    {
+        "id": 3,
+        "codigo": "7792700005951",
+        "nombre": "RESALTADOR PELIKAN FLASH TURQUESA-AGUA",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000075620.png"
+    },
+    {
+        "id": 91,
+        "codigo": "7750082154520",
+        "nombre": "SACAPUNTA 1 SERV.  WRAP DUO",
+        "descripcion": "",
+        "precio": 1.15,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100693.jpg"
+    },
+    {
+        "id": 92,
+        "codigo": "7750082160033",
+        "nombre": "SACAPUNTAS ARTESCO 1 SERV. AXOLOVE",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100697.jpg"
+    },
+    {
+        "id": 73,
+        "codigo": "7861228106041",
+        "nombre": "SACAPUNTAS LANCER 2 SERV. STITCH",
+        "descripcion": "",
+        "precio": 1.2,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100586.jpg"
+    },
+    {
+        "id": 78,
+        "codigo": "6912140100691",
+        "nombre": "SELLOS LANCER FIGURAS",
+        "descripcion": "",
+        "precio": 0.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100611.jpg"
+    },
+    {
+        "id": 68,
+        "codigo": "6937544303585",
+        "nombre": "TACHUELAS LANCER PLATEADO",
+        "descripcion": "",
+        "precio": 0.45,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000099576.jpg"
+    },
+    {
+        "id": 95,
+        "codigo": "7861098314690",
+        "nombre": "TEMPERA ESTILO CON PALETA/PINCEL 6C",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100711.jpg"
+    },
+    {
+        "id": 84,
+        "codigo": "7750082013261",
+        "nombre": "TIJERA ARTESCO REBOTE",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100654.jpg"
+    },
+    {
+        "id": 63,
+        "codigo": "4895137955370",
+        "nombre": "TIJERA LANCER FIGURA ZIGZAG",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000099538.png"
+    },
+    {
+        "id": 65,
+        "codigo": "5903207099073",
+        "nombre": "TIJERA PANDI EWIN 19CM",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000099554.png"
+    },
+    {
+        "id": 62,
+        "codigo": "4712856532647",
+        "nombre": "TINTA LANCER SELLO ALMOHADILLA",
+        "descripcion": "",
+        "precio": 0.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000099524.png"
+    }
+]

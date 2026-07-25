@@ -1,0 +1,727 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const productsGrid = document.getElementById('productsGrid');
+    const searchInput = document.getElementById('searchInput');
+    const categoryFilters = document.getElementById('categoryFilters');
+    const cartToggle = document.getElementById('cartToggle');
+    const themeToggle = document.getElementById('themeToggle');
+    
+    // Elementos del carrito
+    const cartOverlay = document.getElementById('cartOverlay');
+    const cartSidebar = document.getElementById('cartSidebar');
+    const closeCartBtn = document.getElementById('closeCart');
+    const cartItemsContainer = document.getElementById('cartItems');
+    const cartTotalValue = document.getElementById('cartTotalValue');
+    const cartBadge = document.getElementById('cartBadge');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    
+    // Elementos del formulario del cliente
+    const customerName = document.getElementById('customerName');
+    const customerID = document.getElementById('customerID');
+    const customerPhone = document.getElementById('customerPhone');
+    const customerAddress = document.getElementById('customerAddress');
+
+    // Cargar datos guardados del cliente (Autocompletar)
+    if (customerName) customerName.value = localStorage.getItem('tatynet_name') || '';
+    if (customerID) customerID.value = localStorage.getItem('tatynet_id') || '';
+    if (customerPhone) customerPhone.value = localStorage.getItem('tatynet_phone') || '';
+    
+    // Mejoras UX
+    const toast = document.getElementById('toast');
+    const floatingWhatsApp = document.getElementById('floatingWhatsApp');
+    const floatingCartBtn = document.getElementById('floatingCartBtn');
+    const floatingCartBadge = document.getElementById('floatingCartBadge');
+
+    let allProducts = [];
+    let currentFilteredProducts = []; // Productos después de aplicar filtros
+    let configData = {}; // Variable para guardar la configuración
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    // Variables para Paginación (Mejora de rendimiento para >500 productos)
+    let currentPage = 1;
+    const itemsPerPage = 24;
+
+    // --- 1. Lógica del Modo Claro/Oscuro ---
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme);
+
+    themeToggle.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        let newTheme = theme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+
+    function updateThemeIcon(theme) {
+        const icon = themeToggle.querySelector('i');
+        if (theme === 'dark') {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+    }
+
+    // --- 2. Carga de Datos desde JSON (Productos y Configuración) ---
+    // Usamos getTime() para evitar que el navegador guarde los archivos en caché y siempre muestre los nuevos productos
+    const cacheBuster = new Date().getTime();
+    
+    Promise.all([
+        fetch(`config.json?v=${cacheBuster}`).then(res => {
+            if (!res.ok) throw new Error('No se pudo cargar config.json');
+            return res.json();
+        }),
+        fetch(`productos.json?v=${cacheBuster}`).then(res => {
+            if (!res.ok) throw new Error('No se pudo cargar productos.json');
+            return res.json();
+        })
+    ])
+    .then(([config, products]) => {
+        configData = config;
+        allProducts = products;
+        currentFilteredProducts = [...allProducts];
+
+        // Actualizar el nombre de la tienda en el HTML usando la configuración
+        if (configData.nombre_tienda) {
+            document.title = configData.nombre_tienda;
+            const logo = document.querySelector('.logo h1');
+            if (logo) logo.innerHTML = `${configData.nombre_tienda}<span>.</span>`;
+        }
+
+        // Configurar botón flotante de WhatsApp
+        if (configData.whatsapp) {
+            floatingWhatsApp.href = `https://wa.me/${configData.whatsapp}?text=¡Hola! Necesito ayuda con los productos de ${configData.nombre_tienda || 'su catálogo'}.`;
+        }
+
+        // Inicializar modal de promociones
+        initPromoModal(configData);
+
+        const isSchoolList = document.getElementById('isSchoolList');
+        if (isSchoolList) {
+            isSchoolList.addEventListener('change', updateCartUI);
+        }
+
+        renderProducts(currentFilteredProducts, true);
+        generateCategoryButtons(allProducts);
+        updateCartUI(); // Cargar carrito al iniciar
+    })
+    .catch(error => {
+        console.error('Error cargando los archivos JSON:', error);
+        productsGrid.innerHTML = `
+            <div class="no-results">
+                <i class="fas fa-exclamation-triangle" style="font-size: 2rem; color: #ef4444; margin-bottom: 1rem; display: block;"></i>
+                No se pudieron cargar los datos.<br>
+                <small>Asegúrate de ejecutar esto en un servidor local y que <b>productos.json</b> y <b>config.json</b> existan.</small>
+            </div>`;
+    });
+
+    // --- 3. Renderizado de Productos ---
+    function renderProducts(products, reset = true) {
+        if (reset) {
+            productsGrid.innerHTML = '';
+            currentPage = 1;
+        }
+
+        if (products.length === 0 && reset) {
+            productsGrid.innerHTML = `
+                <div class="no-results">
+                    <i class="fas fa-box-open" style="font-size: 2rem; margin-bottom: 1rem; display: block; opacity: 0.5;"></i>
+                    No se encontraron productos que coincidan con tu búsqueda.
+                </div>`;
+            return;
+        }
+
+        // Paginación
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const productsToRender = products.slice(startIndex, endIndex);
+
+        productsToRender.forEach((product, index) => {
+            const card = document.createElement('div');
+            card.classList.add('product-card');
+            
+            // Animación escalonada
+            card.style.animationDelay = `${(index % itemsPerPage) * 0.05}s`;
+
+            // Imagen con fallback por si no existe
+            const imgSrc = product.imagen ? product.imagen : 'https://placehold.co/400x400/eeeeee/999999?text=Sin+Imagen';
+
+            // Lógica de Promoción
+            let finalPrice = product.precio;
+            let promoBadge = '';
+            let priceHtml = `<span>$</span>${product.precio.toFixed(2)}`;
+
+            if (configData.promocion_activa && configData.promociones) {
+                const promo = configData.promociones.find(p => p.codigo_producto === product.codigo);
+                if (promo) {
+                    if (promo.solo_lista) {
+                        promoBadge = `<div style="position: absolute; top: 12px; right: 12px; background: #f59e0b; color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800; z-index: 10; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.4);">¡PROMO LISTA!</div>`;
+                        priceHtml = `<div style="display:flex; flex-direction:column; line-height: 1.2;">
+                                        <span>$${product.precio.toFixed(2)}</span>
+                                        <span style="font-size:0.75rem; color:#f59e0b; font-weight: 600;">(Por lista: $${promo.precio_promocional.toFixed(2)})</span>
+                                     </div>`;
+                    } else {
+                        finalPrice = promo.precio_promocional || product.precio;
+                        promoBadge = `<div style="position: absolute; top: 12px; right: 12px; background: #ef4444; color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800; z-index: 10; box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);">¡PROMO!</div>`;
+                        priceHtml = `<span style="text-decoration: line-through; opacity: 0.5; font-size: 0.9rem; margin-right: 0.5rem;">$${product.precio.toFixed(2)}</span><span style="color: #ef4444;">$</span><span style="color: #ef4444;">${finalPrice.toFixed(2)}</span>`;
+                    }
+                }
+            }
+
+            // Generar valores aleatorios para la marca de agua (anti-bot)
+            const randomX = Math.floor(Math.random() * 20) - 10;
+            const randomY = Math.floor(Math.random() * 20) - 10;
+            const randomRotate = Math.floor(Math.random() * 15) - 35; // e.g. -35 to -20
+
+            card.innerHTML = `
+                <div class="product-image-container">
+                    ${promoBadge}
+                    <div class="watermark-overlay" style="transform: translate(calc(-50% + ${randomX}px), calc(-50% + ${randomY}px)) rotate(${randomRotate}deg);">${configData.nombre_tienda || 'Tatynet'}</div>
+                    <span class="product-category">${product.categoria}</span>
+                    <img src="${imgSrc}" loading="lazy" alt="${product.nombre}" class="product-image" onerror="this.onerror=null;this.src='https://placehold.co/400x400/eeeeee/999999?text=Sin+Imagen';">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">${product.nombre}</h3>
+                </div>
+                <div class="product-footer">
+                    <div class="product-price">${priceHtml}</div>
+                    <div style="display:flex; flex-direction:column; gap:0.5rem; flex:1;">
+                        <button class="btn-buy" aria-label="Comprar ${product.nombre}">
+                            <i class="fas fa-shopping-bag"></i> Comprar
+                        </button>
+                        <button class="btn-ask" style="background:transparent; border:1px solid var(--text-secondary); color:var(--text-secondary); padding:0.4rem; border-radius:50px; font-size:0.8rem; cursor:pointer;" aria-label="Consultar por ${product.nombre}">
+                            <i class="fab fa-whatsapp"></i> Consultar
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // Evento para visualizar la imagen en grande
+            const imgEl = card.querySelector('.product-image');
+            imgEl.style.cursor = 'zoom-in';
+            imgEl.addEventListener('click', () => {
+                const imageModal = document.getElementById('imageModal');
+                const expandedImg = document.getElementById('expandedImg');
+                if (imageModal && expandedImg) {
+                    expandedImg.src = imgSrc;
+                    imageModal.classList.add('active');
+                }
+            });
+
+            // Evento para añadir al carrito
+            const buyBtn = card.querySelector('.btn-buy');
+            buyBtn.addEventListener('click', () => {
+                const isNewItem = addToCart(product);
+                
+                // Animación de botón
+                const originalText = buyBtn.innerHTML;
+                const originalBg = buyBtn.style.background;
+                const originalColor = buyBtn.style.color;
+                
+                if (isNewItem) {
+                    buyBtn.innerHTML = '<i class="fas fa-check"></i> ¡Añadido!';
+                    buyBtn.style.background = '#10b981'; // Verde éxito
+                } else {
+                    buyBtn.innerHTML = '<i class="fas fa-info-circle"></i> ¡Ya agregado!';
+                    buyBtn.style.background = '#f59e0b'; // Naranja/Amarillo
+                }
+                
+                buyBtn.style.color = 'white';
+                
+                setTimeout(() => {
+                    buyBtn.innerHTML = originalText;
+                    buyBtn.style.background = originalBg;
+                    buyBtn.style.color = originalColor;
+                }, 1500);
+            });
+
+            // Evento para consultar duda
+            const askBtn = card.querySelector('.btn-ask');
+            if (askBtn) {
+                askBtn.addEventListener('click', () => {
+                    const phoneNumber = configData.whatsapp || '1234567890';
+                    const message = `¡Hola! Tengo una duda sobre el producto: *${product.nombre}* (CÓD: ${product.codigo}). ¿Me podrían ayudar?`;
+                    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+                });
+            }
+
+            productsGrid.appendChild(card);
+        });
+
+        manageLoadMoreButton(products);
+    }
+
+    function manageLoadMoreButton(products) {
+        const existingBtn = document.getElementById('loadMoreBtnContainer');
+        if (existingBtn) {
+            existingBtn.remove();
+        }
+
+        if (currentPage * itemsPerPage < products.length) {
+            const btnContainer = document.createElement('div');
+            btnContainer.id = 'loadMoreBtnContainer';
+            btnContainer.style.gridColumn = '1 / -1';
+            btnContainer.style.textAlign = 'center';
+            btnContainer.style.marginTop = '2rem';
+
+            const loadMoreBtn = document.createElement('button');
+            loadMoreBtn.classList.add('filter-btn');
+            loadMoreBtn.style.padding = '0.8rem 2rem';
+            loadMoreBtn.style.fontSize = '1rem';
+            loadMoreBtn.style.background = 'var(--accent-color)';
+            loadMoreBtn.style.color = 'white';
+            loadMoreBtn.style.cursor = 'pointer';
+            loadMoreBtn.textContent = 'Cargar más productos';
+            
+            loadMoreBtn.addEventListener('click', () => {
+                currentPage++;
+                renderProducts(currentFilteredProducts, false); // Añadir sin limpiar
+            });
+
+            btnContainer.appendChild(loadMoreBtn);
+            productsGrid.appendChild(btnContainer);
+        }
+    }
+
+    // --- 4. Generación de Botones de Categoría Dinámicos ---
+    function generateCategoryButtons(products) {
+        // Extraer categorías únicas
+        const categories = ['Todos', ...new Set(products.map(p => p.categoria))];
+        
+        categoryFilters.innerHTML = ''; // Limpiar
+
+        categories.forEach(category => {
+            const btn = document.createElement('button');
+            btn.classList.add('filter-btn');
+            if (category === 'Todos') btn.classList.add('active');
+            
+            btn.dataset.category = category;
+            btn.textContent = category;
+            
+            btn.addEventListener('click', () => {
+                // Actualizar estado activo
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Filtrar
+                filterProducts();
+            });
+
+            categoryFilters.appendChild(btn);
+        });
+
+        // --- Botón especial de Ofertas ---
+        if (configData.promocion_activa && configData.promociones && configData.promociones.length > 0) {
+            const promoBtn = document.createElement('button');
+            promoBtn.classList.add('filter-btn');
+            promoBtn.dataset.category = 'ofertas_especiales';
+            promoBtn.innerHTML = '<i class="fas fa-star" style="color:#f59e0b; margin-right:5px;"></i> Promociones';
+            promoBtn.style.fontWeight = 'bold';
+            
+            promoBtn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                promoBtn.classList.add('active');
+                filterProducts();
+            });
+            
+            // Insertar justo después del botón "Todos" (que es el primero)
+            if (categoryFilters.children.length > 1) {
+                categoryFilters.insertBefore(promoBtn, categoryFilters.children[1]);
+            } else {
+                categoryFilters.appendChild(promoBtn);
+            }
+        }
+    }
+
+    // --- 5. Lógica de Filtrado (Búsqueda + Categoría) ---
+    function filterProducts() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const activeCategoryBtn = document.querySelector('.filter-btn.active');
+        const activeCategory = activeCategoryBtn ? activeCategoryBtn.dataset.category : 'Todos';
+
+        currentFilteredProducts = allProducts.filter(product => {
+            // Coincidencia de texto (nombre o descripción)
+            const matchesSearch = product.nombre.toLowerCase().includes(searchTerm);
+            
+            // Coincidencia de categoría
+            let matchesCategory = false;
+            if (activeCategory === 'Todos') {
+                matchesCategory = true;
+            } else if (activeCategory === 'ofertas_especiales') {
+                if (configData.promocion_activa && configData.promociones) {
+                    const promo = configData.promociones.find(p => p.codigo_producto === product.codigo);
+                    if (promo) matchesCategory = true;
+                }
+            } else {
+                matchesCategory = product.categoria === activeCategory;
+            }
+
+            return matchesSearch && matchesCategory;
+        });
+
+        renderProducts(currentFilteredProducts, true); // true = reset grid y paginación
+    }
+
+    // Event listeners para la búsqueda en tiempo real
+    searchInput.addEventListener('input', filterProducts);
+
+    // --- 6. Lógica del Carrito de Compras ---
+    function openCart() {
+        cartOverlay.classList.add('active');
+        cartSidebar.classList.add('active');
+    }
+
+    function closeCart() {
+        cartOverlay.classList.remove('active');
+        cartSidebar.classList.remove('active');
+    }
+
+    cartToggle.addEventListener('click', openCart);
+    closeCartBtn.addEventListener('click', closeCart);
+    cartOverlay.addEventListener('click', closeCart);
+    
+    if (floatingCartBtn) {
+        floatingCartBtn.addEventListener('click', openCart);
+    }
+
+    function addToCart(product) {
+        const existingItem = cart.find(item => item.id === product.id);
+        if (existingItem) {
+            existingItem.quantity += 1;
+            saveCart();
+            updateCartUI();
+            showToast(`<i class="fas fa-info-circle" style="color: #3b82f6;"></i> Cantidad actualizada en carrito`);
+            return false;
+        } else {
+            cart.push({ ...product, quantity: 1 });
+            saveCart();
+            updateCartUI();
+            showToast(`<i class="fas fa-check-circle" style="color: #4ade80;"></i> ${product.nombre} añadido`);
+            return true;
+        }
+    }
+
+    function showToast(message) {
+        toast.innerHTML = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2500);
+    }
+
+    function removeFromCart(productId) {
+        cart = cart.filter(item => item.id !== productId);
+        saveCart();
+        updateCartUI();
+    }
+
+    function changeQuantity(productId, delta) {
+        const item = cart.find(i => i.id === productId);
+        if (item) {
+            item.quantity += delta;
+            if (item.quantity <= 0) {
+                removeFromCart(productId);
+            } else {
+                saveCart();
+                updateCartUI();
+            }
+        }
+    }
+
+    function saveCart() {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    function updateCartUI() {
+        // Revisar si aplica la promo de lista escolar
+        const isSchoolList = document.getElementById('isSchoolList');
+        const isPromoList = isSchoolList && isSchoolList.checked;
+
+        // Actualizar el número del icono del carrito
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartBadge.textContent = totalItems;
+        if (floatingCartBadge) floatingCartBadge.textContent = totalItems;
+
+        // Mostrar u ocultar botón flotante del carrito
+        if (floatingCartBtn) {
+            if (totalItems > 0) {
+                floatingCartBtn.classList.add('show');
+            } else {
+                floatingCartBtn.classList.remove('show');
+            }
+        }
+
+        // Limpiar items
+        cartItemsContainer.innerHTML = '';
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<div style="text-align:center; opacity:0.5; margin-top:2rem;">Tu carrito está vacío</div>';
+        } else {
+            // Renderizar items del carrito
+            cart.forEach(item => {
+                const div = document.createElement('div');
+                div.classList.add('cart-item');
+                
+                const imgSrc = item.imagen ? item.imagen : 'https://placehold.co/400x400/eeeeee/999999?text=Sin+Imagen';
+
+                // Lógica de cálculo dinámico para el carrito
+                let finalItemPrice = item.precio;
+                let priceHtml = `$${item.precio.toFixed(2)}`;
+
+                if (configData.promocion_activa && configData.promociones) {
+                    const promo = configData.promociones.find(p => p.codigo_producto === item.codigo);
+                    if (promo && promo.precio_promocional) {
+                        if (!promo.solo_lista || (promo.solo_lista && isPromoList)) {
+                            finalItemPrice = promo.precio_promocional;
+                            const color = promo.solo_lista ? '#f59e0b' : '#ef4444';
+                            priceHtml = `<span style="text-decoration: line-through; opacity: 0.5; font-size: 0.8rem; margin-right: 0.3rem;">$${item.precio.toFixed(2)}</span><span style="color: ${color}; font-weight: 800;">$${finalItemPrice.toFixed(2)}</span>`;
+                        }
+                    }
+                }
+
+                item.cartDisplayPrice = finalItemPrice; // Guardar para calcular total
+
+                div.innerHTML = `
+                    <img src="${imgSrc}" class="cart-item-img" alt="${item.nombre}" onerror="this.onerror=null;this.src='https://placehold.co/400x400/eeeeee/999999?text=Sin+Imagen';">
+                    <div class="cart-item-info">
+                        <div class="cart-item-title">${item.nombre}</div>
+                        <div class="cart-item-price">${priceHtml}</div>
+                        <div class="cart-item-actions">
+                            <button class="qty-btn minus" data-id="${item.id}">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="qty-btn plus" data-id="${item.id}">+</button>
+                        </div>
+                    </div>
+                    <button class="cart-item-remove" data-id="${item.id}"><i class="fas fa-trash"></i></button>
+                `;
+                cartItemsContainer.appendChild(div);
+            });
+
+            // Asignar eventos a los botones de + y - y eliminar
+            cartItemsContainer.querySelectorAll('.minus').forEach(btn => {
+                btn.addEventListener('click', (e) => changeQuantity(parseInt(e.target.dataset.id), -1));
+            });
+            cartItemsContainer.querySelectorAll('.plus').forEach(btn => {
+                btn.addEventListener('click', (e) => changeQuantity(parseInt(e.target.dataset.id), 1));
+            });
+            cartItemsContainer.querySelectorAll('.cart-item-remove').forEach(btn => {
+                btn.addEventListener('click', (e) => removeFromCart(parseInt(e.currentTarget.dataset.id)));
+            });
+        }
+
+        // Actualizar el total monetario
+        const total = cart.reduce((sum, item) => sum + ((item.cartDisplayPrice || item.precio) * item.quantity), 0);
+        cartTotalValue.textContent = total.toFixed(2);
+
+        // Actualizar el texto de total de artículos
+        const cartTotalItemsEl = document.getElementById('cartTotalItems');
+        if (cartTotalItemsEl) {
+            cartTotalItemsEl.textContent = `${totalItems} artículo${totalItems !== 1 ? 's' : ''}`;
+        }
+    }
+
+    // --- 7. Enviar Pedido (Checkout por WhatsApp) ---
+    checkoutBtn.addEventListener('click', () => {
+        if (cart.length === 0) {
+            alert('Agrega productos al carrito primero.');
+            return;
+        }
+
+        const name = customerName.value.trim();
+        const cedula = customerID.value.trim();
+        const phone = customerPhone.value.trim();
+        const address = customerAddress.value.trim();
+
+        if (!name || !cedula || !phone) {
+            alert('Por favor, llena tus datos obligatorios (Nombre, Cédula y Teléfono) para enviar el pedido.');
+            return;
+        }
+
+        // Guardar en LocalStorage para futuras compras
+        localStorage.setItem('tatynet_name', name);
+        localStorage.setItem('tatynet_id', cedula);
+        localStorage.setItem('tatynet_phone', phone);
+
+        // Leer el número desde config.json, si no existe usa un fallback
+        const phoneNumber = configData.whatsapp || '1234567890'; 
+        const saludo = configData.mensaje_saludo || '¡Hola! Me gustaría hacer un pedido.';
+
+        const isSchoolList = document.getElementById('isSchoolList');
+        const isPromoList = isSchoolList && isSchoolList.checked;
+
+        let message = `${saludo}%0A%0A`;
+        
+        if (isPromoList) {
+            message += `🚨 *PEDIDO APLICA PROMO: LISTA DE ÚTILES* 🚨%0A%0A`;
+        }
+
+        message += `*Datos del Cliente:*%0A`;
+        message += `- Nombre: ${name}%0A`;
+        message += `- Cédula: ${cedula}%0A`;
+        message += `- Teléfono: ${phone}%0A`;
+        if (address) {
+            message += `- Notas/Mensaje: ${address}%0A`;
+        }
+        message += `%0A*Detalle del Pedido:*%0A`;
+        
+        cart.forEach(item => {
+            const finalPrice = item.cartDisplayPrice || item.precio;
+            message += `- ${item.quantity}x ${item.nombre} (CÓD: ${item.codigo}) [$${(finalPrice * item.quantity).toFixed(2)}]%0A`;
+        });
+        
+        const total = cart.reduce((sum, item) => sum + ((item.cartDisplayPrice || item.precio) * item.quantity), 0);
+        message += `%0A*Total a Pagar: $${total.toFixed(2)}*`;
+
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+        window.open(whatsappUrl, '_blank');
+
+        // Vaciar el carrito después de enviar
+        cart = [];
+        saveCart();
+        updateCartUI();
+        
+        // Limpiar el formulario
+        customerName.value = '';
+        customerID.value = '';
+        customerPhone.value = '';
+        customerAddress.value = '';
+
+        closeCart();
+        showToast(`<i class="fas fa-check-circle" style="color: #4ade80;"></i> Pedido procesado`);
+    });
+
+    // --- 8. Promo Modal Logic ---
+    function initPromoModal(config) {
+        const promoModal = document.getElementById('promoModal');
+        if (!promoModal || !config.promocion_activa) return;
+
+        // Llenar datos dinámicos
+        const titleEl = document.getElementById('promoTitle');
+        const subtitleEl = document.getElementById('promoSubtitle');
+        const bodyEl = document.getElementById('promoBody');
+
+        if (titleEl) titleEl.textContent = config.promocion_titulo || 'Promoción';
+        if (subtitleEl) subtitleEl.textContent = config.promocion_subtitulo || '';
+
+        if (bodyEl && config.promociones && config.promociones.length > 0) {
+            bodyEl.innerHTML = config.promociones.map(promo => {
+                // Buscar el producto real para obtener su imagen
+                const matchedProduct = allProducts.find(p => p.codigo === promo.codigo_producto);
+                const imgSrc = (matchedProduct && matchedProduct.imagen) ? matchedProduct.imagen : null;
+                
+                // Si existe la imagen, mostrarla, si no, usar el ícono
+                const mediaHtml = imgSrc 
+                    ? `<img src="${imgSrc}" alt="${promo.titulo}" style="width: 60px; height: 60px; border-radius: 12px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">`
+                    : `<div class="promo-icon"><i class="${promo.icono || 'fas fa-star'}"></i></div>`;
+
+                return `
+                <div class="promo-item">
+                    ${mediaHtml}
+                    <div class="promo-details">
+                        <h3>${promo.titulo}</h3>
+                        <p>${promo.descripcion}</p>
+                        <span class="promo-price">${promo.precio_texto}</span>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        const closePromoBtn = document.getElementById('closePromoBtn');
+        const shopPromoBtn = document.getElementById('shopPromoBtn');
+
+        // Mostrar el modal después de 2 segundos si no ha sido cerrado en esta sesión
+        if (!sessionStorage.getItem('promoClosed')) {
+            setTimeout(() => {
+                promoModal.classList.add('active');
+            }, 2000);
+        }
+
+        const closePromo = () => {
+            promoModal.classList.remove('active');
+            sessionStorage.setItem('promoClosed', 'true');
+        };
+
+        if (closePromoBtn) closePromoBtn.addEventListener('click', closePromo);
+        if (shopPromoBtn) {
+            shopPromoBtn.addEventListener('click', () => {
+                closePromo();
+            });
+        }
+        
+        // Cerrar al hacer clic fuera del modal
+        promoModal.addEventListener('click', (e) => {
+            if (e.target === promoModal) {
+                closePromo();
+            }
+        });
+    }
+
+    // --- 9. Protección Anti-Copia y Seguridad Básica ---
+    
+    // Deshabilitar el clic derecho (Menú contextual)
+    document.addEventListener('contextmenu', (e) => {
+        // Permitir clic derecho en campos de texto para poder pegar
+        if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+        }
+    });
+
+    // Deshabilitar atajos de teclado comunes para inspeccionar o guardar (F12, Ctrl+Shift+I, Ctrl+U, Ctrl+S)
+    document.addEventListener('keydown', (e) => {
+        if (
+            e.key === 'F12' || 
+            (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+            (e.ctrlKey && e.shiftKey && e.key === 'J') || 
+            (e.ctrlKey && e.shiftKey && e.key === 'C') || 
+            (e.ctrlKey && e.key === 'U') || 
+            (e.ctrlKey && e.key === 'S') ||
+            (e.key === 'PrintScreen') // Intento de bloquear ImprPant (no todos los navegadores lo soportan)
+        ) {
+            e.preventDefault();
+        }
+    });
+
+    // Deshabilitar arrastrar imágenes
+    document.addEventListener('dragstart', (e) => {
+        if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+        }
+    });
+
+    // --- 10. Botón Volver Arriba ---
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // --- 11. Image Modal Logic ---
+    const imageModal = document.getElementById('imageModal');
+    const closeImageModalBtn = document.getElementById('closeImageModal');
+    if (imageModal && closeImageModalBtn) {
+        closeImageModalBtn.addEventListener('click', () => {
+            imageModal.classList.remove('active');
+        });
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) {
+                imageModal.classList.remove('active');
+            }
+        });
+    }
+
+});
