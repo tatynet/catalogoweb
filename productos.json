@@ -108,6 +108,51 @@
         "imagen": "img/1000099570.jpg"
     },
     {
+        "id": 119,
+        "codigo": "6942520000907",
+        "nombre": "CARPETA SOBRE DISEÑO",
+        "descripcion": "",
+        "precio": 0.6,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102438.jpg"
+    },
+    {
+        "id": 114,
+        "codigo": "6688465510810",
+        "nombre": "CARPETA TIPO SOBRE  A4",
+        "descripcion": "",
+        "precio": 0.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102404.jpg"
+    },
+    {
+        "id": 109,
+        "codigo": "4895137940024",
+        "nombre": "CARTON CORRUGADO A4  X 10U",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102379.jpg"
+    },
+    {
+        "id": 106,
+        "codigo": "7862114756388",
+        "nombre": "CARTON PRENSADO A3 GRUESO 900GR",
+        "descripcion": "",
+        "precio": 0.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102365.jpg"
+    },
+    {
+        "id": 105,
+        "codigo": "7862114756364",
+        "nombre": "CARTON PRENSADO A4 GRUESO 900GR",
+        "descripcion": "",
+        "precio": 0.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102361.jpg"
+    },
+    {
         "id": 85,
         "codigo": "7861185630948",
         "nombre": "CARTULINA  HOLOGRAFICA PASSOLA X10 COBRE",
@@ -115,6 +160,15 @@
         "precio": 1.3,
         "categoria": "PAPELERIA",
         "imagen": "img/1000100655.jpg"
+    },
+    {
+        "id": 110,
+        "codigo": "7862190730005",
+        "nombre": "CARTULINA LANCER ESCARCHADA IRIDISCENTE A4",
+        "descripcion": "",
+        "precio": 1.45,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102383.jpg"
     },
     {
         "id": 70,
@@ -144,6 +198,15 @@
         "imagen": "img/1000099507.png"
     },
     {
+        "id": 111,
+        "codigo": "4897012974711",
+        "nombre": "CINTA SCOTCH JEFF 18MM X 36YDS",
+        "descripcion": "",
+        "precio": 0.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102384.jpg"
+    },
+    {
         "id": 90,
         "codigo": "7750082072954",
         "nombre": "CORRECTOR ARTESCO CINTA X 10M",
@@ -160,6 +223,51 @@
         "precio": 1.1,
         "categoria": "PAPELERIA",
         "imagen": "img/1000076036.png"
+    },
+    {
+        "id": 123,
+        "codigo": "7861084213136",
+        "nombre": "CUADERNO ESCRIBE CUADRO 100 HOJAS",
+        "descripcion": "",
+        "precio": 1.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102460.jpg"
+    },
+    {
+        "id": 122,
+        "codigo": "7861098309061",
+        "nombre": "CUADERNO ESTILO CUADROS 100 HOJAS",
+        "descripcion": "",
+        "precio": 1.35,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102453.jpg"
+    },
+    {
+        "id": 121,
+        "codigo": "7702111610705",
+        "nombre": "CUADERNO NORMA CUADROS 100HOJAS",
+        "descripcion": "",
+        "precio": 1.4,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102452.jpg"
+    },
+    {
+        "id": 120,
+        "codigo": "29477343",
+        "nombre": "CUADERNO PASTA SEMIDURA CON STIKER ESCRIBE",
+        "descripcion": "",
+        "precio": 2.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102450.jpg"
+    },
+    {
+        "id": 101,
+        "codigo": "7861123903226",
+        "nombre": "DIARIO ESCOLAR BESTER",
+        "descripcion": "",
+        "precio": 1.9,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102344.jpg"
     },
     {
         "id": 74,
@@ -205,6 +313,15 @@
         "precio": 2.4,
         "categoria": "PAPELERIA",
         "imagen": "img/1000099542.png"
+    },
+    {
+        "id": 108,
+        "codigo": "7861098607143",
+        "nombre": "HOJAS MILIMETRADAS",
+        "descripcion": "",
+        "precio": 0.6,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102375.jpg"
     },
     {
         "id": 76,
@@ -283,7 +400,7 @@
         "codigo": "7861228111892",
         "nombre": "LAPIZ LANCER LAPIGOL 2HB",
         "descripcion": "",
-        "precio": 30.0,
+        "precio": 0.3,
         "categoria": "PAPELERIA",
         "imagen": "img/1000099607.jpg"
     },
@@ -360,6 +477,15 @@
         "imagen": "img/1000076164.png"
     },
     {
+        "id": 26,
+        "codigo": "7861098356140",
+        "nombre": "MARCADOR ESTILO MAGICOS",
+        "descripcion": "",
+        "precio": 3.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000078854.png"
+    },
+    {
         "id": 87,
         "codigo": "7861185613170",
         "nombre": "MARCADOR PASOLA JUMBO",
@@ -378,18 +504,9 @@
         "imagen": "img/1000100680.jpg"
     },
     {
-        "id": 26,
-        "codigo": "7861098356140",
-        "nombre": "MARCADORES ESTILO MAGICOS",
-        "descripcion": "",
-        "precio": 3.5,
-        "categoria": "PAPELERIA",
-        "imagen": "img/1000078854.png"
-    },
-    {
         "id": 20,
         "codigo": "7703064206755",
-        "nombre": "MARCADORES PELIKAN COLORELLA STAR 12 COL.",
+        "nombre": "MARCADOR PELIKAN COLORELLA STAR 12 COL.",
         "descripcion": "",
         "precio": 2.25,
         "categoria": "PAPELERIA",
@@ -504,6 +621,15 @@
         "imagen": "img/1000083791.png"
     },
     {
+        "id": 107,
+        "codigo": "7861217448497",
+        "nombre": "NOTAS ADHESIVAS CARDINAL SET POST",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102369.jpg"
+    },
+    {
         "id": 80,
         "codigo": "6975222370283",
         "nombre": "NOTAS ADHESIVAS LANCER NOTEBOOK",
@@ -511,6 +637,15 @@
         "precio": 1.3,
         "categoria": "PAPELERIA",
         "imagen": "img/1000100638.jpg"
+    },
+    {
+        "id": 115,
+        "codigo": "7861123902496",
+        "nombre": "PAPEL CONTAC BESTER COLORES",
+        "descripcion": "",
+        "precio": 2.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102411.jpg"
     },
     {
         "id": 77,
@@ -522,6 +657,33 @@
         "imagen": "img/WhatsApp_Image_2026-07-24_at_6.02.40_PM.jpeg"
     },
     {
+        "id": 104,
+        "codigo": "7861123909945",
+        "nombre": "PINTURA ACRILICA BESTER 60ML",
+        "descripcion": "",
+        "precio": 0.8,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102354.jpg"
+    },
+    {
+        "id": 103,
+        "codigo": "7861123905657",
+        "nombre": "PINTURA ACRILICA BESTER X 12 COL.",
+        "descripcion": "",
+        "precio": 3.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102351.jpg"
+    },
+    {
+        "id": 38,
+        "codigo": "7750082082731",
+        "nombre": "PINTURA ARTESCO BORRABLE 12COL",
+        "descripcion": "",
+        "precio": 3.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083717.png"
+    },
+    {
         "id": 15,
         "codigo": "7750082150843",
         "nombre": "PINTURA ARTESCO SUPERPUNTA 15 COL. PRO BLACK",
@@ -531,6 +693,24 @@
         "imagen": "img/1000075852.png"
     },
     {
+        "id": 28,
+        "codigo": "7861123903431",
+        "nombre": "PINTURA BESTER 12 COL JUMBO",
+        "descripcion": "",
+        "precio": 3.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000078870.png"
+    },
+    {
+        "id": 36,
+        "codigo": "7784310156680",
+        "nombre": "PINTURA CHIFON 12COL.",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083709.png"
+    },
+    {
         "id": 9,
         "codigo": "7861098338603",
         "nombre": "PINTURA CRAFT TRIANG 13L 16C LARGA",
@@ -538,6 +718,15 @@
         "precio": 5.0,
         "categoria": "PAPELERIA",
         "imagen": "img/1000075772.png"
+    },
+    {
+        "id": 8,
+        "codigo": "7861098338610",
+        "nombre": "PINTURA CRAFT TRIANG X13 16C LARGA JUMBO",
+        "descripcion": "",
+        "precio": 7.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000075760.png"
     },
     {
         "id": 13,
@@ -585,6 +774,24 @@
         "imagen": "img/1000075831.png"
     },
     {
+        "id": 39,
+        "codigo": "7862108181950",
+        "nombre": "PINTURA CREATIV PREMIUM 15 COL",
+        "descripcion": "",
+        "precio": 3.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083721.png"
+    },
+    {
+        "id": 34,
+        "codigo": "7861098314522",
+        "nombre": "PINTURA ESTILO KIDS 12 COL",
+        "descripcion": "",
+        "precio": 1.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083672.png"
+    },
+    {
         "id": 35,
         "codigo": "7702111506220",
         "nombre": "PINTURA NORMA 12 LAPIZ 15 COL",
@@ -592,6 +799,15 @@
         "precio": 4.0,
         "categoria": "PAPELERIA",
         "imagen": "img/1000083699.png"
+    },
+    {
+        "id": 29,
+        "codigo": "7702111588585",
+        "nombre": "PINTURA NORMA 15 COL PREMIUM",
+        "descripcion": "",
+        "precio": 5.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000078873.png"
     },
     {
         "id": 10,
@@ -603,81 +819,9 @@
         "imagen": "img/1000075774.png"
     },
     {
-        "id": 37,
-        "codigo": "7750840000229",
-        "nombre": "PINTURA PELIKAN 12 COL TRIANGULAR",
-        "descripcion": "",
-        "precio": 3.25,
-        "categoria": "PAPELERIA",
-        "imagen": "img/1000083714.png"
-    },
-    {
-        "id": 38,
-        "codigo": "7750082082731",
-        "nombre": "PINTURAS ARTESCO BORRABLE 12COL",
-        "descripcion": "",
-        "precio": 3.0,
-        "categoria": "PAPELERIA",
-        "imagen": "img/1000083717.png"
-    },
-    {
-        "id": 28,
-        "codigo": "7861123903431",
-        "nombre": "PINTURAS BESTER 12 COL JUMBO",
-        "descripcion": "",
-        "precio": 3.75,
-        "categoria": "PAPELERIA",
-        "imagen": "img/1000078870.png"
-    },
-    {
-        "id": 36,
-        "codigo": "7784310156680",
-        "nombre": "PINTURAS CHIFON 12COL.",
-        "descripcion": "",
-        "precio": 1.0,
-        "categoria": "PAPELERIA",
-        "imagen": "img/1000083709.png"
-    },
-    {
-        "id": 8,
-        "codigo": "7861098338610",
-        "nombre": "PINTURAS CRAFT TRIANG X13 16C LARGA JUMBO",
-        "descripcion": "",
-        "precio": 7.5,
-        "categoria": "PAPELERIA",
-        "imagen": "img/1000075760.png"
-    },
-    {
-        "id": 39,
-        "codigo": "7862108181950",
-        "nombre": "PINTURAS CREATIV PREMIUM 15 COL",
-        "descripcion": "",
-        "precio": 3.5,
-        "categoria": "PAPELERIA",
-        "imagen": "img/1000083721.png"
-    },
-    {
-        "id": 34,
-        "codigo": "7861098314522",
-        "nombre": "PINTURAS ESTILO KIDS 12 COL",
-        "descripcion": "",
-        "precio": 1.25,
-        "categoria": "PAPELERIA",
-        "imagen": "img/1000083672.png"
-    },
-    {
-        "id": 29,
-        "codigo": "7702111588585",
-        "nombre": "PINTURAS NORMA 15 COL PREMIUM",
-        "descripcion": "",
-        "precio": 5.0,
-        "categoria": "PAPELERIA",
-        "imagen": "img/1000078873.png"
-    },
-    {
         "id": 32,
         "codigo": "5901234123457",
-        "nombre": "PINTURAS PASSOLA 12 COL",
+        "nombre": "PINTURA PASSOLA 12 COL",
         "descripcion": "",
         "precio": 1.2,
         "categoria": "PAPELERIA",
@@ -686,11 +830,20 @@
     {
         "id": 27,
         "codigo": "7861185628952",
-        "nombre": "PINTURAS PASSOLA 12 COL. JUMBO",
+        "nombre": "PINTURA PASSOLA 12 COL. JUMBO",
         "descripcion": "",
         "precio": 3.3,
         "categoria": "PAPELERIA",
         "imagen": "img/1000078865.png"
+    },
+    {
+        "id": 37,
+        "codigo": "7750840000229",
+        "nombre": "PINTURA PELIKAN 12 COL TRIANGULAR",
+        "descripcion": "",
+        "precio": 3.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083714.png"
     },
     {
         "id": 81,
@@ -720,6 +873,24 @@
         "imagen": "img/1000100634.jpg"
     },
     {
+        "id": 113,
+        "codigo": "6973833020887",
+        "nombre": "PORTAMINAS BAIKU PASTEL 0.5MM",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102396.jpg"
+    },
+    {
+        "id": 102,
+        "codigo": "7862124950950",
+        "nombre": "PORTAMINAS UTILEZA SMOOT  0.5MM",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102348.jpg"
+    },
+    {
         "id": 2,
         "codigo": "7862138010169",
         "nombre": "REGLA APOLO PLASTICA 30CM",
@@ -745,6 +916,24 @@
         "precio": 1.5,
         "categoria": "PAPELERIA",
         "imagen": "img/371719.jpg"
+    },
+    {
+        "id": 99,
+        "codigo": "7703064648104",
+        "nombre": "RESALTADOR PELIKAN BUHO X 16 COL.",
+        "descripcion": "",
+        "precio": 9.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102315.jpg"
+    },
+    {
+        "id": 100,
+        "codigo": "7703064399730",
+        "nombre": "RESALTADOR PELIKAN CAMALEON X 26COL.",
+        "descripcion": "",
+        "precio": 12.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102343.jpg"
     },
     {
         "id": 4,
@@ -792,6 +981,15 @@
         "imagen": "img/1000075620.png"
     },
     {
+        "id": 117,
+        "codigo": "56767958",
+        "nombre": "ROMPECABEZAS MAPA ECUADOR",
+        "descripcion": "",
+        "precio": 2.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102425.jpg"
+    },
+    {
         "id": 91,
         "codigo": "7750082154520",
         "nombre": "SACAPUNTA 1 SERV.  WRAP DUO",
@@ -826,6 +1024,15 @@
         "precio": 0.25,
         "categoria": "PAPELERIA",
         "imagen": "img/1000100611.jpg"
+    },
+    {
+        "id": 116,
+        "codigo": "31207731",
+        "nombre": "TABLA DE PULZAR  + PIZARRA CUADRICULADA",
+        "descripcion": "",
+        "precio": 2.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102421.jpg"
     },
     {
         "id": 68,
@@ -864,6 +1071,15 @@
         "imagen": "img/1000099538.png"
     },
     {
+        "id": 112,
+        "codigo": "3154144643108",
+        "nombre": "TIJERA MAPED ZURDO ESCOLAR",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102390.jpg"
+    },
+    {
         "id": 65,
         "codigo": "5903207099073",
         "nombre": "TIJERA PANDI EWIN 19CM",
@@ -880,5 +1096,14 @@
         "precio": 0.5,
         "categoria": "PAPELERIA",
         "imagen": "img/1000099524.png"
+    },
+    {
+        "id": 118,
+        "codigo": "34135",
+        "nombre": "ZAPATO DE ENHEBRAR SERING",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102429.jpg"
     }
 ]

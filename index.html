@@ -21,12 +21,11 @@
     <header class="glass-header">
         <div class="header-content">
             <div class="logo">
-                <h1>Catálogo<span>.</span></h1>
-            </div>
-            
-            <div class="search-container">
-                <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Buscar productos por nombre...">
+                <img src="logo.jpeg" alt="Logo Tatynet" class="header-logo-img">
+                <div class="logo-brand">
+                    <h1 class="logo-text">TATYNET</h1>
+                    <span class="logo-slogan">Todo en un solo lugar</span>
+                </div>
             </div>
 
             <div class="header-actions">
@@ -40,21 +39,46 @@
             </div>
         </div>
         
-        <div class="filters-container">
-            <div id="categoryFilters" class="category-filters">
+    </header>
+
+    <!-- Store Cover / Portada -->
+    <section class="store-cover-container">
+        <div class="store-cover-wrapper">
+            <img src="portada.jpeg" alt="Portada Tatynet" class="store-cover-img">
+        </div>
+    </section>
+
+    <!-- Barra de Búsqueda Principal (debajo de la portada) -->
+    <section class="main-search-section">
+        <div class="main-search-container">
+            <i class="fas fa-search main-search-icon"></i>
+            <input type="text" id="searchInput" class="main-search-input" placeholder="🔍 ¿Qué producto estás buscando hoy?">
+            <button class="main-search-clear" id="clearSearch" style="display:none;" aria-label="Limpiar búsqueda">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </section>
+
+    <main class="container main-layout">
+        <aside class="sidebar-categories">
+            <h3><i class="fas fa-list"></i> Categorías</h3>
+            <div class="category-search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="categorySearchInput" class="category-search-input" placeholder="Buscar categoría...">
+            </div>
+            <div id="categoryFilters" class="category-filters-vertical">
                 <button class="filter-btn active" data-category="Todos">Todos</button>
                 <!-- Las categorías se cargarán dinámicamente aquí -->
             </div>
-        </div>
-    </header>
-
-    <main class="container">
-        <div id="productsGrid" class="products-grid">
+        </aside>
+        
+        <section class="products-section">
+            <div id="productsGrid" class="products-grid">
             <!-- Loading State -->
             <div class="loading">
                 <i class="fas fa-spinner fa-spin"></i> Cargando productos...
             </div>
-        </div>
+        </section>
     </main>
 
     <script src="app.js"></script>
@@ -145,6 +169,57 @@
             <button id="closeAlertBtn" class="btn-buy" style="width: 100%; justify-content: center;">Entendido</button>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+
+            <!-- Columna 1: Marca -->
+            <div class="footer-brand">
+                <img src="logo.jpeg" alt="Logo Tatynet" class="footer-logo">
+                <div class="footer-brand-text">
+                    <h3>TATYNET</h3>
+                    <p>Todo lo que necesitas<br>en un solo lugar</p>
+                </div>
+            </div>
+
+            <!-- Columna 2: Ubicación -->
+            <div class="footer-col">
+                <h4 class="footer-col-title"><i class="fas fa-store"></i> Nuestra Tienda</h4>
+                <div class="footer-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Calle Pacahama, entre Lira Ñan y Amauta, frente a la Unidad Educativa Aída Gallegos de Moncayo.</span>
+                </div>
+                <div class="footer-item">
+                    <i class="fas fa-city"></i>
+                    <span>Quito, Ecuador &mdash; C.P. 170702</span>
+                </div>
+                <div class="footer-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Lunes a Sábado: 8:00 AM &ndash; 7:00 PM</span>
+                </div>
+            </div>
+
+            <!-- Columna 3: Contacto -->
+            <div class="footer-col">
+                <h4 class="footer-col-title"><i class="fas fa-headset"></i> Contáctanos</h4>
+                <a href="https://wa.me/593999649381?text=%C2%A1Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" class="footer-contact-btn footer-wa">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://www.facebook.com/tatynet.ec/?locale=es_LA" target="_blank" class="footer-contact-btn footer-fb">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+                <div class="footer-item" style="margin-top: 0.5rem;">
+                    <i class="fas fa-phone"></i>
+                    <span>+593 999 649 381</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 <strong>TATYNET</strong>. Hecho con <i class="fas fa-heart" style="color:#ef4444;"></i> para nuestros clientes &mdash; Quito, Ecuador.</p>
+        </div>
+    </footer>
 
 </body>
 </html>

@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const productsGrid = document.getElementById('productsGrid');
     const searchInput = document.getElementById('searchInput');
     const categoryFilters = document.getElementById('categoryFilters');
+    const categorySearchInput = document.getElementById('categorySearchInput');
+    const clearSearchBtn = document.getElementById('clearSearch');
     const cartToggle = document.getElementById('cartToggle');
     const themeToggle = document.getElementById('themeToggle');
     
@@ -90,6 +92,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- Botón limpiar búsqueda ---
+    if (searchInput && clearSearchBtn) {
+        searchInput.addEventListener('input', () => {
+            clearSearchBtn.style.display = searchInput.value.length > 0 ? 'flex' : 'none';
+        });
+        clearSearchBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            clearSearchBtn.style.display = 'none';
+            searchInput.dispatchEvent(new Event('input'));
+            searchInput.focus();
+        });
+    }
+
     // --- 2. Carga de Datos desde JSON (Productos y Configuración) ---
     // Usamos getTime() para evitar que el navegador guarde los archivos en caché y siempre muestre los nuevos productos
     const cacheBuster = new Date().getTime();
@@ -106,14 +121,28 @@ document.addEventListener('DOMContentLoaded', () => {
     ])
     .then(([config, products]) => {
         configData = config;
-        allProducts = products;
+        
+        allProducts = products.map(product => {
+            // Extraer la primera palabra del nombre como categoría
+            let primeraPalabra = product.nombre.trim().split(/\s+/)[0];
+            primeraPalabra = primeraPalabra.charAt(0).toUpperCase() + primeraPalabra.slice(1).toLowerCase();
+            return {
+                ...product,
+                categoria_original: product.categoria,
+                categoria: primeraPalabra
+            };
+        });
+
+        // Ordenar inicialmente todos los productos por precio de menor a mayor
+        allProducts.sort((a, b) => a.precio - b.precio);
+
         currentFilteredProducts = [...allProducts];
 
         // Actualizar el nombre de la tienda en el HTML usando la configuración
         if (configData.nombre_tienda) {
             document.title = configData.nombre_tienda;
-            const logo = document.querySelector('.logo h1');
-            if (logo) logo.innerHTML = `${configData.nombre_tienda}<span>.</span>`;
+            const logoText = document.querySelector('.logo-text');
+            if (logoText) logoText.innerHTML = `${configData.nombre_tienda}`;
         }
 
         // Configurar botón flotante de WhatsApp
@@ -225,9 +254,9 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             
             // Evento para visualizar la imagen en grande
-            const imgEl = card.querySelector('.product-image');
-            imgEl.style.cursor = 'zoom-in';
-            imgEl.addEventListener('click', () => {
+            const imgContainerEl = card.querySelector('.product-image-container');
+            imgContainerEl.style.cursor = 'zoom-in';
+            imgContainerEl.addEventListener('click', () => {
                 const imageModal = document.getElementById('imageModal');
                 const expandedImg = document.getElementById('expandedImg');
                 if (imageModal && expandedImg) {
@@ -313,8 +342,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 4. Generación de Botones de Categoría Dinámicos ---
     function generateCategoryButtons(products) {
-        // Extraer categorías únicas
-        const categories = ['Todos', ...new Set(products.map(p => p.categoria))];
+        // Extraer categorías únicas y ordenarlas alfabéticamente
+        const uniqueCategories = [...new Set(products.map(p => p.categoria))].sort();
+        const categories = ['Todos', ...uniqueCategories];
         
         categoryFilters.innerHTML = ''; // Limpiar
 
@@ -324,15 +354,25 @@ document.addEventListener('DOMContentLoaded', () => {
             if (category === 'Todos') btn.classList.add('active');
             
             btn.dataset.category = category;
-            btn.textContent = category;
+
+            // Contar productos por categoría (ya no se muestra, pero se conserva para futuros usos)
+            btn.innerHTML = `<span class="cat-name">${category}</span>`;
             
             btn.addEventListener('click', () => {
                 // Actualizar estado activo
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('#categoryFilters .filter-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 
-                // Filtrar
+                // Filtrar productos
                 filterProducts();
+
+                // Scroll automático hacia los productos
+                const productsSection = document.getElementById('productsGrid');
+                if (productsSection) {
+                    const offset = 120; // Espacio para el header sticky
+                    const top = productsSection.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
             });
 
             categoryFilters.appendChild(btn);
@@ -343,28 +383,69 @@ document.addEventListener('DOMContentLoaded', () => {
             const promoBtn = document.createElement('button');
             promoBtn.classList.add('filter-btn');
             promoBtn.dataset.category = 'ofertas_especiales';
-            promoBtn.innerHTML = '<i class="fas fa-star" style="color:#f59e0b; margin-right:5px;"></i> Promociones';
+            const promoCount = configData.promociones.filter(p => p.activa !== false).length;
+            promoBtn.innerHTML = `<span class="cat-name"><i class="fas fa-star" style="color:#f59e0b; margin-right:4px;"></i> Promociones</span><span class="cat-count" style="background:#f59e0b;">${promoCount}</span>`;
             promoBtn.style.fontWeight = 'bold';
             
             promoBtn.addEventListener('click', () => {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('#categoryFilters .filter-btn').forEach(b => b.classList.remove('active'));
                 promoBtn.classList.add('active');
                 filterProducts();
+                const productsSection = document.getElementById('productsGrid');
+                if (productsSection) {
+                    const top = productsSection.getBoundingClientRect().top + window.scrollY - 120;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
             });
             
-            // Insertar justo después del botón "Todos" (que es el primero)
+            // Insertar justo después del botón "Todos"
             if (categoryFilters.children.length > 1) {
                 categoryFilters.insertBefore(promoBtn, categoryFilters.children[1]);
             } else {
                 categoryFilters.appendChild(promoBtn);
             }
         }
+
+        // Indicador de scroll: mostrar/ocultar degradado según posición
+        const filterList = categoryFilters;
+        const sidebarEl = filterList.closest('.sidebar-categories');
+        if (sidebarEl) {
+            function updateScrollIndicator() {
+                const canScrollDown = filterList.scrollTop + filterList.clientHeight < filterList.scrollHeight - 5;
+                const canScrollUp = filterList.scrollTop > 5;
+                sidebarEl.classList.toggle('has-scroll-down', canScrollDown);
+                sidebarEl.classList.toggle('has-scroll-up', canScrollUp);
+            }
+            filterList.addEventListener('scroll', updateScrollIndicator);
+            // Llamar una vez al cargar para estado inicial
+            setTimeout(updateScrollIndicator, 100);
+        }
+
+        // Lógica de búsqueda para las categorías
+        if (categorySearchInput) {
+            categorySearchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase().trim();
+                const buttons = categoryFilters.querySelectorAll('.filter-btn');
+                
+                buttons.forEach(btn => {
+                    const catName = btn.querySelector('.cat-name')?.textContent.toLowerCase() || btn.textContent.toLowerCase();
+                    btn.style.display = catName.includes(term) ? 'flex' : 'none';
+                });
+
+                // Actualizar indicador tras filtrar
+                const sidebarEl = categoryFilters.closest('.sidebar-categories');
+                if (sidebarEl) {
+                    const canScrollDown = categoryFilters.scrollHeight > categoryFilters.clientHeight;
+                    sidebarEl.classList.toggle('has-scroll-down', canScrollDown);
+                }
+            });
+        }
     }
 
     // --- 5. Lógica de Filtrado (Búsqueda + Categoría) ---
     function filterProducts() {
         const searchTerm = searchInput.value.toLowerCase().trim();
-        const activeCategoryBtn = document.querySelector('.filter-btn.active');
+        const activeCategoryBtn = document.querySelector('#categoryFilters .filter-btn.active');
         const activeCategory = activeCategoryBtn ? activeCategoryBtn.dataset.category : 'Todos';
 
         currentFilteredProducts = allProducts.filter(product => {
@@ -386,6 +467,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             return matchesSearch && matchesCategory;
         });
+
+        // Ordenar por precio de menor a mayor
+        currentFilteredProducts.sort((a, b) => a.precio - b.precio);
 
         renderProducts(currentFilteredProducts, true); // true = reset grid y paginación
     }
