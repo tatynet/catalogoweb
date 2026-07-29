@@ -108,6 +108,24 @@
         "imagen": "img/1000099570.jpg"
     },
     {
+        "id": 148,
+        "codigo": "4549526608711",
+        "nombre": "CALCULADORA CASIO FX-350ES PLUS",
+        "descripcion": "",
+        "precio": 20.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000103011.jpg"
+    },
+    {
+        "id": 149,
+        "codigo": "4549526617348",
+        "nombre": "CALCULADORA CASIO PORTABLE",
+        "descripcion": "",
+        "precio": 6.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000103012.jpg"
+    },
+    {
         "id": 119,
         "codigo": "6942520000907",
         "nombre": "CARPETA SOBRE DISEÑO",
@@ -222,7 +240,25 @@
         "descripcion": "",
         "precio": 1.1,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000076036.png"
+        "imagen": "img/WhatsApp_Image_2026-07-28_at_5.22.24_PM.jpeg"
+    },
+    {
+        "id": 131,
+        "codigo": "4007817091340",
+        "nombre": "CRAYONES DE CERA TRIANGULARES JUMBO",
+        "descripcion": "",
+        "precio": 2.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102940.jpg"
+    },
+    {
+        "id": 130,
+        "codigo": "7750082142619",
+        "nombre": "CRAYONES DE SEDA RESALTADOR GEL",
+        "descripcion": "",
+        "precio": 5.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102934.jpg"
     },
     {
         "id": 123,
@@ -270,6 +306,24 @@
         "imagen": "img/1000102344.jpg"
     },
     {
+        "id": 129,
+        "codigo": "7861103520078",
+        "nombre": "ESCUADRA PRECISION ART 0.25",
+        "descripcion": "",
+        "precio": 1.4,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102933.jpg"
+    },
+    {
+        "id": 128,
+        "codigo": "7861103520085",
+        "nombre": "ESCUADRA PRESION  ART. 026",
+        "descripcion": "",
+        "precio": 1.2,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102932.jpg"
+    },
+    {
         "id": 74,
         "codigo": "7754111024754",
         "nombre": "ESFERO FABER CASTELL TRILUX FUN X 10 COL",
@@ -286,6 +340,24 @@
         "precio": 0.5,
         "categoria": "PAPELERIA",
         "imagen": "img/1000100702.jpg"
+    },
+    {
+        "id": 135,
+        "codigo": "6971090890069",
+        "nombre": "FOAMI MOLDEABLE 12COL.",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102944.jpg"
+    },
+    {
+        "id": 134,
+        "codigo": "4895137906808",
+        "nombre": "FOAMY MOLDEABLE LANCER 50GR",
+        "descripcion": "",
+        "precio": 0.8,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102943.jpg"
     },
     {
         "id": 41,
@@ -306,6 +378,69 @@
         "imagen": "img/1000100665.jpg"
     },
     {
+        "id": 136,
+        "codigo": "7862108182780",
+        "nombre": "GOMA EN BARRA  STICK CREATIV 15GR",
+        "descripcion": "",
+        "precio": 0.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102945.jpg"
+    },
+    {
+        "id": 139,
+        "codigo": "7861123900744",
+        "nombre": "GOMA EN BARRA BESTER 21GR",
+        "descripcion": "",
+        "precio": 0.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102981.jpg"
+    },
+    {
+        "id": 138,
+        "codigo": "7861123900737",
+        "nombre": "GOMA EN BARRA BESTER 36GR",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102980.jpg"
+    },
+    {
+        "id": 140,
+        "codigo": "7861123900751",
+        "nombre": "GOMA EN BARRA BESTER 8GR",
+        "descripcion": "",
+        "precio": 0.45,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102984.jpg"
+    },
+    {
+        "id": 137,
+        "codigo": "7861098369010",
+        "nombre": "GOMA EN BARRA LOVE CON AROMA 15GR",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102979.jpg"
+    },
+    {
+        "id": 141,
+        "codigo": "7702111465718",
+        "nombre": "GOMA INVISIBLE NORMA 155GR",
+        "descripcion": "",
+        "precio": 1.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102987.jpg"
+    },
+    {
+        "id": 142,
+        "codigo": "7861098354955",
+        "nombre": "GOMA TRANSPARENTE ESTILO 250GR",
+        "descripcion": "",
+        "precio": 1.35,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102988.jpg"
+    },
+    {
         "id": 64,
         "codigo": "4894616021971",
         "nombre": "GRAPADORA JEFF METALICA MEDIANA JR.GR",
@@ -322,6 +457,42 @@
         "precio": 0.6,
         "categoria": "PAPELERIA",
         "imagen": "img/1000102375.jpg"
+    },
+    {
+        "id": 127,
+        "codigo": "7750082207585",
+        "nombre": "JUEGO CURVIGRAFOS",
+        "descripcion": "",
+        "precio": 3.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102927.jpg"
+    },
+    {
+        "id": 124,
+        "codigo": "7861103520245",
+        "nombre": "JUEGO GEOMETRICO APOLO NRO 1",
+        "descripcion": "",
+        "precio": 1.2,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102879.jpg"
+    },
+    {
+        "id": 125,
+        "codigo": "7861103520252",
+        "nombre": "JUEGO GEOMETRICO APOLO NRO 2",
+        "descripcion": "",
+        "precio": 1.35,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102905.jpg"
+    },
+    {
+        "id": 126,
+        "codigo": "7750082106468",
+        "nombre": "JUEGO GEOMETRICO ARTESCO 30CM FLEXIBLE",
+        "descripcion": "",
+        "precio": 2.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102926.jpg"
     },
     {
         "id": 76,
@@ -457,6 +628,15 @@
         "precio": 2.75,
         "categoria": "PAPELERIA",
         "imagen": "img/1000100733.jpg"
+    },
+    {
+        "id": 145,
+        "codigo": "7861098347124",
+        "nombre": "MARCADOR CRAFT LAVABLES DOBLE PUNTA",
+        "descripcion": "",
+        "precio": 7.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000103002.jpg"
     },
     {
         "id": 21,
@@ -855,6 +1035,24 @@
         "imagen": "img/1000100639.jpg"
     },
     {
+        "id": 133,
+        "codigo": "7861098314614",
+        "nombre": "PLASTILINA ESTILO LARGA 8 COL.",
+        "descripcion": "",
+        "precio": 0.9,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102942.jpg"
+    },
+    {
+        "id": 132,
+        "codigo": "7501015220450",
+        "nombre": "PLASTILINA PELIKAN 180GR.",
+        "descripcion": "",
+        "precio": 0.95,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102941.jpg"
+    },
+    {
         "id": 18,
         "codigo": "7501015211120",
         "nombre": "PLASTILINA PELIKAN JUMBO X10 COL. PASTEL",
@@ -1026,6 +1224,24 @@
         "imagen": "img/1000100611.jpg"
     },
     {
+        "id": 146,
+        "codigo": "7861123902540",
+        "nombre": "SILICONA LIQUIDA BESTER 30ML",
+        "descripcion": "",
+        "precio": 0.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000103009.jpg"
+    },
+    {
+        "id": 147,
+        "codigo": "7861161206983",
+        "nombre": "SILICONA LIQUIDA CELINA 60ML",
+        "descripcion": "",
+        "precio": 0.8,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000103010.jpg"
+    },
+    {
         "id": 116,
         "codigo": "31207731",
         "nombre": "TABLA DE PULZAR  + PIZARRA CUADRICULADA",
@@ -1042,6 +1258,24 @@
         "precio": 0.45,
         "categoria": "PAPELERIA",
         "imagen": "img/1000099576.jpg"
+    },
+    {
+        "id": 144,
+        "codigo": "7750082005976",
+        "nombre": "TEMPERA ARTESCO 250ML",
+        "descripcion": "",
+        "precio": 2.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102995.jpg"
+    },
+    {
+        "id": 143,
+        "codigo": "7862108181134",
+        "nombre": "TEMPERA CREATIV 250ML.",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000102992.jpg"
     },
     {
         "id": 95,
