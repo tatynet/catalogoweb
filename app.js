@@ -59,9 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let allProducts = [];
-    let currentFilteredProducts = []; // Productos después de aplicar filtros
-    let configData = {}; // Variable para guardar la configuración
+    let currentFilteredProducts = [];
+    let configData = {};
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let newProductCodes = new Set(); // Códigos de productos detectados como nuevos
     
     // Variables para Paginación (Mejora de rendimiento para >500 productos)
     let currentPage = 1;
@@ -135,8 +136,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Ordenar inicialmente todos los productos por precio de menor a mayor
         allProducts.sort((a, b) => a.precio - b.precio);
-
         currentFilteredProducts = [...allProducts];
+
+        // --- Detectar productos nuevos con localStorage ---
+        detectNewProducts(allProducts);
 
         // Actualizar el nombre de la tienda en el HTML usando la configuración
         if (configData.nombre_tienda) {
@@ -160,7 +163,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         renderProducts(currentFilteredProducts, true);
         generateCategoryButtons(allProducts);
-        updateCartUI(); // Cargar carrito al iniciar
+        updateCartUI();
+
+        // Mostrar banner si hay productos nuevos
+        if (newProductCodes.size > 0) {
+            showNewProductsBanner(newProductCodes.size);
+        }
     })
     .catch(error => {
         console.error('Error cargando los archivos JSON:', error);
@@ -203,6 +211,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Imagen con fallback por si no existe
             const imgSrc = product.imagen ? product.imagen : 'https://placehold.co/400x400/eeeeee/999999?text=Sin+Imagen';
 
+            // Badge de producto nuevo
+            const isNew = newProductCodes.has(String(product.codigo));
+            const newBadgeHtml = isNew
+                ? `<div class="badge-nuevo"><i class="fas fa-sparkles"></i> NUEVO</div>`
+                : '';
+
             // Lógica de Promoción
             let finalPrice = product.precio;
             let promoBadge = '';
@@ -232,6 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             card.innerHTML = `
                 <div class="product-image-container">
+                    ${newBadgeHtml}
                     ${promoBadge}
                     <div class="watermark-overlay" style="transform: translate(calc(-50% + ${randomX}px), calc(-50% + ${randomY}px)) rotate(${randomRotate}deg);">${configData.nombre_tienda || 'Tatynet'}</div>
                     <span class="product-category">${product.categoria}</span>
@@ -378,6 +393,33 @@ document.addEventListener('DOMContentLoaded', () => {
             categoryFilters.appendChild(btn);
         });
 
+        // --- Botón especial de Novedades ---
+        if (newProductCodes.size > 0) {
+            const novBtn = document.createElement('button');
+            novBtn.classList.add('filter-btn');
+            novBtn.dataset.category = 'novedades';
+            novBtn.innerHTML = `<span class="cat-name"><i class="fas fa-bell" style="color:#10b981; margin-right:4px;"></i> Novedades</span><span class="cat-count" style="background:#10b981; color:white;">${newProductCodes.size}</span>`;
+            novBtn.style.fontWeight = 'bold';
+
+            novBtn.addEventListener('click', () => {
+                document.querySelectorAll('#categoryFilters .filter-btn').forEach(b => b.classList.remove('active'));
+                novBtn.classList.add('active');
+                filterProducts();
+                const productsSection = document.getElementById('productsGrid');
+                if (productsSection) {
+                    const top = productsSection.getBoundingClientRect().top + window.scrollY - 120;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+
+            // Insertar justo al inicio (primer posición, después de 'Todos')
+            if (categoryFilters.children.length > 1) {
+                categoryFilters.insertBefore(novBtn, categoryFilters.children[1]);
+            } else {
+                categoryFilters.appendChild(novBtn);
+            }
+        }
+
         // --- Botón especial de Ofertas ---
         if (configData.promocion_activa && configData.promociones && configData.promociones.filter(p => p.activa !== false).length > 0) {
             const promoBtn = document.createElement('button');
@@ -449,10 +491,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const activeCategory = activeCategoryBtn ? activeCategoryBtn.dataset.category : 'Todos';
 
         currentFilteredProducts = allProducts.filter(product => {
-            // Coincidencia de texto (nombre o descripción)
             const matchesSearch = product.nombre.toLowerCase().includes(searchTerm);
             
-            // Coincidencia de categoría
             let matchesCategory = false;
             if (activeCategory === 'Todos') {
                 matchesCategory = true;
@@ -461,6 +501,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     const promo = configData.promociones.find(p => p.codigo_producto === product.codigo && p.activa !== false);
                     if (promo) matchesCategory = true;
                 }
+            } else if (activeCategory === 'novedades') {
+                matchesCategory = newProductCodes.has(String(product.codigo));
             } else {
                 matchesCategory = product.categoria === activeCategory;
             }
@@ -468,10 +510,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return matchesSearch && matchesCategory;
         });
 
-        // Ordenar por precio de menor a mayor
         currentFilteredProducts.sort((a, b) => a.precio - b.precio);
-
-        renderProducts(currentFilteredProducts, true); // true = reset grid y paginación
+        renderProducts(currentFilteredProducts, true);
     }
 
     // Event listeners para la búsqueda en tiempo real
@@ -831,6 +871,93 @@ document.addEventListener('DOMContentLoaded', () => {
                 imageModal.classList.remove('active');
             }
         });
+    }
+
+    // --- 12. Detección de Productos Nuevos (via localStorage) ---
+    function detectNewProducts(products) {
+        const STORAGE_KEY = 'tatynet_seen_products';
+        const currentCodes = products.map(p => String(p.codigo));
+        const seenCodesRaw = localStorage.getItem(STORAGE_KEY);
+
+        if (!seenCodesRaw) {
+            // Primera visita: guardar todos como "vistos" sin marcar ninguno como nuevo
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(currentCodes));
+            newProductCodes = new Set();
+            return;
+        }
+
+        const seenCodes = new Set(JSON.parse(seenCodesRaw));
+
+        // Los que están en el JSON actual pero NO en los vistos = NUEVOS
+        currentCodes.forEach(code => {
+            if (!seenCodes.has(code)) {
+                newProductCodes.add(code);
+            }
+        });
+
+        // Actualizar localStorage con la lista actual completa
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(currentCodes));
+    }
+
+    function showNewProductsBanner(count) {
+        // No mostrar si ya fue cerrado en esta sesión
+        if (sessionStorage.getItem('newProductsBannerClosed')) return;
+
+        const banner = document.createElement('div');
+        banner.id = 'newProductsBanner';
+        banner.className = 'new-products-banner';
+        banner.innerHTML = `
+            <div class="new-banner-content">
+                <div class="new-banner-icon"><i class="fas fa-bell"></i></div>
+                <div class="new-banner-text">
+                    <strong>¡${count} producto${count > 1 ? 's nuevos' : ' nuevo'} disponible${count > 1 ? 's' : ''}!</strong>
+                    <span>Revisa las últimas novedades que llegaron a TATYNET</span>
+                </div>
+                <button class="new-banner-btn" id="verNovBtn">
+                    <i class="fas fa-eye"></i> Ver
+                </button>
+                <button class="new-banner-close" id="closeBannerBtn" aria-label="Cerrar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        `;
+
+        // Insertar después del header
+        const header = document.querySelector('.glass-header');
+        if (header && header.nextSibling) {
+            header.parentNode.insertBefore(banner, header.nextSibling);
+        } else {
+            document.body.prepend(banner);
+        }
+
+        // Animar entrada
+        requestAnimationFrame(() => banner.classList.add('visible'));
+
+        // Botón Ver Novedades: activar filtro
+        document.getElementById('verNovBtn')?.addEventListener('click', () => {
+            closeBanner();
+            // Activar el botón de Novedades en la barra de categorías
+            const novBtn = document.querySelector('[data-category="novedades"]');
+            if (novBtn) {
+                document.querySelectorAll('#categoryFilters .filter-btn').forEach(b => b.classList.remove('active'));
+                novBtn.classList.add('active');
+                filterProducts();
+                const grid = document.getElementById('productsGrid');
+                if (grid) {
+                    const top = grid.getBoundingClientRect().top + window.scrollY - 120;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            }
+        });
+
+        // Botón cerrar
+        document.getElementById('closeBannerBtn')?.addEventListener('click', closeBanner);
+
+        function closeBanner() {
+            banner.classList.remove('visible');
+            setTimeout(() => banner.remove(), 400);
+            sessionStorage.setItem('newProductsBannerClosed', 'true');
+        }
     }
 
 });
