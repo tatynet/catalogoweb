@@ -377,6 +377,14 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2.5rem;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    will-change: opacity, transform;
+}
+
+/* Estado de transición al cambiar categoría */
+.products-grid.fading-out {
+    opacity: 0;
+    transform: translateY(8px);
 }
 
 /* Tarjeta de Producto Premium */

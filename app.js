@@ -183,11 +183,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 3. Renderizado de Productos ---
     function renderProducts(products, reset = true) {
         if (reset) {
+            const hasCards = productsGrid.querySelector('.product-card');
+            if (hasCards) {
+                // Animación suave: fade-out → clear → fade-in
+                productsGrid.classList.add('fading-out');
+                setTimeout(() => {
+                    productsGrid.classList.remove('fading-out');
+                    productsGrid.innerHTML = '';
+                    currentPage = 1;
+                    _renderPage(products);
+                }, 160);
+                return;
+            }
             productsGrid.innerHTML = '';
             currentPage = 1;
         }
+        _renderPage(products);
+    }
 
-        if (products.length === 0 && reset) {
+    function _renderPage(products) {
+        if (products.length === 0) {
             productsGrid.innerHTML = `
                 <div class="no-results">
                     <i class="fas fa-box-open" style="font-size: 2rem; margin-bottom: 1rem; display: block; opacity: 0.5;"></i>
