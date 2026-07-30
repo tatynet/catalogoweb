@@ -1,5 +1,14 @@
 [
     {
+        "id": 40,
+        "codigo": "7861123905664",
+        "nombre": "ACUARELA CON PINCEL 12 COL",
+        "descripcion": "",
+        "precio": 1.3,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083725.png"
+    },
+    {
         "id": 17,
         "codigo": "7861185617970",
         "nombre": "ACUARELA PASSOLA X 12 COLORES",
@@ -7,15 +16,6 @@
         "precio": 1.5,
         "categoria": "PAPELERIA",
         "imagen": "img/1000076039.png"
-    },
-    {
-        "id": 40,
-        "codigo": "7861123905664",
-        "nombre": "ACUARELAS CON PINCEL 12 COL",
-        "descripcion": "",
-        "precio": 1.3,
-        "categoria": "PAPELERIA",
-        "imagen": "img/1000083725.png"
     },
     {
         "id": 96,
@@ -128,7 +128,7 @@
     {
         "id": 119,
         "codigo": "6942520000907",
-        "nombre": "CARPETA SOBRE DISEÑO",
+        "nombre": "CARPETA A4 TIPO SOBRE DISEÑO",
         "descripcion": "",
         "precio": 0.6,
         "categoria": "PAPELERIA",
@@ -236,7 +236,7 @@
     {
         "id": 16,
         "codigo": "7750082002654",
-        "nombre": "CRAYON ARTESCO ESCOLAR 12 COLORES",
+        "nombre": "CRAYONES ARTESCO ESCOLAR 12 COLORES",
         "descripcion": "",
         "precio": 1.1,
         "categoria": "PAPELERIA",
@@ -263,7 +263,7 @@
     {
         "id": 123,
         "codigo": "7861084213136",
-        "nombre": "CUADERNO ESCRIBE CUADRO 100 HOJAS",
+        "nombre": "CUADERNO UNIVERSITARIO  ESCRIBE CUADRO 100 HOJAS",
         "descripcion": "",
         "precio": 1.25,
         "categoria": "PAPELERIA",
@@ -272,7 +272,7 @@
     {
         "id": 122,
         "codigo": "7861098309061",
-        "nombre": "CUADERNO ESTILO CUADROS 100 HOJAS",
+        "nombre": "CUADERNO UNIVERSITARIO ESTILO CUADROS 100 HOJAS",
         "descripcion": "",
         "precio": 1.35,
         "categoria": "PAPELERIA",
@@ -281,7 +281,7 @@
     {
         "id": 121,
         "codigo": "7702111610705",
-        "nombre": "CUADERNO NORMA CUADROS 100HOJAS",
+        "nombre": "CUADERNO UNIVERSITARIO NORMA CUADROS 100HOJAS",
         "descripcion": "",
         "precio": 1.4,
         "categoria": "PAPELERIA",
@@ -290,7 +290,7 @@
     {
         "id": 120,
         "codigo": "29477343",
-        "nombre": "CUADERNO PASTA SEMIDURA CON STIKER ESCRIBE",
+        "nombre": "CUADERNO UNIVERSITARIO PASTA SEMIDURA CON STIKER ESCRIBE",
         "descripcion": "",
         "precio": 2.5,
         "categoria": "PAPELERIA",
@@ -342,13 +342,31 @@
         "imagen": "img/1000100702.jpg"
     },
     {
+        "id": 41,
+        "codigo": "6938684620129",
+        "nombre": "FOAMY MOLDEABLE 12COL",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000083735.png"
+    },
+    {
         "id": 135,
         "codigo": "6971090890069",
-        "nombre": "FOAMI MOLDEABLE 12COL.",
+        "nombre": "FOAMY MOLDEABLE 12COL.",
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
         "imagen": "img/1000102944.jpg"
+    },
+    {
+        "id": 86,
+        "codigo": "7750082021532",
+        "nombre": "FOAMY MOLDEABLE ARTESCO GRANULADO",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100665.jpg"
     },
     {
         "id": 134,
@@ -358,24 +376,6 @@
         "precio": 0.8,
         "categoria": "PAPELERIA",
         "imagen": "img/1000102943.jpg"
-    },
-    {
-        "id": 41,
-        "codigo": "6938684620129",
-        "nombre": "FOMIX MOLDEABLE 12COL",
-        "descripcion": "",
-        "precio": 1.5,
-        "categoria": "PAPELERIA",
-        "imagen": "img/1000083735.png"
-    },
-    {
-        "id": 86,
-        "codigo": "7750082021532",
-        "nombre": "FOMIX MOLDEABLE ARTESCO GRANULADO",
-        "descripcion": "",
-        "precio": 1.0,
-        "categoria": "PAPELERIA",
-        "imagen": "img/1000100665.jpg"
     },
     {
         "id": 136,
@@ -1064,7 +1064,7 @@
     {
         "id": 79,
         "codigo": "6941032911114",
-        "nombre": "PORTA CREDENCIALES LANCER",
+        "nombre": "PORTACREDENCIAL LANCER",
         "descripcion": "",
         "precio": 1.25,
         "categoria": "PAPELERIA",
@@ -1188,15 +1188,6 @@
         "imagen": "img/1000102425.jpg"
     },
     {
-        "id": 91,
-        "codigo": "7750082154520",
-        "nombre": "SACAPUNTA 1 SERV.  WRAP DUO",
-        "descripcion": "",
-        "precio": 1.15,
-        "categoria": "PAPELERIA",
-        "imagen": "img/1000100693.jpg"
-    },
-    {
         "id": 92,
         "codigo": "7750082160033",
         "nombre": "SACAPUNTAS ARTESCO 1 SERV. AXOLOVE",
@@ -1204,6 +1195,15 @@
         "precio": 1.5,
         "categoria": "PAPELERIA",
         "imagen": "img/1000100697.jpg"
+    },
+    {
+        "id": 91,
+        "codigo": "7750082154520",
+        "nombre": "SACAPUNTAS DOS SERV.  WRAP DUO",
+        "descripcion": "",
+        "precio": 1.15,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000100693.jpg"
     },
     {
         "id": 73,
