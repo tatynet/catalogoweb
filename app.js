@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${imgSrc}" loading="lazy" alt="${product.nombre}" class="product-image" onerror="this.onerror=null;this.src='https://placehold.co/400x400/eeeeee/999999?text=Sin+Imagen';">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name">${product.nombre}</h3>
+                    <h3 class="product-name" title="${product.nombre}">${product.nombre}</h3>
                 </div>
                 <div class="product-footer">
                     <div class="product-price">${priceHtml}</div>
