@@ -41,7 +41,7 @@
 
     { "_nota": "MASAS Y PLASTILINAS",
       "contiene": "MASA MOLDEABLE",  "categoria": "Masas Moldeables" },
-    { "contiene": "FOAMY MOLDEABLE", "categoria": "Masas Moldeables" },
+    { "contiene": "FOAMY MOLDEABLE", "categoria": "Foamy Moldeables" },
     { "contiene": "PLASTILINA",      "categoria": "Plastilinas" },
 
     { "contiene": "ARENA MAGICA",    "categoria": "Arena Magica" },
