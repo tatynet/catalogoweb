@@ -308,11 +308,16 @@ document.addEventListener('DOMContentLoaded', () => {
             imgContainerEl.addEventListener('click', () => {
                 const imageModal = document.getElementById('imageModal');
                 const expandedImg = document.getElementById('expandedImg');
+                const nameEl = document.getElementById('expandedProductName');
+                const codeEl = document.getElementById('expandedProductCode');
                 if (imageModal && expandedImg) {
                     expandedImg.src = imgSrc;
+                    if (nameEl) nameEl.textContent = product.nombre;
+                    if (codeEl) codeEl.textContent = `CÓD: ${product.codigo}`;
                     imageModal.classList.add('active');
                 }
             });
+
 
             // Evento para añadir al carrito
             const buyBtn = card.querySelector('.btn-buy');
