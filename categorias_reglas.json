@@ -1,36 +1,60 @@
-﻿{
-  "_comentario": "Archivo de reglas de categorias. Las reglas se evaluan EN ORDEN (la primera que coincida gana). Si un producto no coincide con ninguna regla, se usa automaticamente la primera palabra de su nombre como categoria.",
+{
+  "_AYUDA_MEMORIA": {
+    "_QUE_ES": "Este archivo controla como se clasifican los productos en el catalogo web.",
+    "_COMO_FUNCIONA": "El sistema busca en el NOMBRE del producto si contiene la palabra en 'contiene'. Si encuentra coincidencia, le asigna la 'categoria' indicada. Si ningun producto coincide, se usa automaticamente la primera palabra del nombre.",
+    "_ORDEN_IMPORTANTE": "Las reglas se leen DE ARRIBA HACIA ABAJO. La PRIMERA que coincida gana. Por eso JUEGO GEOMETRICO debe ir ANTES que JUEGO (para que no caiga en la regla general).",
+    "_COMO_AGREGAR_NUEVA_REGLA": "Agrega una linea nueva con este formato: { 'contiene': 'PALABRA DEL PRODUCTO', 'categoria': 'Nombre de Categoria' }",
+    "_EJEMPLO_NUEVA_REGLA": "Si tienes el producto 'ROMPECABEZAS MAPA ECUADOR' y quieres que aparezca en 'Rompecabezas': { 'contiene': 'ROMPECABEZAS', 'categoria': 'Rompecabezas' }",
+    "_MAYUSCULAS_MINUSCULAS": "No importa si escribes 'juego', 'JUEGO' o 'Juego' en el campo 'contiene', el sistema compara sin distincion de mayusculas.",
+    "_DONDE_SE_VE": "La categoria aparece como etiqueta en la tarjeta del producto y en los botones de filtro del lado izquierdo del catalogo.",
+    "_CUANDO_NO_TOCAR": "Si un producto ya tiene bien su categoria con la primera palabra, NO necesitas agregar una regla. Solo agrega reglas para los casos especiales."
+  },
+  "_comentario": "Reglas activas. Se evaluan EN ORDEN, la primera coincidencia gana. Si ningun producto coincide con ninguna regla, se usa la primera palabra del nombre como categoria (fallback automatico).",
   "reglas": [
-    { "contiene": "JUEGO GEOMETRICO", "categoria": "Juegos Geometricos" },
-    { "contiene": "JUEGO DIDACTICO", "categoria": "Juegos Didacticos" },
+    { "_nota": "JUEGOS: los especificos van ANTES del general 'JUEGO'",
+      "contiene": "JUEGO GEOMETRICO", "categoria": "Juegos Geometricos" },
+    { "contiene": "JUEGO DIDACTICO",  "categoria": "Juegos Didacticos" },
     { "contiene": "JUEGO CURVIGRAFO", "categoria": "Juegos Geometricos" },
-    { "contiene": "JUEGO", "categoria": "Juegos" },
-    { "contiene": "CUADERNOS", "categoria": "Cuadernos" },
-    { "contiene": "CUADERNO", "categoria": "Cuadernos" },
-    { "contiene": "PINTURA", "categoria": "Pinturas" },
-    { "contiene": "LAPIZ", "categoria": "Lapices" },
-    { "contiene": "LAPICES", "categoria": "Lapices" },
-    { "contiene": "MARCADOR", "categoria": "Marcadores" },
-    { "contiene": "MARCATODO", "categoria": "Marcadores" },
+    { "contiene": "JUEGO",            "categoria": "Juegos" },
+
+    { "_nota": "CUADERNOS: plural y singular apuntan a la misma categoria",
+      "contiene": "CUADERNOS", "categoria": "Cuadernos" },
+    { "contiene": "CUADERNO",  "categoria": "Cuadernos" },
+
+    { "_nota": "PINTURAS Y LAPICES",
+      "contiene": "PINTURA",  "categoria": "Pinturas" },
+    { "contiene": "LAPICES",  "categoria": "Lapices" },
+    { "contiene": "LAPIZ",    "categoria": "Lapices" },
+
+    { "_nota": "MARCADORES: incluye MARCATODO que es diferente nombre pero misma categoria",
+      "contiene": "MARCATODO", "categoria": "Marcadores" },
+    { "contiene": "MARCADOR",  "categoria": "Marcadores" },
+
     { "contiene": "RESALTADOR", "categoria": "Resaltadores" },
-    { "contiene": "TIJERA", "categoria": "Tijeras" },
-    { "contiene": "GOMA EN BARRA", "categoria": "Gomas" },
-    { "contiene": "GOMA LIQUIDA", "categoria": "Gomas" },
-    { "contiene": "GOMA", "categoria": "Gomas" },
-    { "contiene": "SILICONA", "categoria": "Silicona" },
-    { "contiene": "MASA MOLDEABLE", "categoria": "Masas Moldeables" },
+    { "contiene": "TIJERA",     "categoria": "Tijeras" },
+
+    { "_nota": "GOMAS: los especificos 'EN BARRA' y 'LIQUIDA' van ANTES del general 'GOMA'",
+      "contiene": "GOMA EN BARRA", "categoria": "Gomas" },
+    { "contiene": "GOMA LIQUIDA",  "categoria": "Gomas" },
+    { "contiene": "GOMA",          "categoria": "Gomas" },
+    { "contiene": "SILICONA",      "categoria": "Silicona" },
+
+    { "_nota": "MASAS Y PLASTILINAS",
+      "contiene": "MASA MOLDEABLE",  "categoria": "Masas Moldeables" },
     { "contiene": "FOAMY MOLDEABLE", "categoria": "Masas Moldeables" },
-    { "contiene": "PLASTILINA", "categoria": "Plastilinas" },
-    { "contiene": "ARENA MAGICA", "categoria": "Arena Magica" },
-    { "contiene": "CALCULADORA", "categoria": "Calculadoras" },
-    { "contiene": "CARTULINA", "categoria": "Cartulinas" },
-    { "contiene": "CARTON", "categoria": "Carton" },
-    { "contiene": "CRAYONES", "categoria": "Crayones" },
-    { "contiene": "ACUARELA", "categoria": "Acuarelas" },
-    { "contiene": "TEMPERA", "categoria": "Temperas" },
-    { "contiene": "COMPAS", "categoria": "Compases" },
+    { "contiene": "PLASTILINA",      "categoria": "Plastilinas" },
+
+    { "contiene": "ARENA MAGICA",    "categoria": "Arena Magica" },
+    { "contiene": "CALCULADORA",     "categoria": "Calculadoras" },
+    { "contiene": "CARTULINA",       "categoria": "Cartulinas" },
+    { "contiene": "CARTON",          "categoria": "Carton" },
+    { "contiene": "CRAYONES",        "categoria": "Crayones" },
+    { "contiene": "ACUARELA",        "categoria": "Acuarelas" },
+    { "contiene": "TEMPERA",         "categoria": "Temperas" },
+    { "contiene": "COMPAS",          "categoria": "Compases" },
     { "contiene": "NOTAS ADHESIVAS", "categoria": "Notas Adhesivas" },
-    { "contiene": "SACAPUNTAS", "categoria": "Sacapuntas" },
-    { "contiene": "PORTAMINAS", "categoria": "Portaminas" }
+    { "contiene": "SACAPUNTAS",      "categoria": "Sacapuntas" },
+    { "contiene": "PORTAMINAS",      "categoria": "Portaminas" }
   ]
 }
+
