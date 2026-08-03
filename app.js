@@ -110,6 +110,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Usamos getTime() para evitar que el navegador guarde los archivos en caché y siempre muestre los nuevos productos
     const cacheBuster = new Date().getTime();
     
+    // Función: asigna categoría usando reglas primero, luego primera palabra como fallback
+    function getCategoriaConReglas(nombreProducto, reglas) {
+        const nombreUpper = nombreProducto.toUpperCase();
+        if (reglas && reglas.length > 0) {
+            for (const regla of reglas) {
+                if (regla.contiene && nombreUpper.includes(regla.contiene.toUpperCase())) {
+                    return regla.categoria;
+                }
+            }
+        }
+        // Fallback: primera palabra del nombre
+        let primeraPalabra = nombreProducto.trim().split(/\s+/)[0];
+        return primeraPalabra.charAt(0).toUpperCase() + primeraPalabra.slice(1).toLowerCase();
+    }
+
     Promise.all([
         fetch(`config.json?v=${cacheBuster}`).then(res => {
             if (!res.ok) throw new Error('No se pudo cargar config.json');
@@ -118,19 +133,23 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(`productos.json?v=${cacheBuster}`).then(res => {
             if (!res.ok) throw new Error('No se pudo cargar productos.json');
             return res.json();
-        })
+        }),
+        fetch(`categorias_reglas.json?v=${cacheBuster}`).then(res => {
+            if (!res.ok) return { reglas: [] }; // Si no existe el archivo, continúa sin reglas
+            return res.json();
+        }).catch(() => ({ reglas: [] }))
     ])
-    .then(([config, products]) => {
+    .then(([config, products, reglasData]) => {
         configData = config;
+        const reglasCategoria = reglasData.reglas || [];
         
         allProducts = products.map(product => {
-            // Extraer la primera palabra del nombre como categoría
-            let primeraPalabra = product.nombre.trim().split(/\s+/)[0];
-            primeraPalabra = primeraPalabra.charAt(0).toUpperCase() + primeraPalabra.slice(1).toLowerCase();
+            // Asignar categoría usando reglas; si no coincide, usa la primera palabra (fallback)
+            const categoriaAsignada = getCategoriaConReglas(product.nombre, reglasCategoria);
             return {
                 ...product,
                 categoria_original: product.categoria,
-                categoria: primeraPalabra
+                categoria: categoriaAsignada
             };
         });
 
