@@ -225,6 +225,24 @@
         "imagen": "img/1000102384.jpg"
     },
     {
+        "id": 155,
+        "codigo": "6970673700016",
+        "nombre": "COMPAS CREATIV  11.5CM CS16",
+        "descripcion": "",
+        "precio": 1.65,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106322.jpg"
+    },
+    {
+        "id": 158,
+        "codigo": "6900785911031",
+        "nombre": "COMPAS CREATIV HIGH QUALIY",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106338.jpg"
+    },
+    {
         "id": 90,
         "codigo": "7750082072954",
         "nombre": "CORRECTOR ARTESCO CINTA X 10M",
@@ -232,6 +250,15 @@
         "precio": 1.25,
         "categoria": "PAPELERIA",
         "imagen": "img/1000100686.jpg"
+    },
+    {
+        "id": 156,
+        "codigo": "7861186201574",
+        "nombre": "CORRECTOR BIC BOLIGRAFO 8ML",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106328.jpg"
     },
     {
         "id": 16,
@@ -297,6 +324,33 @@
         "imagen": "img/1000102450.jpg"
     },
     {
+        "id": 169,
+        "codigo": "7861088912431",
+        "nombre": "CUERDA DE SALTAR  SOGA 1.80 MTS.",
+        "descripcion": "",
+        "precio": 1.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106372.jpg"
+    },
+    {
+        "id": 168,
+        "codigo": "7861088912387",
+        "nombre": "CUERDA DE SALTAR SOGA GRUESA 2.10 MTS.",
+        "descripcion": "",
+        "precio": 1.95,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106371.jpg"
+    },
+    {
+        "id": 160,
+        "codigo": "2504011335024",
+        "nombre": "DIARIO CON CANDADO 4 4 COLORES FLORES",
+        "descripcion": "",
+        "precio": 3.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106343.jpg"
+    },
+    {
         "id": 101,
         "codigo": "7861123903226",
         "nombre": "DIARIO ESCOLAR BESTER",
@@ -331,6 +385,15 @@
         "precio": 2.3,
         "categoria": "PAPELERIA",
         "imagen": "img/1000100590.jpg"
+    },
+    {
+        "id": 152,
+        "codigo": "6920250400853",
+        "nombre": "ESPONJA FIGURA GEOMETRICA X6",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106304.jpg"
     },
     {
         "id": 94,
@@ -378,6 +441,24 @@
         "imagen": "img/1000102943.jpg"
     },
     {
+        "id": 172,
+        "codigo": "97441493",
+        "nombre": "FUNDA DE REGALO PAPEL KRAFT",
+        "descripcion": "",
+        "precio": 0.45,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106398.jpg"
+    },
+    {
+        "id": 167,
+        "codigo": "7862108182797",
+        "nombre": "GOMA CREATIV LIQUIDA DOBLE PUNTA 42 ML",
+        "descripcion": "",
+        "precio": 0.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106364.jpg"
+    },
+    {
         "id": 136,
         "codigo": "7862108182780",
         "nombre": "GOMA EN BARRA  STICK CREATIV 15GR",
@@ -409,7 +490,7 @@
         "codigo": "7861123900751",
         "nombre": "GOMA EN BARRA BESTER 8GR",
         "descripcion": "",
-        "precio": 0.45,
+        "precio": 0.4,
         "categoria": "PAPELERIA",
         "imagen": "img/1000102984.jpg"
     },
@@ -450,6 +531,15 @@
         "imagen": "img/1000099542.png"
     },
     {
+        "id": 164,
+        "codigo": "6906942516255",
+        "nombre": "HILO NYLON ELASTICO",
+        "descripcion": "",
+        "precio": 0.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106354.jpg"
+    },
+    {
         "id": 108,
         "codigo": "7861098607143",
         "nombre": "HOJAS MILIMETRADAS",
@@ -466,6 +556,24 @@
         "precio": 3.25,
         "categoria": "PAPELERIA",
         "imagen": "img/1000102927.jpg"
+    },
+    {
+        "id": 170,
+        "codigo": "7861143604486",
+        "nombre": "JUEGO DIDACTICO ABACO VERTICAL X35 PZS DE COLORES ECUATOYS",
+        "descripcion": "",
+        "precio": 5.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106375.jpg"
+    },
+    {
+        "id": 171,
+        "codigo": "PELOT4546",
+        "nombre": "JUEGO DIDACTICO PEOLOTA PARA PISINA 8CM",
+        "descripcion": "",
+        "precio": 0.35,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106387.jpg"
     },
     {
         "id": 124,
@@ -549,6 +657,15 @@
         "imagen": "img/1000100737.jpg"
     },
     {
+        "id": 154,
+        "codigo": "7862108180731",
+        "nombre": "LAPIZ CREATIV GRAFITO NRO 2/ HB",
+        "descripcion": "",
+        "precio": 0.2,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106318.jpg"
+    },
+    {
         "id": 69,
         "codigo": "7891360306016",
         "nombre": "LAPIZ FABER CASTELL BICOLOR",
@@ -592,6 +709,15 @@
         "precio": 3.95,
         "categoria": "PAPELERIA",
         "imagen": "img/1000100681.jpg"
+    },
+    {
+        "id": 161,
+        "codigo": "7750082142633",
+        "nombre": "MARCADOR ARTESCO SUPERPUNTA JUMBO X12",
+        "descripcion": "",
+        "precio": 4.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106346.jpg"
     },
     {
         "id": 19,
@@ -639,6 +765,15 @@
         "imagen": "img/1000103002.jpg"
     },
     {
+        "id": 151,
+        "codigo": "7862108181318",
+        "nombre": "MARCADOR CREATIV TRIANGULARES 12 COL.",
+        "descripcion": "",
+        "precio": 1.4,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106301.jpg"
+    },
+    {
         "id": 21,
         "codigo": "7862108181295",
         "nombre": "MARCADOR CREATIV X12 COL. ESCOLAR",
@@ -664,6 +799,24 @@
         "precio": 3.5,
         "categoria": "PAPELERIA",
         "imagen": "img/1000078854.png"
+    },
+    {
+        "id": 163,
+        "codigo": "7702111446106",
+        "nombre": "MARCADOR NORMA LAVABLE JUMBO",
+        "descripcion": "",
+        "precio": 4.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106351.jpg"
+    },
+    {
+        "id": 162,
+        "codigo": "7702111446083",
+        "nombre": "MARCADOR NORMA PLUMONES 12PIEZAS",
+        "descripcion": "",
+        "precio": 4.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106347.jpg"
     },
     {
         "id": 87,
@@ -801,6 +954,15 @@
         "imagen": "img/1000083791.png"
     },
     {
+        "id": 173,
+        "codigo": "7750082207622",
+        "nombre": "NORMOGRAFO DE 10MM.",
+        "descripcion": "",
+        "precio": 0.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106401.jpg"
+    },
+    {
         "id": 107,
         "codigo": "7861217448497",
         "nombre": "NOTAS ADHESIVAS CARDINAL SET POST",
@@ -835,6 +997,15 @@
         "precio": 2.5,
         "categoria": "PAPELERIA",
         "imagen": "img/WhatsApp_Image_2026-07-24_at_6.02.40_PM.jpeg"
+    },
+    {
+        "id": 159,
+        "codigo": "4038732323308",
+        "nombre": "PINCEL CREATIV RECARGABLE PARA AGUA X6",
+        "descripcion": "",
+        "precio": 4.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106342.jpg"
     },
     {
         "id": 104,
@@ -954,6 +1125,15 @@
         "imagen": "img/1000075831.png"
     },
     {
+        "id": 150,
+        "codigo": "7862108181943",
+        "nombre": "PINTURA CREATIV 24 LAPI. 36COL.",
+        "descripcion": "",
+        "precio": 4.6,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106297.jpg"
+    },
+    {
         "id": 39,
         "codigo": "7862108181950",
         "nombre": "PINTURA CREATIV PREMIUM 15 COL",
@@ -961,6 +1141,15 @@
         "precio": 3.5,
         "categoria": "PAPELERIA",
         "imagen": "img/1000083721.png"
+    },
+    {
+        "id": 153,
+        "codigo": "7862108184883",
+        "nombre": "PINTURA CREATIV SUPER SOFT LARGA",
+        "descripcion": "",
+        "precio": 3.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106310.jpg"
     },
     {
         "id": 34,
@@ -1060,6 +1249,15 @@
         "precio": 1.2,
         "categoria": "PAPELERIA",
         "imagen": "img/1000076043.png"
+    },
+    {
+        "id": 157,
+        "codigo": "7862108182704",
+        "nombre": "PONPONES MOTITAS CREATIV",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106329.jpg"
     },
     {
         "id": 79,
@@ -1296,6 +1494,15 @@
         "imagen": "img/1000100654.jpg"
     },
     {
+        "id": 165,
+        "codigo": "7862108182063",
+        "nombre": "TIJERA CREATIV DE FORMAS 4 DISEÑOS INTERCAMBIABLES",
+        "descripcion": "",
+        "precio": 2.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106355.jpg"
+    },
+    {
         "id": 63,
         "codigo": "4895137955370",
         "nombre": "TIJERA LANCER FIGURA ZIGZAG",
@@ -1321,6 +1528,15 @@
         "precio": 1.5,
         "categoria": "PAPELERIA",
         "imagen": "img/1000099554.png"
+    },
+    {
+        "id": 166,
+        "codigo": "4007817965023",
+        "nombre": "TIJERA STAEDTLE PARA SURDO ESCOLAR",
+        "descripcion": "",
+        "precio": 1.95,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106357.jpg"
     },
     {
         "id": 62,
