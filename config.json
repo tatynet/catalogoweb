@@ -5,8 +5,8 @@
     "promocion_activa": false,
     "promocion_titulo": "🎒 ¡Regreso a Clases!",
     "promocion_subtitulo": "Aprovecha nuestras ofertas exclusivas de temporada.",
-    "promociones": [
     
+    "promociones": [
         {
             "icono": "fas fa-ruler",
             "titulo": "LAPIZ DE COLOR BNNNN",
