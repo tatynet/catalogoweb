@@ -26,9 +26,14 @@
     { "contiene": "LAPICES",  "categoria": "Lapices" },
     { "contiene": "LAPIZ",    "categoria": "Lapices" },
 
-    { "_nota": "MARCADORES: incluye MARCATODO que es diferente nombre pero misma categoria",
-      "contiene": "MARCATODO", "categoria": "Marcadores" },
-    { "contiene": "MARCADOR",  "categoria": "Marcadores" },
+    { "_nota": "MARCADORES: los especificos van ANTES del general 'MARCADOR'",
+      "contiene": "MARCADOR PIZARRA",    "categoria": "Marcadores de Pizarra" },
+    { "contiene": "MARCADOR BORRABLE",   "categoria": "Marcadores de Pizarra" },
+    { "contiene": "MARCADOR DE PIZARRA", "categoria": "Marcadores de Pizarra" },
+    { "contiene": "MARCADOR PERMANENTE", "categoria": "Marcadores Permanentes" },
+    { "contiene": "MARCADOR INDELEBLE",  "categoria": "Marcadores Permanentes" },
+    { "contiene": "MARCATODO",           "categoria": "Marcadores Permanentes" },
+    { "contiene": "MARCADOR",            "categoria": "Marcadores" },
 
     { "contiene": "RESALTADOR", "categoria": "Resaltadores" },
     { "contiene": "TIJERA",     "categoria": "Tijeras" },
@@ -54,7 +59,12 @@
     { "contiene": "COMPAS",          "categoria": "Compases" },
     { "contiene": "NOTAS ADHESIVAS", "categoria": "Notas Adhesivas" },
     { "contiene": "SACAPUNTAS",      "categoria": "Sacapuntas" },
-    { "contiene": "PORTAMINAS",      "categoria": "Portaminas" }
+    { "contiene": "PORTAMINAS",      "categoria": "Portaminas" },
+
+    { "_nota": "FUNDAS: el especifico 'FUNDA DE REGALO' va ANTES del general 'FUNDA'",
+      "contiene": "FUNDA DE REGALO", "categoria": "Fundas de Regalo" },
+    { "contiene": "FUNDA REGALO",    "categoria": "Fundas de Regalo" },
+    { "contiene": "FUNDA",           "categoria": "Fundas de Regalo" }
   ]
 }
 
