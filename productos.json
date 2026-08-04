@@ -144,9 +144,18 @@
         "imagen": "img/1000102404.jpg"
     },
     {
+        "id": 180,
+        "codigo": "7862108183770",
+        "nombre": "CARTILINA CREATIV MAGICA A4",
+        "descripcion": "",
+        "precio": 1.8,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106750.jpg"
+    },
+    {
         "id": 109,
         "codigo": "4895137940024",
-        "nombre": "CARTON CORRUGADO A4  X 10U",
+        "nombre": "CARTON CORRUGADO X 10U A4",
         "descripcion": "",
         "precio": 1.0,
         "categoria": "PAPELERIA",
@@ -173,11 +182,29 @@
     {
         "id": 85,
         "codigo": "7861185630948",
-        "nombre": "CARTULINA  HOLOGRAFICA PASSOLA X10 COBRE",
+        "nombre": "CARTULINA  HOLOGRAFICA PASSOLA X10 COBRE A4",
         "descripcion": "",
         "precio": 1.3,
         "categoria": "PAPELERIA",
         "imagen": "img/1000100655.jpg"
+    },
+    {
+        "id": 181,
+        "codigo": "7862108182193",
+        "nombre": "CARTULINA CREATIV FLUORESCENTE A4",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106754.jpg"
+    },
+    {
+        "id": 182,
+        "codigo": "7862108180410",
+        "nombre": "CARTULINA CREATIV IRIS 10COL A4",
+        "descripcion": "",
+        "precio": 0.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106768.jpg"
     },
     {
         "id": 110,
@@ -378,6 +405,150 @@
         "imagen": "img/1000102932.jpg"
     },
     {
+        "id": 204,
+        "codigo": "7750082101883",
+        "nombre": "ESFERO ARTESCO BORRABLE  COLOR AZUL",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106880.jpg"
+    },
+    {
+        "id": 203,
+        "codigo": "7750082101906",
+        "nombre": "ESFERO ARTESCO BORRABLE  COLOR NEGRO",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": ""
+    },
+    {
+        "id": 202,
+        "codigo": "7750082101845",
+        "nombre": "ESFERO ARTESCO BORRABLE  COLOR ROJO",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106879.jpg"
+    },
+    {
+        "id": 201,
+        "codigo": "7861186200119",
+        "nombre": "ESFERO BIC  COLOR AZUL PUNTA FINA",
+        "descripcion": "",
+        "precio": 0.4,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106866.jpg"
+    },
+    {
+        "id": 198,
+        "codigo": "7861186203042",
+        "nombre": "ESFERO BIC  COLOR MORADO PUNTA MEDIA",
+        "descripcion": "",
+        "precio": 0.45,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106847.jpg"
+    },
+    {
+        "id": 200,
+        "codigo": "7861186200126",
+        "nombre": "ESFERO BIC  COLOR NEGRO PUNTA FINA",
+        "descripcion": "",
+        "precio": 0.4,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106862.jpg"
+    },
+    {
+        "id": 193,
+        "codigo": "7861186203035",
+        "nombre": "ESFERO BIC  COLOR RODADO PUNTA MEDIA",
+        "descripcion": "",
+        "precio": 0.45,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106833.jpg"
+    },
+    {
+        "id": 199,
+        "codigo": "7861186200133",
+        "nombre": "ESFERO BIC  COLOR ROJO PUNTA FINA",
+        "descripcion": "",
+        "precio": 0.4,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106861.jpg"
+    },
+    {
+        "id": 195,
+        "codigo": "7861186201826",
+        "nombre": "ESFERO BIC  COLOR VERDE PUNTA MEDIA",
+        "descripcion": "",
+        "precio": 0.45,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106834.jpg"
+    },
+    {
+        "id": 194,
+        "codigo": "7861186203028",
+        "nombre": "ESFERO BIC COLOR TURQUESA PUNTA MEDIA",
+        "descripcion": "",
+        "precio": 0.45,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106835.jpg"
+    },
+    {
+        "id": 188,
+        "codigo": "836449007580",
+        "nombre": "ESFERO DAX COLOR AZUL",
+        "descripcion": "",
+        "precio": 0.35,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106793.jpg"
+    },
+    {
+        "id": 189,
+        "codigo": "836449007597",
+        "nombre": "ESFERO DAX COLOR NEGRO",
+        "descripcion": "",
+        "precio": 0.35,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106794.jpg"
+    },
+    {
+        "id": 190,
+        "codigo": "836449007603",
+        "nombre": "ESFERO DAX COLOR ROJO",
+        "descripcion": "",
+        "precio": 0.35,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106808.jpg"
+    },
+    {
+        "id": 205,
+        "codigo": "17861098347374",
+        "nombre": "ESFERO ESTILO BORRABLE COLOR AZUL",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106881.jpg"
+    },
+    {
+        "id": 206,
+        "codigo": "7861098347391",
+        "nombre": "ESFERO ESTILO BORRABLE COLOR NEGRO",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106882.jpg"
+    },
+    {
+        "id": 197,
+        "codigo": "7861098373840",
+        "nombre": "ESFERO ESTILO X 10COL. 1.0MM",
+        "descripcion": "",
+        "precio": 2.6,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106846.jpg"
+    },
+    {
         "id": 74,
         "codigo": "7754111024754",
         "nombre": "ESFERO FABER CASTELL TRILUX FUN X 10 COL",
@@ -385,6 +556,15 @@
         "precio": 2.3,
         "categoria": "PAPELERIA",
         "imagen": "img/1000100590.jpg"
+    },
+    {
+        "id": 196,
+        "codigo": "4895137975439",
+        "nombre": "ESFERO JEFF X 10COL. 1.0MM",
+        "descripcion": "",
+        "precio": 2.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106836.jpg"
     },
     {
         "id": 152,
@@ -542,11 +722,101 @@
     {
         "id": 108,
         "codigo": "7861098607143",
-        "nombre": "HOJAS MILIMETRADAS",
+        "nombre": "HOJAS MILIMETRADAS A4",
         "descripcion": "",
         "precio": 0.6,
         "categoria": "PAPELERIA",
         "imagen": "img/1000102375.jpg"
+    },
+    {
+        "id": 183,
+        "codigo": "7702111529878",
+        "nombre": "HOJAS NORMA PERFORADAS 2 LINEAS A4",
+        "descripcion": "",
+        "precio": 0.8,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106773.jpg"
+    },
+    {
+        "id": 185,
+        "codigo": "7861098600205",
+        "nombre": "HOJAS PERFORADAS 1 LINEA A5",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106788.jpg"
+    },
+    {
+        "id": 187,
+        "codigo": "7861098600182",
+        "nombre": "HOJAS PERFORADAS 4 LINEAS A5",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106792.jpg"
+    },
+    {
+        "id": 186,
+        "codigo": "7861098600212",
+        "nombre": "HOJAS PERFORADAS CUADROS A5",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106789.jpg"
+    },
+    {
+        "id": 175,
+        "codigo": "7861084200419",
+        "nombre": "HOJAS PERFORADAS ESCRIBE 1 LINEA A4",
+        "descripcion": "",
+        "precio": 0.8,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106716.jpg"
+    },
+    {
+        "id": 174,
+        "codigo": "7861084200440",
+        "nombre": "HOJAS PERFORADAS ESCRIBE 4 LINEAS A4",
+        "descripcion": "",
+        "precio": 0.8,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106715.jpg"
+    },
+    {
+        "id": 178,
+        "codigo": "7861084200433",
+        "nombre": "HOJAS PERFORADAS ESCRIBE CUADROS A4",
+        "descripcion": "",
+        "precio": 0.8,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106728.jpg"
+    },
+    {
+        "id": 184,
+        "codigo": "7861098349593",
+        "nombre": "HOJAS PERFORADAS ESTILO A CUADROS A4",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106776.jpg"
+    },
+    {
+        "id": 176,
+        "codigo": "7861098316632",
+        "nombre": "HOJAS PERFORADAS ESTILO CUADROS PALBULARIO A4",
+        "descripcion": "",
+        "precio": 0.9,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106717.jpg"
+    },
+    {
+        "id": 177,
+        "codigo": "7861098316786",
+        "nombre": "HOJAS PERFORADAS ESTILO LINEAS PALBULARIO A4",
+        "descripcion": "",
+        "precio": 0.9,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106727.jpg"
     },
     {
         "id": 127,
@@ -846,6 +1116,105 @@
         "imagen": "img/1000076050.png"
     },
     {
+        "id": 215,
+        "codigo": "7703064495395",
+        "nombre": "MARCADOR PERMANENTE COLOR ROJO",
+        "descripcion": "",
+        "precio": 0.6,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106955.jpg"
+    },
+    {
+        "id": 217,
+        "codigo": "7703064495296",
+        "nombre": "MARCADOR PERMANENTE PELIKAN COLOR AZUL",
+        "descripcion": "",
+        "precio": 0.6,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106957.jpg"
+    },
+    {
+        "id": 214,
+        "codigo": "7703064495593",
+        "nombre": "MARCADOR PERMANENTE PELIKAN COLOR NEGRO",
+        "descripcion": "",
+        "precio": 0.6,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106950.jpg"
+    },
+    {
+        "id": 216,
+        "codigo": "7703064495494",
+        "nombre": "MARCADOR PERMANENTE PELIKAN COLOR VERDE",
+        "descripcion": "",
+        "precio": 0.6,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106956.jpg"
+    },
+    {
+        "id": 213,
+        "codigo": "7703064457294",
+        "nombre": "MARCADOR PIZARRA PELIKAN COLOR AZUL",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106936.jpg"
+    },
+    {
+        "id": 211,
+        "codigo": "7703064100299",
+        "nombre": "MARCADOR PIZARRA PELIKAN COLOR MORADO",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106905_YgpdWbT.jpg"
+    },
+    {
+        "id": 212,
+        "codigo": "7703064457508",
+        "nombre": "MARCADOR PIZARRA PELIKAN COLOR NEGRO",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106935.jpg"
+    },
+    {
+        "id": 209,
+        "codigo": "7703064457300",
+        "nombre": "MARCADOR PIZARRA PELIKAN COLOR ROJO",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106918.jpg"
+    },
+    {
+        "id": 208,
+        "codigo": "7703064100268",
+        "nombre": "MARCADOR PIZARRA PELIKAN COLOR ROSADO",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106905.jpg"
+    },
+    {
+        "id": 210,
+        "codigo": "7703064100275",
+        "nombre": "MARCADOR PIZARRA PELIKAN COLOR TURQUESA",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106922.jpg"
+    },
+    {
+        "id": 207,
+        "codigo": "7703064457591",
+        "nombre": "MARCADOR PIZARRA PELIKAN COLOR VERDE",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106904.jpg"
+    },
+    {
         "id": 24,
         "codigo": "7861098367573",
         "nombre": "MARCATODO ESTILO KIDS 12 COL.",
@@ -979,6 +1348,15 @@
         "precio": 1.3,
         "categoria": "PAPELERIA",
         "imagen": "img/1000100638.jpg"
+    },
+    {
+        "id": 179,
+        "codigo": "7862108182872",
+        "nombre": "PAPEL BRILLANTE CREATIV A4",
+        "descripcion": "",
+        "precio": 0.55,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106741.jpg"
     },
     {
         "id": 115,
@@ -1287,6 +1665,24 @@
         "imagen": "img/1000102348.jpg"
     },
     {
+        "id": 191,
+        "codigo": "7861098363292",
+        "nombre": "PROTECTOR DE HOJAS DELGADA A4",
+        "descripcion": "",
+        "precio": 0.1,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106812.jpg"
+    },
+    {
+        "id": 192,
+        "codigo": "7862108143194",
+        "nombre": "PROTECTOR DE HOJAS MICA GRUESO A4",
+        "descripcion": "",
+        "precio": 0.3,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000106824.jpg"
+    },
+    {
         "id": 2,
         "codigo": "7862138010169",
         "nombre": "REGLA APOLO PLASTICA 30CM",
@@ -1474,15 +1870,6 @@
         "precio": 1.5,
         "categoria": "PAPELERIA",
         "imagen": "img/1000102992.jpg"
-    },
-    {
-        "id": 95,
-        "codigo": "7861098314690",
-        "nombre": "TEMPERA ESTILO CON PALETA/PINCEL 6C",
-        "descripcion": "",
-        "precio": 1.5,
-        "categoria": "PAPELERIA",
-        "imagen": "img/1000100711.jpg"
     },
     {
         "id": 84,
