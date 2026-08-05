@@ -1720,7 +1720,7 @@ img {
         font-size: 0.82rem;
         font-weight: 600;
         white-space: nowrap;
-        min-height: 36px;
+        min-height: 44px;
         border: 1.5px solid var(--glass-border);
         background: var(--glass-bg);
         color: var(--text-primary);

@@ -103,6 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
             clearSearchBtn.style.display = 'none';
             searchInput.dispatchEvent(new Event('input'));
             searchInput.focus();
+
+            // UX: Scroll suave a los productos tras limpiar
+            const productsSection = document.getElementById('productsGrid');
+            if (productsSection) {
+                const top = productsSection.getBoundingClientRect().top + window.scrollY - 120;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
         });
     }
 
@@ -577,6 +584,18 @@ document.addEventListener('DOMContentLoaded', () => {
             categorySearchInput.value = '';
             categorySearchInput.dispatchEvent(new Event('input'));
         }
+
+        // UX: Búsqueda Global Automática
+        // Si el usuario empieza a buscar, cambiamos la categoría a "Todos" para que no le salgan 0 resultados por estar en una categoría restrictiva.
+        if (e.isTrusted && searchInput.value.trim() !== '') {
+            const currentActive = document.querySelector('#categoryFilters .filter-btn.active');
+            if (currentActive && currentActive.dataset.category !== 'Todos') {
+                currentActive.classList.remove('active');
+                const btnTodos = document.querySelector('#categoryFilters .filter-btn[data-category="Todos"]');
+                if (btnTodos) btnTodos.classList.add('active');
+            }
+        }
+
         filterProducts();
     });
 
