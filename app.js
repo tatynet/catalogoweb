@@ -505,6 +505,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Lógica de búsqueda para las categorías
         if (categorySearchInput) {
             categorySearchInput.addEventListener('input', (e) => {
+                if (e.isTrusted && searchInput && searchInput.value !== '') {
+                    searchInput.value = '';
+                    searchInput.dispatchEvent(new Event('input'));
+                }
+
                 const term = normalizeString(e.target.value).trim();
                 const buttons = categoryFilters.querySelectorAll('.filter-btn');
                 
@@ -567,7 +572,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Event listeners para la búsqueda en tiempo real
-    searchInput.addEventListener('input', filterProducts);
+    searchInput.addEventListener('input', (e) => {
+        if (e.isTrusted && categorySearchInput && categorySearchInput.value !== '') {
+            categorySearchInput.value = '';
+            categorySearchInput.dispatchEvent(new Event('input'));
+        }
+        filterProducts();
+    });
 
     // --- 6. Lógica del Carrito de Compras ---
     function openCart() {
