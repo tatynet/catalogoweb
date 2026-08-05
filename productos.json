@@ -18,6 +18,24 @@
         "imagen": "img/1000076039.png"
     },
     {
+        "id": 248,
+        "codigo": "55121254",
+        "nombre": "AGUJA PLASTICA",
+        "descripcion": "",
+        "precio": 0.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107627.jpg"
+    },
+    {
+        "id": 262,
+        "codigo": "61561671",
+        "nombre": "AJEDRES",
+        "descripcion": "",
+        "precio": 2.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107715.jpg"
+    },
+    {
         "id": 96,
         "codigo": "7861098362646",
         "nombre": "APOYAMANOS A4 ACRICO ESTILO",
@@ -108,6 +126,15 @@
         "imagen": "img/1000099570.jpg"
     },
     {
+        "id": 247,
+        "codigo": "7861139843950",
+        "nombre": "BOTONES CELINA MADERA 20PCS2CM",
+        "descripcion": "",
+        "precio": 1.3,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107621.jpg"
+    },
+    {
         "id": 148,
         "codigo": "4549526608711",
         "nombre": "CALCULADORA CASIO FX-350ES PLUS",
@@ -133,6 +160,24 @@
         "precio": 0.6,
         "categoria": "PAPELERIA",
         "imagen": "img/1000102438.jpg"
+    },
+    {
+        "id": 266,
+        "codigo": "7862108226385",
+        "nombre": "CARPETA PLASTICA CON VENTANA PERSONALIZADA",
+        "descripcion": "",
+        "precio": 1.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107750.jpg"
+    },
+    {
+        "id": 264,
+        "codigo": "7707815733651",
+        "nombre": "CARPETA PLASTICA DISEÑO",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107735.jpg"
     },
     {
         "id": 114,
@@ -270,6 +315,15 @@
         "imagen": "img/1000106338.jpg"
     },
     {
+        "id": 257,
+        "codigo": "7862140709327",
+        "nombre": "CONFETI DECORATIVO DE FLORES",
+        "descripcion": "",
+        "precio": 0.2,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107698.jpg"
+    },
+    {
         "id": 90,
         "codigo": "7750082072954",
         "nombre": "CORRECTOR ARTESCO CINTA X 10M",
@@ -360,6 +414,15 @@
         "imagen": "img/1000106372.jpg"
     },
     {
+        "id": 236,
+        "codigo": "7862124951308",
+        "nombre": "CUERDA DE SALTAR CON CONTADOR",
+        "descripcion": "",
+        "precio": 2.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107562.jpg"
+    },
+    {
         "id": 168,
         "codigo": "7861088912387",
         "nombre": "CUERDA DE SALTAR SOGA GRUESA 2.10 MTS.",
@@ -385,6 +448,33 @@
         "precio": 1.9,
         "categoria": "PAPELERIA",
         "imagen": "img/1000102344.jpg"
+    },
+    {
+        "id": 249,
+        "codigo": "2504011335031",
+        "nombre": "DIARIO SECRETO A5",
+        "descripcion": "",
+        "precio": 3.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107650.jpg"
+    },
+    {
+        "id": 250,
+        "codigo": "6972216172816",
+        "nombre": "DIARIO UNICORNIO",
+        "descripcion": "",
+        "precio": 2.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107651.jpg"
+    },
+    {
+        "id": 258,
+        "codigo": "4719867213084",
+        "nombre": "DURITA",
+        "descripcion": "",
+        "precio": 0.35,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107701.jpg"
     },
     {
         "id": 129,
@@ -828,6 +918,15 @@
         "imagen": "img/1000102927.jpg"
     },
     {
+        "id": 231,
+        "codigo": "7892018014475",
+        "nombre": "JUEGO DIDACTICO ABACO CREATIV",
+        "descripcion": "",
+        "precio": 2.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107532.jpg"
+    },
+    {
         "id": 170,
         "codigo": "7861143604486",
         "nombre": "JUEGO DIDACTICO ABACO VERTICAL X35 PZS DE COLORES ECUATOYS",
@@ -837,6 +936,78 @@
         "imagen": "img/1000106375.jpg"
     },
     {
+        "id": 229,
+        "codigo": "7861143603427",
+        "nombre": "JUEGO DIDACTICO ATOMOS X18",
+        "descripcion": "",
+        "precio": 3.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107524.jpg"
+    },
+    {
+        "id": 225,
+        "codigo": "7861088926674",
+        "nombre": "JUEGO DIDACTICO CUENTAS GEOMETRICAS",
+        "descripcion": "",
+        "precio": 4.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107508.jpg"
+    },
+    {
+        "id": 263,
+        "codigo": "6902023102522",
+        "nombre": "JUEGO DIDACTICO DE TREN CON NUMEROS",
+        "descripcion": "",
+        "precio": 6.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107726.jpg"
+    },
+    {
+        "id": 227,
+        "codigo": "7861088926612",
+        "nombre": "JUEGO DIDACTICO FLEXI GEOMETRICO PLANOS",
+        "descripcion": "",
+        "precio": 4.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107513.jpg"
+    },
+    {
+        "id": 220,
+        "codigo": "6921",
+        "nombre": "JUEGO DIDACTICO INTELLECT BLOCKS",
+        "descripcion": "",
+        "precio": 4.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107461.jpg"
+    },
+    {
+        "id": 221,
+        "codigo": "7861143604912",
+        "nombre": "JUEGO DIDACTICO MULLOS 100PZ",
+        "descripcion": "",
+        "precio": 3.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107478.jpg"
+    },
+    {
+        "id": 222,
+        "codigo": "7861143604844",
+        "nombre": "JUEGO DIDACTICO MULLOS 50PZ",
+        "descripcion": "",
+        "precio": 2.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107483.jpg"
+    },
+    {
+        "id": 232,
+        "codigo": "69451911",
+        "nombre": "JUEGO DIDACTICO PANDERETA",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107542.jpg"
+    },
+    {
         "id": 171,
         "codigo": "PELOT4546",
         "nombre": "JUEGO DIDACTICO PEOLOTA PARA PISINA 8CM",
@@ -844,6 +1015,87 @@
         "precio": 0.35,
         "categoria": "PAPELERIA",
         "imagen": "img/1000106387.jpg"
+    },
+    {
+        "id": 230,
+        "codigo": "6949757077771",
+        "nombre": "JUEGO DIDACTICO PUZZLE BLOCKS",
+        "descripcion": "",
+        "precio": 5.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107531.jpg"
+    },
+    {
+        "id": 223,
+        "codigo": "7861143605124",
+        "nombre": "JUEGO DIDACTICO ROSETA PEQUEÑA 100 PZ",
+        "descripcion": "",
+        "precio": 2.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107491.jpg"
+    },
+    {
+        "id": 219,
+        "codigo": "7861143605605",
+        "nombre": "JUEGO DIDACTICO TANGRAM",
+        "descripcion": "",
+        "precio": 1.2,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107460.jpg"
+    },
+    {
+        "id": 226,
+        "codigo": "7861143605629",
+        "nombre": "JUEGO DIDACTICO TUERCAS Y TORNILLOS X32",
+        "descripcion": "",
+        "precio": 5.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107512.jpg"
+    },
+    {
+        "id": 218,
+        "codigo": "7861143607517",
+        "nombre": "JUEGO DIDACTIVO FLEXI PERSONAS",
+        "descripcion": "",
+        "precio": 4.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107453.jpg"
+    },
+    {
+        "id": 242,
+        "codigo": "2901231132417",
+        "nombre": "JUEGO DIDACTIVO NATURE WORLD",
+        "descripcion": "",
+        "precio": 1.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107610.jpg"
+    },
+    {
+        "id": 237,
+        "codigo": "7861185625524",
+        "nombre": "JUEGO DIDACTIVO RODILLO PARA PINTAR",
+        "descripcion": "",
+        "precio": 2.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107569.jpg"
+    },
+    {
+        "id": 224,
+        "codigo": "7861143604387",
+        "nombre": "JUEGO DIDACTIVO ROSETA 30PZ",
+        "descripcion": "",
+        "precio": 3.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107492.jpg"
+    },
+    {
+        "id": 228,
+        "codigo": "7861088926780",
+        "nombre": "JUEGO DIDACTIVO TUBI CURVOS",
+        "descripcion": "",
+        "precio": 3.9,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107514.jpg"
     },
     {
         "id": 124,
@@ -871,6 +1123,15 @@
         "precio": 2.0,
         "categoria": "PAPELERIA",
         "imagen": "img/1000102926.jpg"
+    },
+    {
+        "id": 259,
+        "codigo": "7861000200677",
+        "nombre": "JUEGO GEOMETRICO CUERPO",
+        "descripcion": "",
+        "precio": 3.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107704.jpg"
     },
     {
         "id": 76,
@@ -963,6 +1224,42 @@
         "imagen": "img/1000099607.jpg"
     },
     {
+        "id": 253,
+        "codigo": "39721212",
+        "nombre": "LENTEJUELAS CELESTE FUNDAS PEQUE",
+        "descripcion": "",
+        "precio": 0.15,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107677.jpg"
+    },
+    {
+        "id": 254,
+        "codigo": "39485291",
+        "nombre": "LENTEJUELAS DISEÑO CONCHA FUNDAS PEQUE",
+        "descripcion": "",
+        "precio": 0.15,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107678.jpg"
+    },
+    {
+        "id": 251,
+        "codigo": "23575370",
+        "nombre": "LENTEJUELAS DORADAS FUNDAS PEQUE.0",
+        "descripcion": "",
+        "precio": 0.15,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107660.jpg"
+    },
+    {
+        "id": 252,
+        "codigo": "21833227",
+        "nombre": "LENTEJUELAS PLATEADO FUNDAS PEQUE",
+        "descripcion": "",
+        "precio": 0.15,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107676.jpg"
+    },
+    {
         "id": 1,
         "codigo": "7861084203120",
         "nombre": "LIBRETA N2 MARCA ESCRIBE 100H CUADRO",
@@ -970,6 +1267,24 @@
         "precio": 0.8,
         "categoria": "PAPELERIA",
         "imagen": "img/1000075611.png"
+    },
+    {
+        "id": 260,
+        "codigo": "7861098353477",
+        "nombre": "LIENZO ARTISTIC",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107710.jpg"
+    },
+    {
+        "id": 261,
+        "codigo": "7861098374120",
+        "nombre": "LIENZO ARTISTICO 30X40",
+        "descripcion": "",
+        "precio": 2.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107711.jpg"
     },
     {
         "id": 89,
@@ -1323,6 +1638,24 @@
         "imagen": "img/1000083791.png"
     },
     {
+        "id": 256,
+        "codigo": "43351949",
+        "nombre": "MULLOS COL. ROSADO PASTEL",
+        "descripcion": "",
+        "precio": 0.15,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107690.jpg"
+    },
+    {
+        "id": 255,
+        "codigo": "61482737",
+        "nombre": "MULLOS COL. ROSADOS",
+        "descripcion": "",
+        "precio": 0.15,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107691.jpg"
+    },
+    {
         "id": 173,
         "codigo": "7750082207622",
         "nombre": "NORMOGRAFO DE 10MM.",
@@ -1341,6 +1674,15 @@
         "imagen": "img/1000102369.jpg"
     },
     {
+        "id": 238,
+        "codigo": "6970880591544",
+        "nombre": "NOTAS ADHESIVAS LANCER",
+        "descripcion": "",
+        "precio": 2.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107572.jpg"
+    },
+    {
         "id": 80,
         "codigo": "6975222370283",
         "nombre": "NOTAS ADHESIVAS LANCER NOTEBOOK",
@@ -1348,6 +1690,15 @@
         "precio": 1.3,
         "categoria": "PAPELERIA",
         "imagen": "img/1000100638.jpg"
+    },
+    {
+        "id": 246,
+        "codigo": "40793162",
+        "nombre": "OJOS MOVIBLES",
+        "descripcion": "",
+        "precio": 1.3,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107618.jpg"
     },
     {
         "id": 179,
@@ -1384,6 +1735,15 @@
         "precio": 4.0,
         "categoria": "PAPELERIA",
         "imagen": "img/1000106342.jpg"
+    },
+    {
+        "id": 265,
+        "codigo": "63752236",
+        "nombre": "PINCEL ESPONJA",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107743.jpg"
     },
     {
         "id": 104,
@@ -1593,6 +1953,42 @@
         "imagen": "img/1000083714.png"
     },
     {
+        "id": 243,
+        "codigo": "6927124241505",
+        "nombre": "PINTURA PINTA CARITAS",
+        "descripcion": "",
+        "precio": 2.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107611.jpg"
+    },
+    {
+        "id": 244,
+        "codigo": "9645698623967",
+        "nombre": "PINTURA PINTA CARITAS 6 COL",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107614.jpg"
+    },
+    {
+        "id": 239,
+        "codigo": "7861161263146",
+        "nombre": "PISTOLA SILICONA CELINA",
+        "descripcion": "",
+        "precio": 5.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107583.jpg"
+    },
+    {
+        "id": 241,
+        "codigo": "7861161263153",
+        "nombre": "PISTOLA SILICONA CELINA GRANDE",
+        "descripcion": "",
+        "precio": 9.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107585.jpg"
+    },
+    {
         "id": 81,
         "codigo": "7861228107581",
         "nombre": "PISTOLA SILICONA LANCER PEQ 10W",
@@ -1627,6 +2023,33 @@
         "precio": 1.2,
         "categoria": "PAPELERIA",
         "imagen": "img/1000076043.png"
+    },
+    {
+        "id": 235,
+        "codigo": "7861139842823",
+        "nombre": "PLUMAS CELINA COLORES",
+        "descripcion": "",
+        "precio": 2.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107546.jpg"
+    },
+    {
+        "id": 233,
+        "codigo": "6973583940756",
+        "nombre": "PLUMAS LANCER DE COLORES DISEÑO 19CM",
+        "descripcion": "",
+        "precio": 1.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107543.jpg"
+    },
+    {
+        "id": 234,
+        "codigo": "7861185626194",
+        "nombre": "PLUMAS PASSOLA COLORES",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107545.jpg"
     },
     {
         "id": 157,
@@ -1915,6 +2338,15 @@
         "precio": 1.5,
         "categoria": "PAPELERIA",
         "imagen": "img/1000099554.png"
+    },
+    {
+        "id": 245,
+        "codigo": "6939412922065",
+        "nombre": "TIJERA SCISSORS",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000107617.jpg"
     },
     {
         "id": 166,
