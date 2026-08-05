@@ -420,6 +420,15 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerHTML = `<span class="cat-name">${category}</span>`;
             
             btn.addEventListener('click', () => {
+                // Si el usuario navega a una categoría, limpiamos el buscador principal 
+                // para que no haya un filtro de texto activo ocultando los resultados.
+                const searchInput = document.getElementById('searchInput');
+                const clearSearchBtn = document.getElementById('clearSearch');
+                if (searchInput && searchInput.value !== '') {
+                    searchInput.value = '';
+                    if (clearSearchBtn) clearSearchBtn.style.display = 'none';
+                }
+
                 // Actualizar estado activo
                 document.querySelectorAll('#categoryFilters .filter-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
@@ -448,6 +457,13 @@ document.addEventListener('DOMContentLoaded', () => {
             novBtn.style.fontWeight = 'bold';
 
             novBtn.addEventListener('click', () => {
+                const searchInput = document.getElementById('searchInput');
+                const clearSearchBtn = document.getElementById('clearSearch');
+                if (searchInput && searchInput.value !== '') {
+                    searchInput.value = '';
+                    if (clearSearchBtn) clearSearchBtn.style.display = 'none';
+                }
+
                 document.querySelectorAll('#categoryFilters .filter-btn').forEach(b => b.classList.remove('active'));
                 novBtn.classList.add('active');
                 filterProducts();
@@ -476,6 +492,13 @@ document.addEventListener('DOMContentLoaded', () => {
             promoBtn.style.fontWeight = 'bold';
             
             promoBtn.addEventListener('click', () => {
+                const searchInput = document.getElementById('searchInput');
+                const clearSearchBtn = document.getElementById('clearSearch');
+                if (searchInput && searchInput.value !== '') {
+                    searchInput.value = '';
+                    if (clearSearchBtn) clearSearchBtn.style.display = 'none';
+                }
+
                 document.querySelectorAll('#categoryFilters .filter-btn').forEach(b => b.classList.remove('active'));
                 promoBtn.classList.add('active');
                 filterProducts();
