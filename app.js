@@ -505,11 +505,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Lógica de búsqueda para las categorías
         if (categorySearchInput) {
             categorySearchInput.addEventListener('input', (e) => {
-                const term = e.target.value.toLowerCase().trim();
+                const term = normalizeString(e.target.value).trim();
                 const buttons = categoryFilters.querySelectorAll('.filter-btn');
                 
                 buttons.forEach(btn => {
-                    const catName = btn.querySelector('.cat-name')?.textContent.toLowerCase() || btn.textContent.toLowerCase();
+                    const catName = normalizeString(btn.querySelector('.cat-name')?.textContent || btn.textContent);
                     btn.style.display = catName.includes(term) ? 'flex' : 'none';
                 });
 
@@ -523,14 +523,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function normalizeString(str) {
+        if (!str) return '';
+        return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
     // --- 5. Lógica de Filtrado (Búsqueda + Categoría) ---
     function filterProducts() {
-        const searchTerm = searchInput.value.toLowerCase().trim();
+        const searchTerm = normalizeString(searchInput.value).trim();
         const activeCategoryBtn = document.querySelector('#categoryFilters .filter-btn.active');
         const activeCategory = activeCategoryBtn ? activeCategoryBtn.dataset.category : 'Todos';
 
         currentFilteredProducts = allProducts.filter(product => {
-            const matchesSearch = product.nombre.toLowerCase().includes(searchTerm);
+            const productName = normalizeString(product.nombre);
+            const productCategory = normalizeString(product.categoria);
+            const productDesc = normalizeString(product.descripcion);
+            const productCode = normalizeString(String(product.codigo));
+
+            const matchesSearch = productName.includes(searchTerm) || 
+                                  productCategory.includes(searchTerm) || 
+                                  productDesc.includes(searchTerm) ||
+                                  productCode.includes(searchTerm);
             
             let matchesCategory = false;
             if (activeCategory === 'Todos') {
