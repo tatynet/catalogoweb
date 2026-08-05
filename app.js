@@ -573,7 +573,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 5. Lógica de Filtrado (Búsqueda + Categoría) ---
     function filterProducts() {
-        const searchTerm = normalizeString(searchInput.value).trim();
+        const searchTermStr = normalizeString(searchInput.value).trim();
+        const searchTerms = searchTermStr ? searchTermStr.split(/\s+/) : [];
         const activeCategoryBtn = document.querySelector('#categoryFilters .filter-btn.active');
         const activeCategory = activeCategoryBtn ? activeCategoryBtn.dataset.category : 'Todos';
 
@@ -582,11 +583,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const productCategory = normalizeString(product.categoria);
             const productDesc = normalizeString(product.descripcion);
             const productCode = normalizeString(String(product.codigo));
-
-            const matchesSearch = productName.includes(searchTerm) || 
-                                  productCategory.includes(searchTerm) || 
-                                  productDesc.includes(searchTerm) ||
-                                  productCode.includes(searchTerm);
+            
+            const searchableText = `${productName} ${productCategory} ${productDesc} ${productCode}`;
+            
+            let matchesSearch = true;
+            if (searchTerms.length > 0) {
+                matchesSearch = searchTerms.every(term => searchableText.includes(term));
+            }
             
             let matchesCategory = false;
             if (activeCategory === 'Todos') {
