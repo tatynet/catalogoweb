@@ -321,6 +321,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     expandedImg.src = imgSrc;
                     if (nameEl) nameEl.textContent = product.nombre;
                     if (codeEl) codeEl.textContent = `CÓD: ${product.codigo}`;
+                    
+                    const watermarkEl = document.getElementById('expandedWatermark');
+                    if (watermarkEl) {
+                        const rRotate = Math.floor(Math.random() * 30) - 45; // -45 a -15 grados
+                        watermarkEl.textContent = configData.nombre_tienda || 'Tatynet';
+                        watermarkEl.style.transform = `translate(-50%, -50%) rotate(${rRotate}deg)`;
+                    }
+
                     imageModal.classList.add('active');
                 }
             });
