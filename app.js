@@ -646,7 +646,31 @@ document.addEventListener('DOMContentLoaded', () => {
             
             let matchesSearch = true;
             if (searchTerms.length > 0) {
-                matchesSearch = searchTerms.every(term => searchableText.includes(term));
+                // Ignorar palabras comunes (stop words)
+                const stopWords = new Set(['de', 'el', 'la', 'los', 'las', 'en', 'para', 'con', 'y', 'o', 'un', 'una', 'del', 'al', 'por', 'las', 'los']);
+                const filteredTerms = searchTerms.filter(t => !stopWords.has(t));
+                const termsToUse = filteredTerms.length > 0 ? filteredTerms : searchTerms;
+
+                matchesSearch = termsToUse.every(term => {
+                    // Coincidencia exacta
+                    if (searchableText.includes(term)) return true;
+                    
+                    // Flexibilidad: ignorar última o dos últimas letras (género/plural) ej: plastico/plastica/plasticos
+                    if (term.length > 3 && searchableText.includes(term.slice(0, -1))) return true;
+                    if (term.length > 4 && searchableText.includes(term.slice(0, -2))) return true;
+
+                    // Tolerancia a pequeños errores ("platico" en lugar de "plastico")
+                    if (term.length > 4) {
+                        const textWords = searchableText.split(/\s+/);
+                        for (let word of textWords) {
+                            // Si coinciden las primeras 3 letras y la diferencia de longitud es pequeña
+                            if (word.length >= 4 && word.startsWith(term.slice(0, 3)) && Math.abs(word.length - term.length) <= 2) {
+                                return true;
+                            }
+                        }
+                    }
+                    return false;
+                });
             }
             
             let matchesCategory = false;
