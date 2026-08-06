@@ -162,6 +162,24 @@
         "imagen": "img/1000102438.jpg"
     },
     {
+        "id": 279,
+        "codigo": "7862141616242",
+        "nombre": "CARPETA CARTON",
+        "descripcion": "",
+        "precio": 0.35,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000108699.jpg"
+    },
+    {
+        "id": 278,
+        "codigo": "72385978",
+        "nombre": "CARPETA DOBLE ANILLO OFICIO",
+        "descripcion": "",
+        "precio": 2.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000108690.jpg"
+    },
+    {
         "id": 266,
         "codigo": "7862108226385",
         "nombre": "CARPETA PLASTICA CON VENTANA PERSONALIZADA",
@@ -178,6 +196,15 @@
         "precio": 1.5,
         "categoria": "PAPELERIA",
         "imagen": "img/1000107735.jpg"
+    },
+    {
+        "id": 280,
+        "codigo": "7861123904414",
+        "nombre": "CARPETA PLATICA SOBRE A3",
+        "descripcion": "",
+        "precio": 1.2,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000108707.jpg"
     },
     {
         "id": 114,
@@ -675,6 +702,51 @@
         "imagen": "img/1000100702.jpg"
     },
     {
+        "id": 276,
+        "codigo": "91414836",
+        "nombre": "FOAMY  ESCARCHADO PLIEGO",
+        "descripcion": "",
+        "precio": 2.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000108675.png"
+    },
+    {
+        "id": 274,
+        "codigo": "4894616000334",
+        "nombre": "FOAMY ARCOIRIS X10U A4",
+        "descripcion": "",
+        "precio": 3.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000108652.png"
+    },
+    {
+        "id": 270,
+        "codigo": "7823499475851",
+        "nombre": "FOAMY ESCARCHADO ADHESIVO X10 A4",
+        "descripcion": "",
+        "precio": 2.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000108620.jpg"
+    },
+    {
+        "id": 268,
+        "codigo": "7861180402212",
+        "nombre": "FOAMY ESCARCHADO X10U A4",
+        "descripcion": "",
+        "precio": 2.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000108607.jpg"
+    },
+    {
+        "id": 271,
+        "codigo": "7836940501405",
+        "nombre": "FOAMY FIGURAS SURTIDAD X10U A4",
+        "descripcion": "",
+        "precio": 2.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000108624.jpg"
+    },
+    {
         "id": 41,
         "codigo": "6938684620129",
         "nombre": "FOAMY MOLDEABLE 12COL",
@@ -709,6 +781,51 @@
         "precio": 0.8,
         "categoria": "PAPELERIA",
         "imagen": "img/1000102943.jpg"
+    },
+    {
+        "id": 275,
+        "codigo": "17396494",
+        "nombre": "FOAMY NATURAL PLIEGO X1U",
+        "descripcion": "",
+        "precio": 1.2,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000108666.png"
+    },
+    {
+        "id": 267,
+        "codigo": "7862108183329",
+        "nombre": "FOAMY NATURAL X10U A4",
+        "descripcion": "",
+        "precio": 1.1,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000108599.jpg"
+    },
+    {
+        "id": 273,
+        "codigo": "4895138021098",
+        "nombre": "FOAMY TELA FLORES X10U A4",
+        "descripcion": "",
+        "precio": 3.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000108650.png"
+    },
+    {
+        "id": 272,
+        "codigo": "2129720040009",
+        "nombre": "FOAMY TESTURA X10U A4",
+        "descripcion": "",
+        "precio": 2.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000108646.png"
+    },
+    {
+        "id": 269,
+        "codigo": "4895137956001",
+        "nombre": "FOAMY TOALLA X10U A4",
+        "descripcion": "",
+        "precio": 2.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000108611.jpg"
     },
     {
         "id": 172,

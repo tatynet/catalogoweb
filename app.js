@@ -263,8 +263,26 @@ document.addEventListener('DOMContentLoaded', () => {
             let promoBadge = '';
             let priceHtml = `<span>$</span>${product.precio.toFixed(2)}`;
 
-            if (configData.promocion_activa && configData.promociones) {
-                const promo = configData.promociones.find(p => p.codigo_producto === product.codigo && p.activa !== false);
+            // 1. Verificar promoción individual del producto (nueva lógica JSON)
+            if (product.tiene_promocion && product.promocion) {
+                const promo = product.promocion;
+                const min = promo.cantidad_minima || 1;
+                
+                if (min > 1) {
+                    promoBadge = `<div style="position: absolute; top: 12px; right: 12px; background: #8b5cf6; color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800; z-index: 10; box-shadow: 0 4px 10px rgba(139, 92, 246, 0.4);">¡MEGA OFERTA!</div>`;
+                    priceHtml = `<div style="display:flex; flex-direction:column; line-height: 1.3;">
+                                    <span style="font-size: 0.85rem; color: #64748b; text-decoration: line-through;">Normal: $${product.precio.toFixed(2)} c/u</span>
+                                    <span style="font-size: 0.85rem; color: #8b5cf6; font-weight: 800;">Desde ${min} unid: $${promo.precio_especial.toFixed(2)} c/u</span>
+                                 </div>`;
+                } else {
+                    finalPrice = promo.precio_especial;
+                    promoBadge = `<div style="position: absolute; top: 12px; right: 12px; background: #ef4444; color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800; z-index: 10; box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);">¡OFERTA!</div>`;
+                    priceHtml = `<span style="text-decoration: line-through; opacity: 0.5; font-size: 0.9rem; margin-right: 0.5rem;">$${product.precio.toFixed(2)}</span><span style="color: #ef4444;">$</span><span style="color: #ef4444;">${finalPrice.toFixed(2)}</span>`;
+                }
+            } 
+            // 2. Verificar promoción antigua de config.json
+            else if (configData.promocion_activa && configData.promociones) {
+                const promo = configData.promociones.find(p => String(p.codigo_producto) === String(product.codigo) && p.activa !== false);
                 if (promo) {
                     if (promo.solo_lista) {
                         promoBadge = `<div style="position: absolute; top: 12px; right: 12px; background: #f59e0b; color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800; z-index: 10; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.4);">¡PROMO LISTA!</div>`;
@@ -277,6 +295,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         promoBadge = `<div style="position: absolute; top: 12px; right: 12px; background: #ef4444; color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800; z-index: 10; box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);">¡PROMO!</div>`;
                         priceHtml = `<span style="text-decoration: line-through; opacity: 0.5; font-size: 0.9rem; margin-right: 0.5rem;">$${product.precio.toFixed(2)}</span><span style="color: #ef4444;">$</span><span style="color: #ef4444;">${finalPrice.toFixed(2)}</span>`;
                     }
+                }
+            }
+
+            let promoDescHtml = '';
+            if (product.tiene_promocion && product.promocion && product.promocion.descripcion) {
+                promoDescHtml = `<div style="font-size: 0.75rem; color: #10b981; font-weight: 600; margin-top: 4px; display: flex; align-items: center; gap: 4px; line-height: 1.1;"><i class="fas fa-info-circle"></i> ${product.promocion.descripcion}</div>`;
+            } else if (configData.promocion_activa && configData.promociones) {
+                const promo = configData.promociones.find(p => String(p.codigo_producto) === String(product.codigo) && p.activa !== false);
+                if (promo && promo.descripcion) {
+                    promoDescHtml = `<div style="font-size: 0.75rem; color: #10b981; font-weight: 600; margin-top: 4px; display: flex; align-items: center; gap: 4px; line-height: 1.1;"><i class="fas fa-info-circle"></i> ${promo.descripcion}</div>`;
                 }
             }
 
@@ -295,6 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="product-info">
                     <h3 class="product-name" title="${product.nombre}">${product.nombre}</h3>
+                    ${promoDescHtml}
                 </div>
                 <div class="product-footer">
                     <div class="product-price">${priceHtml}</div>
@@ -491,12 +520,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // --- Botón especial de Ofertas ---
-        if (configData.promocion_activa && configData.promociones && configData.promociones.filter(p => p.activa !== false).length > 0) {
+        let promoCount = 0;
+        if (configData.promocion_activa && configData.promociones) {
+            promoCount += configData.promociones.filter(p => p.activa !== false).length;
+        }
+        
+        // Agregar conteo de productos con promocion individual excluyendo los ya contados para no duplicar?
+        // En realidad, un contador unico de productos promocionales:
+        let promotedProductsCount = products.filter(p => {
+            if (p.tiene_promocion) return true;
+            if (configData.promocion_activa && configData.promociones) {
+                return configData.promociones.some(cp => String(cp.codigo_producto) === String(p.codigo) && cp.activa !== false);
+            }
+            return false;
+        }).length;
+
+        if (promotedProductsCount > 0) {
             const promoBtn = document.createElement('button');
             promoBtn.classList.add('filter-btn');
             promoBtn.dataset.category = 'ofertas_especiales';
-            const promoCount = configData.promociones.filter(p => p.activa !== false).length;
-            promoBtn.innerHTML = `<span class="cat-name"><i class="fas fa-star" style="color:#f59e0b; margin-right:4px;"></i> Promociones</span><span class="cat-count" style="background:#f59e0b;">${promoCount}</span>`;
+            promoBtn.innerHTML = `<span class="cat-name"><i class="fas fa-star" style="color:#f59e0b; margin-right:4px;"></i> Promociones</span><span class="cat-count" style="background:#f59e0b;">${promotedProductsCount}</span>`;
             promoBtn.style.fontWeight = 'bold';
             
             promoBtn.addEventListener('click', () => {
@@ -523,6 +566,21 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 categoryFilters.appendChild(promoBtn);
             }
+
+            // Activar el botón de ofertas rápidas en la barra de búsqueda
+            const quickPromoBtn = document.getElementById('quickPromoBtn');
+            if (quickPromoBtn) {
+                quickPromoBtn.style.display = 'flex';
+                // Remove previous event listeners if generateCategoryButtons is called multiple times
+                const newQuickBtn = quickPromoBtn.cloneNode(true);
+                quickPromoBtn.parentNode.replaceChild(newQuickBtn, quickPromoBtn);
+                newQuickBtn.addEventListener('click', () => {
+                    promoBtn.click();
+                });
+            }
+        } else {
+            const quickPromoBtn = document.getElementById('quickPromoBtn');
+            if (quickPromoBtn) quickPromoBtn.style.display = 'none';
         }
 
         // Indicador de scroll: mostrar/ocultar degradado según posición
@@ -595,8 +653,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (activeCategory === 'Todos') {
                 matchesCategory = true;
             } else if (activeCategory === 'ofertas_especiales') {
-                if (configData.promocion_activa && configData.promociones) {
-                    const promo = configData.promociones.find(p => p.codigo_producto === product.codigo && p.activa !== false);
+                if (product.tiene_promocion) {
+                    matchesCategory = true;
+                } else if (configData.promocion_activa && configData.promociones) {
+                    const promo = configData.promociones.find(p => String(p.codigo_producto) === String(product.codigo) && p.activa !== false);
                     if (promo) matchesCategory = true;
                 }
             } else if (activeCategory === 'novedades') {
@@ -734,15 +794,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Lógica de cálculo dinámico para el carrito
                 let finalItemPrice = item.precio;
                 let priceHtml = `$${item.precio.toFixed(2)}`;
+                let appliedPromo = false;
+                let promoColor = '#ef4444';
 
-                if (configData.promocion_activa && configData.promociones) {
-                    const promo = configData.promociones.find(p => p.codigo_producto === item.codigo && p.activa !== false);
+                // 1. Promoción Individual (nueva lógica JSON)
+                if (item.tiene_promocion && item.promocion) {
+                    const promo = item.promocion;
+                    const min = promo.cantidad_minima || 1;
+                    if (item.quantity >= min) {
+                        finalItemPrice = promo.precio_especial;
+                        appliedPromo = true;
+                        promoColor = min > 1 ? '#8b5cf6' : '#ef4444';
+                    }
+                } 
+                // 2. Promoción Global (config.json)
+                else if (configData.promocion_activa && configData.promociones) {
+                    const promo = configData.promociones.find(p => String(p.codigo_producto) === String(item.codigo) && p.activa !== false);
                     if (promo && promo.precio_promocional) {
                         if (!promo.solo_lista || (promo.solo_lista && isPromoList)) {
                             finalItemPrice = promo.precio_promocional;
-                            const color = promo.solo_lista ? '#f59e0b' : '#ef4444';
-                            priceHtml = `<span style="text-decoration: line-through; opacity: 0.5; font-size: 0.8rem; margin-right: 0.3rem;">$${item.precio.toFixed(2)}</span><span style="color: ${color}; font-weight: 800;">$${finalItemPrice.toFixed(2)}</span>`;
+                            appliedPromo = true;
+                            promoColor = promo.solo_lista ? '#f59e0b' : '#ef4444';
                         }
+                    }
+                }
+
+                if (appliedPromo) {
+                    priceHtml = `<span style="text-decoration: line-through; opacity: 0.5; font-size: 0.8rem; margin-right: 0.3rem;">$${item.precio.toFixed(2)}</span><span style="color: ${promoColor}; font-weight: 800;">$${finalItemPrice.toFixed(2)}</span>`;
+                    
+                    if (item.tiene_promocion && item.promocion && item.promocion.cantidad_minima > 1 && item.quantity >= item.promocion.cantidad_minima) {
+                        priceHtml += `<div style="font-size: 0.7rem; color: ${promoColor}; margin-top: 2px;"><i class="fas fa-tag"></i> Descuento por volumen aplicado</div>`;
                     }
                 }
 
@@ -833,7 +914,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         cart.forEach(item => {
             const finalPrice = item.cartDisplayPrice || item.precio;
-            message += `- ${item.quantity}x ${item.nombre} (CÓD: ${item.codigo}) [$${(finalPrice * item.quantity).toFixed(2)}]%0A`;
+            let qtyNote = "";
+            if (item.cartDisplayPrice && item.cartDisplayPrice < item.precio) {
+                qtyNote = " (Promo aplicada)";
+            }
+            message += `- ${item.quantity}x ${item.nombre} (CÓD: ${item.codigo}) [$${(finalPrice * item.quantity).toFixed(2)}]${qtyNote}%0A`;
         });
         
         const total = cart.reduce((sum, item) => sum + ((item.cartDisplayPrice || item.precio) * item.quantity), 0);
