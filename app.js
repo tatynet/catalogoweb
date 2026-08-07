@@ -286,10 +286,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 const nameEl = document.getElementById('expandedProductName');
                 const codeEl = document.getElementById('expandedProductCode');
                 const priceEl = document.getElementById('expandedProductPrice');
+                const modalBuyBtn = document.getElementById('modalBuyBtn');
                 if (expandedImg) expandedImg.src = pImg;
                 if (nameEl) nameEl.textContent = p.nombre;
                 if (codeEl) codeEl.textContent = `CÓD: ${p.codigo}`;
                 if (priceEl) priceEl.textContent = `$${finalPrice.toFixed(2)}`;
+                if (modalBuyBtn) {
+                    modalBuyBtn.innerHTML = '<i class="fas fa-shopping-cart"></i> Añadir al carrito';
+                    modalBuyBtn.style.background = '';
+                    modalBuyBtn.onclick = () => {
+                        const isNewItem = addToCart(p);
+                        if (isNewItem) {
+                            modalBuyBtn.innerHTML = '<i class="fas fa-check"></i> ¡Añadido!';
+                            modalBuyBtn.style.background = '#10b981';
+                        } else {
+                            modalBuyBtn.innerHTML = '<i class="fas fa-info-circle"></i> ¡Ya en carrito!';
+                            modalBuyBtn.style.background = '#f59e0b';
+                        }
+                    };
+                }
                 
                 // Actualizar recomendaciones recursivamente
                 renderRecommendedProducts(p);
@@ -440,11 +455,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 const nameEl = document.getElementById('expandedProductName');
                 const codeEl = document.getElementById('expandedProductCode');
                 const priceEl = document.getElementById('expandedProductPrice');
+                const modalBuyBtn = document.getElementById('modalBuyBtn');
                 if (imageModal && expandedImg) {
                     expandedImg.src = imgSrc;
                     if (nameEl) nameEl.textContent = product.nombre;
                     if (codeEl) codeEl.textContent = `CÓD: ${product.codigo}`;
                     if (priceEl) priceEl.textContent = `$${finalPrice.toFixed(2)}`;
+                    if (modalBuyBtn) {
+                        modalBuyBtn.innerHTML = '<i class="fas fa-shopping-cart"></i> Añadir al carrito';
+                        modalBuyBtn.style.background = '';
+                        modalBuyBtn.onclick = () => {
+                            const isNewItem = addToCart(product);
+                            if (isNewItem) {
+                                modalBuyBtn.innerHTML = '<i class="fas fa-check"></i> ¡Añadido!';
+                                modalBuyBtn.style.background = '#10b981';
+                            } else {
+                                modalBuyBtn.innerHTML = '<i class="fas fa-info-circle"></i> ¡Ya en carrito!';
+                                modalBuyBtn.style.background = '#f59e0b';
+                            }
+                        };
+                    }
                     
                     const watermarkEl = document.getElementById('expandedWatermark');
                     if (watermarkEl) {

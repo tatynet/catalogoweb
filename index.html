@@ -237,15 +237,19 @@
                 <i class="fas fa-times"></i>
             </button>
             <div class="image-modal-img-wrap" style="position: relative;">
+                <div class="marketing-badge-modal"><i class="fas fa-star"></i> Excelente Elección</div>
                 <div id="expandedWatermark" class="watermark-overlay" style="font-size: 3.5rem; z-index: 10;"></div>
                 <img class="image-modal-content" id="expandedImg" alt="Producto ampliado">
             </div>
             <div class="image-modal-footer">
                 <p class="image-modal-product-name" id="expandedProductName"></p>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
                     <p class="image-modal-product-code" id="expandedProductCode"></p>
-                    <p class="image-modal-product-price" id="expandedProductPrice" style="font-size: 1.25rem; font-weight: 800; color: var(--primary); margin: 0;"></p>
+                    <p class="image-modal-product-price" id="expandedProductPrice"></p>
                 </div>
+                <button id="modalBuyBtn" class="btn-modal-buy">
+                    <i class="fas fa-shopping-cart"></i> Añadir al carrito
+                </button>
             </div>
             <div class="recommended-products-section" id="recommendedProductsSection">
                 <h4>Te sugerimos llevar también:</h4>
