@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=20260807">
+    <link rel="stylesheet" href="style.css?v=20260807_v2">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-K562E8V6ZP"></script>
@@ -146,7 +146,7 @@
         </section>
     </main>
 
-    <script src="app.js?v=20260807"></script>
+    <script src="app.js?v=20260807_v2"></script>
 
     <!-- Shopping Cart Sidebar -->
     <div class="cart-overlay" id="cartOverlay"></div>
@@ -361,6 +361,25 @@
             <p>&copy; 2025 <strong>TATYNET</strong>. Hecho con <i class="fas fa-heart" style="color:#ef4444;"></i> para nuestros clientes &mdash; Quito, Ecuador.</p>
         </div>
     </footer>
+
+    <!-- Modal para Fraccionar Venta -->
+    <div id="fraccionModal" class="modal-overlay">
+        <div class="modal-content fraccion-modal" style="max-width: 400px; text-align: center; border-radius: 20px; padding: 30px;">
+            <button class="modal-close" id="closeFraccionModal"><i class="fas fa-times"></i></button>
+            <div style="margin-bottom: 20px;">
+                <h3 style="color: var(--accent-color); margin-bottom: 10px;"><i class="fas fa-box-open"></i> Opciones de Compra</h3>
+                <p style="color: var(--text-secondary);">¿Cómo deseas comprar este producto?</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <button id="btnComprarCaja" class="btn-buy" style="background: transparent; border: 2px solid var(--accent-color); color: var(--accent-color); font-size: 1.1rem; padding: 12px; border-radius: 50px;">
+                    <i class="fas fa-box"></i> Por Paquete (<span id="lblPrecioCaja"></span>)
+                </button>
+                <button id="btnComprarUnidad" class="btn-buy" style="font-size: 1.1rem; padding: 12px; border-radius: 50px;">
+                    <i class="fas fa-pen"></i> Por Unidad (<span id="lblPrecioUnidad"></span>)
+                </button>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

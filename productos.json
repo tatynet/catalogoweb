@@ -6,7 +6,16 @@
         "descripcion": "",
         "precio": 1.3,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083725.png"
+        "imagen": "img/1000083725.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 17,
@@ -15,7 +24,16 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000076039.png"
+        "imagen": "img/1000076039.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 248,
@@ -24,7 +42,16 @@
         "descripcion": "",
         "precio": 0.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107627.jpg"
+        "imagen": "img/1000107627.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 262,
@@ -33,7 +60,16 @@
         "descripcion": "",
         "precio": 2.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107715.jpg"
+        "imagen": "img/1000107715.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 96,
@@ -42,7 +78,16 @@
         "descripcion": "",
         "precio": 2.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100731.jpg"
+        "imagen": "img/1000100731.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 54,
@@ -51,7 +96,16 @@
         "descripcion": "",
         "precio": 1.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083860.png"
+        "imagen": "img/1000083860.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 58,
@@ -60,7 +114,16 @@
         "descripcion": "",
         "precio": 1.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083911.png"
+        "imagen": "img/1000083911.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 60,
@@ -69,7 +132,16 @@
         "descripcion": "",
         "precio": 1.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000084005.png"
+        "imagen": "img/1000084005.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 59,
@@ -78,7 +150,16 @@
         "descripcion": "",
         "precio": 1.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083916.png"
+        "imagen": "img/1000083916.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 56,
@@ -87,7 +168,16 @@
         "descripcion": "",
         "precio": 1.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083896.png"
+        "imagen": "img/1000083896.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 53,
@@ -96,7 +186,16 @@
         "descripcion": "",
         "precio": 1.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083847.png"
+        "imagen": "img/1000083847.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 55,
@@ -105,7 +204,16 @@
         "descripcion": "",
         "precio": 1.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083868.png"
+        "imagen": "img/1000083868.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 57,
@@ -114,7 +222,16 @@
         "descripcion": "",
         "precio": 1.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083906.png"
+        "imagen": "img/1000083906.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 67,
@@ -123,7 +240,268 @@
         "descripcion": "",
         "precio": 1.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000099570.jpg"
+        "imagen": "img/1000099570.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 298,
+        "codigo": "7750082028760",
+        "nombre": "BORRADOR ARTESCO DE COLOR",
+        "descripcion": "",
+        "precio": 0.3,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109297.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 299,
+        "codigo": "17861123909966",
+        "nombre": "BORRADOR BESTER TECNICO DE COLOR",
+        "descripcion": "",
+        "precio": 0.4,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109303.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 315,
+        "codigo": "2022863010017",
+        "nombre": "BORRADOR BLOQUES INTERCAMBIABLES",
+        "descripcion": "",
+        "precio": 0.6,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109377.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 311,
+        "codigo": "6938247160543",
+        "nombre": "BORRADOR CON LIMPIADOR *",
+        "descripcion": "",
+        "precio": 0.8,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109362.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 330,
+        "codigo": "6971123985090",
+        "nombre": "BORRADOR CORTABLE DIVERTIDO *",
+        "descripcion": "",
+        "precio": 0.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109570.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 302,
+        "codigo": "6936096709012",
+        "nombre": "BORRADOR ERASER 2B",
+        "descripcion": "",
+        "precio": 0.3,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109316.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 309,
+        "codigo": "6938247129243",
+        "nombre": "BORRADOR ERASER 4B",
+        "descripcion": "",
+        "precio": 0.2,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109335.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 313,
+        "codigo": "6941920405183",
+        "nombre": "BORRADOR ERASER RETRATIL *",
+        "descripcion": "",
+        "precio": 0.8,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109375.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 306,
+        "codigo": "9556089889216",
+        "nombre": "BORRADOR FABER CASTELL",
+        "descripcion": "",
+        "precio": 0.35,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109326.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 314,
+        "codigo": "6971123984185",
+        "nombre": "BORRADOR ICE CREAM *",
+        "descripcion": "",
+        "precio": 1.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109376.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 310,
+        "codigo": "7750082090149",
+        "nombre": "BORRADOR JELLY COLOR",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109336.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 304,
+        "codigo": "7703064447752",
+        "nombre": "BORRADOR PELIKAN  PZ 20",
+        "descripcion": "",
+        "precio": 0.35,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109321.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 303,
+        "codigo": "7703064650374",
+        "nombre": "BORRADOR PELIKAN NEGRO",
+        "descripcion": "",
+        "precio": 0.35,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109320.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 305,
+        "codigo": "7703064447745",
+        "nombre": "BORRADOR PELIKAN PZ 40",
+        "descripcion": "",
+        "precio": 0.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109325.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 247,
@@ -132,7 +510,16 @@
         "descripcion": "",
         "precio": 1.3,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107621.jpg"
+        "imagen": "img/1000107621.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 148,
@@ -141,7 +528,16 @@
         "descripcion": "",
         "precio": 20.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000103011.jpg"
+        "imagen": "img/1000103011.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 149,
@@ -150,7 +546,16 @@
         "descripcion": "",
         "precio": 6.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000103012.jpg"
+        "imagen": "img/1000103012.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 119,
@@ -159,7 +564,16 @@
         "descripcion": "",
         "precio": 0.6,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102438.jpg"
+        "imagen": "img/1000102438.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 279,
@@ -168,7 +582,16 @@
         "descripcion": "",
         "precio": 0.35,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000108699.jpg"
+        "imagen": "img/1000108699.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 278,
@@ -177,7 +600,16 @@
         "descripcion": "",
         "precio": 2.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000108690.jpg"
+        "imagen": "img/1000108690.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 266,
@@ -186,7 +618,16 @@
         "descripcion": "",
         "precio": 1.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107750.jpg"
+        "imagen": "img/1000107750.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 264,
@@ -195,7 +636,16 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107735.jpg"
+        "imagen": "img/1000107735.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 280,
@@ -204,7 +654,16 @@
         "descripcion": "",
         "precio": 1.2,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000108707.jpg"
+        "imagen": "img/1000108707.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 114,
@@ -213,7 +672,16 @@
         "descripcion": "",
         "precio": 0.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102404.jpg"
+        "imagen": "img/1000102404.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 180,
@@ -222,7 +690,16 @@
         "descripcion": "",
         "precio": 1.8,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106750.jpg"
+        "imagen": "img/1000106750.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 109,
@@ -231,7 +708,16 @@
         "descripcion": "",
         "precio": 1.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102379.jpg"
+        "imagen": "img/1000102379.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 106,
@@ -240,7 +726,16 @@
         "descripcion": "",
         "precio": 0.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102365.jpg"
+        "imagen": "img/1000102365.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 105,
@@ -249,7 +744,16 @@
         "descripcion": "",
         "precio": 0.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102361.jpg"
+        "imagen": "img/1000102361.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 85,
@@ -258,7 +762,16 @@
         "descripcion": "",
         "precio": 1.3,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100655.jpg"
+        "imagen": "img/1000100655.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 181,
@@ -267,7 +780,16 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106754.jpg"
+        "imagen": "img/1000106754.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 182,
@@ -276,7 +798,16 @@
         "descripcion": "",
         "precio": 0.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106768.jpg"
+        "imagen": "img/1000106768.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 110,
@@ -285,7 +816,16 @@
         "descripcion": "",
         "precio": 1.45,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102383.jpg"
+        "imagen": "img/1000102383.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 70,
@@ -294,7 +834,16 @@
         "descripcion": "",
         "precio": 1.2,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000099596.jpg"
+        "imagen": "img/1000099596.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 71,
@@ -303,7 +852,34 @@
         "descripcion": "",
         "precio": 1.2,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000099603.jpg"
+        "imagen": "img/1000099603.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 292,
+        "codigo": "6948124832494",
+        "nombre": "CINTA DECORSTIVAS",
+        "descripcion": "",
+        "precio": 0.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109234.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 61,
@@ -312,7 +888,16 @@
         "descripcion": "",
         "precio": 0.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000099507.png"
+        "imagen": "img/1000099507.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 111,
@@ -321,7 +906,34 @@
         "descripcion": "",
         "precio": 0.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102384.jpg"
+        "imagen": "img/1000102384.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 338,
+        "codigo": "7861123902595",
+        "nombre": "COMPAS CON LAPIZ",
+        "descripcion": "",
+        "precio": 0.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109630.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 155,
@@ -330,7 +942,16 @@
         "descripcion": "",
         "precio": 1.65,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106322.jpg"
+        "imagen": "img/1000106322.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 158,
@@ -339,7 +960,52 @@
         "descripcion": "",
         "precio": 1.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106338.jpg"
+        "imagen": "img/1000106338.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 336,
+        "codigo": "6971082818699",
+        "nombre": "COMPAS DE PRECISION METALICO",
+        "descripcion": "",
+        "precio": 2.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109623.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 337,
+        "codigo": "7861123902557",
+        "nombre": "COMPAS METALICO CON ADAPTADOR",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109626.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 257,
@@ -348,7 +1014,16 @@
         "descripcion": "",
         "precio": 0.2,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107698.jpg"
+        "imagen": "img/1000107698.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 90,
@@ -357,7 +1032,16 @@
         "descripcion": "",
         "precio": 1.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100686.jpg"
+        "imagen": "img/1000100686.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 156,
@@ -366,7 +1050,16 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106328.jpg"
+        "imagen": "img/1000106328.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 16,
@@ -375,7 +1068,16 @@
         "descripcion": "",
         "precio": 1.1,
         "categoria": "PAPELERIA",
-        "imagen": "img/WhatsApp_Image_2026-07-28_at_5.22.24_PM.jpeg"
+        "imagen": "img/WhatsApp_Image_2026-07-28_at_5.22.24_PM.jpeg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 131,
@@ -384,7 +1086,16 @@
         "descripcion": "",
         "precio": 2.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102940.jpg"
+        "imagen": "img/1000102940.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 130,
@@ -393,7 +1104,16 @@
         "descripcion": "",
         "precio": 5.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102934.jpg"
+        "imagen": "img/1000102934.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 123,
@@ -402,7 +1122,16 @@
         "descripcion": "",
         "precio": 1.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102460.jpg"
+        "imagen": "img/1000102460.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 122,
@@ -411,7 +1140,16 @@
         "descripcion": "",
         "precio": 1.35,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102453.jpg"
+        "imagen": "img/1000102453.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 121,
@@ -420,7 +1158,16 @@
         "descripcion": "",
         "precio": 1.4,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102452.jpg"
+        "imagen": "img/1000102452.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 120,
@@ -429,7 +1176,16 @@
         "descripcion": "",
         "precio": 2.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102450.jpg"
+        "imagen": "img/1000102450.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 169,
@@ -438,7 +1194,16 @@
         "descripcion": "",
         "precio": 1.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106372.jpg"
+        "imagen": "img/1000106372.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 236,
@@ -447,7 +1212,16 @@
         "descripcion": "",
         "precio": 2.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107562.jpg"
+        "imagen": "img/1000107562.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 168,
@@ -456,7 +1230,34 @@
         "descripcion": "",
         "precio": 1.95,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106371.jpg"
+        "imagen": "img/1000106371.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 333,
+        "codigo": "38329033",
+        "nombre": "DADOS PEQUEÑOS",
+        "descripcion": "",
+        "precio": 0.1,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109615.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 160,
@@ -465,7 +1266,16 @@
         "descripcion": "",
         "precio": 3.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106343.jpg"
+        "imagen": "img/1000106343.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 101,
@@ -474,7 +1284,16 @@
         "descripcion": "",
         "precio": 1.9,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102344.jpg"
+        "imagen": "img/1000102344.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 249,
@@ -483,7 +1302,16 @@
         "descripcion": "",
         "precio": 3.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107650.jpg"
+        "imagen": "img/1000107650.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 250,
@@ -492,7 +1320,16 @@
         "descripcion": "",
         "precio": 2.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107651.jpg"
+        "imagen": "img/1000107651.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 258,
@@ -501,7 +1338,34 @@
         "descripcion": "",
         "precio": 0.35,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107701.jpg"
+        "imagen": "img/1000107701.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 340,
+        "codigo": "7862108180519",
+        "nombre": "ESCARCHA CREATIV COLOR 20GRS",
+        "descripcion": "",
+        "precio": 0.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109632.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 129,
@@ -510,7 +1374,16 @@
         "descripcion": "",
         "precio": 1.4,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102933.jpg"
+        "imagen": "img/1000102933.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 128,
@@ -519,7 +1392,34 @@
         "descripcion": "",
         "precio": 1.2,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102932.jpg"
+        "imagen": "img/1000102932.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 332,
+        "codigo": "6912345601047",
+        "nombre": "ESFERO 10 COLORES DISEÑO",
+        "descripcion": "",
+        "precio": 0.8,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109585.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 204,
@@ -528,7 +1428,16 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106880.jpg"
+        "imagen": "img/1000106880.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 203,
@@ -537,7 +1446,16 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": ""
+        "imagen": "",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 202,
@@ -546,7 +1464,16 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106879.jpg"
+        "imagen": "img/1000106879.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 201,
@@ -555,7 +1482,16 @@
         "descripcion": "",
         "precio": 0.4,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106866.jpg"
+        "imagen": "img/1000106866.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 198,
@@ -564,7 +1500,16 @@
         "descripcion": "",
         "precio": 0.45,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106847.jpg"
+        "imagen": "img/1000106847.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 200,
@@ -573,7 +1518,16 @@
         "descripcion": "",
         "precio": 0.4,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106862.jpg"
+        "imagen": "img/1000106862.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 193,
@@ -582,7 +1536,16 @@
         "descripcion": "",
         "precio": 0.45,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106833.jpg"
+        "imagen": "img/1000106833.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 199,
@@ -591,7 +1554,16 @@
         "descripcion": "",
         "precio": 0.4,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106861.jpg"
+        "imagen": "img/1000106861.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 195,
@@ -600,7 +1572,16 @@
         "descripcion": "",
         "precio": 0.45,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106834.jpg"
+        "imagen": "img/1000106834.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 194,
@@ -609,7 +1590,52 @@
         "descripcion": "",
         "precio": 0.45,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106835.jpg"
+        "imagen": "img/1000106835.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 295,
+        "codigo": "6970366735974",
+        "nombre": "ESFERO BORRABLE *",
+        "descripcion": "",
+        "precio": 0.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109244.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 294,
+        "codigo": "7862108180298",
+        "nombre": "ESFERO CREATIV ESCARCHADO  12 COL.",
+        "descripcion": "",
+        "precio": 2.6,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109242.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 188,
@@ -618,7 +1644,16 @@
         "descripcion": "",
         "precio": 0.35,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106793.jpg"
+        "imagen": "img/1000106793.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 189,
@@ -627,7 +1662,16 @@
         "descripcion": "",
         "precio": 0.35,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106794.jpg"
+        "imagen": "img/1000106794.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 190,
@@ -636,7 +1680,34 @@
         "descripcion": "",
         "precio": 0.35,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106808.jpg"
+        "imagen": "img/1000106808.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 327,
+        "codigo": "77121717",
+        "nombre": "ESFERO DE GEL ARCOIRIS",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109557.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 205,
@@ -645,7 +1716,16 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106881.jpg"
+        "imagen": "img/1000106881.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 206,
@@ -654,7 +1734,16 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106882.jpg"
+        "imagen": "img/1000106882.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 197,
@@ -663,7 +1752,16 @@
         "descripcion": "",
         "precio": 2.6,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106846.jpg"
+        "imagen": "img/1000106846.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 74,
@@ -672,7 +1770,34 @@
         "descripcion": "",
         "precio": 2.3,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100590.jpg"
+        "imagen": "img/1000100590.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 322,
+        "codigo": "2100000040018",
+        "nombre": "ESFERO GEL RETRACTIL TINTA AZUL DISEÑO",
+        "descripcion": "",
+        "precio": 0.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109504.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 196,
@@ -681,7 +1806,88 @@
         "descripcion": "",
         "precio": 2.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106836.jpg"
+        "imagen": "img/1000106836.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 321,
+        "codigo": "7854585428116",
+        "nombre": "ESFERO RETRACTIL",
+        "descripcion": "",
+        "precio": 0.6,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109460.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 328,
+        "codigo": "6978218780035",
+        "nombre": "ESFERO RETRACTIL CAPYBARA COLOR AZUL",
+        "descripcion": "",
+        "precio": 0.6,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109562.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 325,
+        "codigo": "48688014",
+        "nombre": "ESFERO RETRACTIL HELLO KITTY TINTA AZUL",
+        "descripcion": "",
+        "precio": 0.6,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109538.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 297,
+        "codigo": "6904030009061",
+        "nombre": "ESFERO SEMI GEL *",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109296.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 152,
@@ -690,7 +1896,16 @@
         "descripcion": "",
         "precio": 1.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106304.jpg"
+        "imagen": "img/1000106304.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 94,
@@ -699,7 +1914,16 @@
         "descripcion": "",
         "precio": 0.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100702.jpg"
+        "imagen": "img/1000100702.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 276,
@@ -708,7 +1932,16 @@
         "descripcion": "",
         "precio": 2.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000108675.png"
+        "imagen": "img/1000108675.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 274,
@@ -717,7 +1950,16 @@
         "descripcion": "",
         "precio": 3.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000108652.png"
+        "imagen": "img/1000108652.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 270,
@@ -726,7 +1968,16 @@
         "descripcion": "",
         "precio": 2.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000108620.jpg"
+        "imagen": "img/1000108620.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 268,
@@ -735,7 +1986,16 @@
         "descripcion": "",
         "precio": 2.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000108607.jpg"
+        "imagen": "img/1000108607.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 271,
@@ -744,7 +2004,16 @@
         "descripcion": "",
         "precio": 2.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000108624.jpg"
+        "imagen": "img/1000108624.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 41,
@@ -753,7 +2022,16 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083735.png"
+        "imagen": "img/1000083735.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 135,
@@ -762,7 +2040,16 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102944.jpg"
+        "imagen": "img/1000102944.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 86,
@@ -771,7 +2058,16 @@
         "descripcion": "",
         "precio": 1.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100665.jpg"
+        "imagen": "img/1000100665.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 134,
@@ -780,7 +2076,16 @@
         "descripcion": "",
         "precio": 0.8,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102943.jpg"
+        "imagen": "img/1000102943.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 275,
@@ -789,7 +2094,16 @@
         "descripcion": "",
         "precio": 1.2,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000108666.png"
+        "imagen": "img/1000108666.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 267,
@@ -798,7 +2112,16 @@
         "descripcion": "",
         "precio": 1.1,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000108599.jpg"
+        "imagen": "img/1000108599.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 273,
@@ -807,7 +2130,16 @@
         "descripcion": "",
         "precio": 3.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000108650.png"
+        "imagen": "img/1000108650.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 272,
@@ -816,7 +2148,16 @@
         "descripcion": "",
         "precio": 2.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000108646.png"
+        "imagen": "img/1000108646.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 269,
@@ -825,7 +2166,16 @@
         "descripcion": "",
         "precio": 2.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000108611.jpg"
+        "imagen": "img/1000108611.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 172,
@@ -834,7 +2184,34 @@
         "descripcion": "",
         "precio": 0.45,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106398.jpg"
+        "imagen": "img/1000106398.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 329,
+        "codigo": "7861098360666",
+        "nombre": "GOMA BARRS LOVE CON AROMA X3 *",
+        "descripcion": "",
+        "precio": 2.8,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109563.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 167,
@@ -843,7 +2220,16 @@
         "descripcion": "",
         "precio": 0.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106364.jpg"
+        "imagen": "img/1000106364.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 136,
@@ -852,7 +2238,16 @@
         "descripcion": "",
         "precio": 0.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102945.jpg"
+        "imagen": "img/1000102945.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 139,
@@ -861,7 +2256,16 @@
         "descripcion": "",
         "precio": 0.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102981.jpg"
+        "imagen": "img/1000102981.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 138,
@@ -870,7 +2274,16 @@
         "descripcion": "",
         "precio": 1.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102980.jpg"
+        "imagen": "img/1000102980.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 140,
@@ -879,7 +2292,16 @@
         "descripcion": "",
         "precio": 0.4,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102984.jpg"
+        "imagen": "img/1000102984.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 137,
@@ -888,7 +2310,16 @@
         "descripcion": "",
         "precio": 1.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102979.jpg"
+        "imagen": "img/1000102979.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 141,
@@ -897,7 +2328,34 @@
         "descripcion": "",
         "precio": 1.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102987.jpg"
+        "imagen": "img/1000102987.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 288,
+        "codigo": "6922266899775",
+        "nombre": "GOMA LANCER ESCARCHADA 60GR",
+        "descripcion": "",
+        "precio": 0.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109169.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 142,
@@ -906,7 +2364,52 @@
         "descripcion": "",
         "precio": 1.35,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102988.jpg"
+        "imagen": "img/1000102988.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 341,
+        "codigo": "7861103520023",
+        "nombre": "GRADUADOR",
+        "descripcion": "",
+        "precio": 0.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109633.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 342,
+        "codigo": "67705811",
+        "nombre": "GRADUADOR 360GRADO",
+        "descripcion": "",
+        "precio": 0.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109634.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 64,
@@ -915,7 +2418,16 @@
         "descripcion": "",
         "precio": 2.4,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000099542.png"
+        "imagen": "img/1000099542.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 164,
@@ -924,7 +2436,16 @@
         "descripcion": "",
         "precio": 0.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106354.jpg"
+        "imagen": "img/1000106354.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 108,
@@ -933,7 +2454,16 @@
         "descripcion": "",
         "precio": 0.6,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102375.jpg"
+        "imagen": "img/1000102375.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 183,
@@ -942,7 +2472,16 @@
         "descripcion": "",
         "precio": 0.8,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106773.jpg"
+        "imagen": "img/1000106773.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 185,
@@ -951,7 +2490,16 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106788.jpg"
+        "imagen": "img/1000106788.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 187,
@@ -960,7 +2508,16 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106792.jpg"
+        "imagen": "img/1000106792.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 186,
@@ -969,7 +2526,16 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106789.jpg"
+        "imagen": "img/1000106789.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 175,
@@ -978,7 +2544,16 @@
         "descripcion": "",
         "precio": 0.8,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106716.jpg"
+        "imagen": "img/1000106716.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 174,
@@ -987,7 +2562,16 @@
         "descripcion": "",
         "precio": 0.8,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106715.jpg"
+        "imagen": "img/1000106715.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 178,
@@ -996,7 +2580,16 @@
         "descripcion": "",
         "precio": 0.8,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106728.jpg"
+        "imagen": "img/1000106728.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 184,
@@ -1005,7 +2598,16 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106776.jpg"
+        "imagen": "img/1000106776.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 176,
@@ -1014,7 +2616,16 @@
         "descripcion": "",
         "precio": 0.9,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106717.jpg"
+        "imagen": "img/1000106717.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 177,
@@ -1023,7 +2634,16 @@
         "descripcion": "",
         "precio": 0.9,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106727.jpg"
+        "imagen": "img/1000106727.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 127,
@@ -1032,7 +2652,16 @@
         "descripcion": "",
         "precio": 3.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102927.jpg"
+        "imagen": "img/1000102927.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 231,
@@ -1041,7 +2670,16 @@
         "descripcion": "",
         "precio": 2.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107532.jpg"
+        "imagen": "img/1000107532.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 170,
@@ -1050,7 +2688,16 @@
         "descripcion": "",
         "precio": 5.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106375.jpg"
+        "imagen": "img/1000106375.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 229,
@@ -1059,7 +2706,16 @@
         "descripcion": "",
         "precio": 3.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107524.jpg"
+        "imagen": "img/1000107524.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 225,
@@ -1068,7 +2724,16 @@
         "descripcion": "",
         "precio": 4.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107508.jpg"
+        "imagen": "img/1000107508.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 263,
@@ -1077,7 +2742,16 @@
         "descripcion": "",
         "precio": 6.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107726.jpg"
+        "imagen": "img/1000107726.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 227,
@@ -1086,7 +2760,16 @@
         "descripcion": "",
         "precio": 4.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107513.jpg"
+        "imagen": "img/1000107513.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 220,
@@ -1095,7 +2778,16 @@
         "descripcion": "",
         "precio": 4.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107461.jpg"
+        "imagen": "img/1000107461.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 221,
@@ -1104,7 +2796,16 @@
         "descripcion": "",
         "precio": 3.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107478.jpg"
+        "imagen": "img/1000107478.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 222,
@@ -1113,7 +2814,16 @@
         "descripcion": "",
         "precio": 2.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107483.jpg"
+        "imagen": "img/1000107483.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 232,
@@ -1122,7 +2832,16 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107542.jpg"
+        "imagen": "img/1000107542.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 171,
@@ -1131,7 +2850,16 @@
         "descripcion": "",
         "precio": 0.35,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106387.jpg"
+        "imagen": "img/1000106387.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 230,
@@ -1140,7 +2868,16 @@
         "descripcion": "",
         "precio": 5.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107531.jpg"
+        "imagen": "img/1000107531.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 223,
@@ -1149,7 +2886,16 @@
         "descripcion": "",
         "precio": 2.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107491.jpg"
+        "imagen": "img/1000107491.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 219,
@@ -1158,7 +2904,16 @@
         "descripcion": "",
         "precio": 1.2,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107460.jpg"
+        "imagen": "img/1000107460.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 226,
@@ -1167,7 +2922,16 @@
         "descripcion": "",
         "precio": 5.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107512.jpg"
+        "imagen": "img/1000107512.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 218,
@@ -1176,7 +2940,16 @@
         "descripcion": "",
         "precio": 4.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107453.jpg"
+        "imagen": "img/1000107453.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 242,
@@ -1185,7 +2958,16 @@
         "descripcion": "",
         "precio": 1.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107610.jpg"
+        "imagen": "img/1000107610.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 237,
@@ -1194,7 +2976,16 @@
         "descripcion": "",
         "precio": 2.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107569.jpg"
+        "imagen": "img/1000107569.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 224,
@@ -1203,7 +2994,16 @@
         "descripcion": "",
         "precio": 3.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107492.jpg"
+        "imagen": "img/1000107492.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 228,
@@ -1212,7 +3012,16 @@
         "descripcion": "",
         "precio": 3.9,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107514.jpg"
+        "imagen": "img/1000107514.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 124,
@@ -1221,7 +3030,16 @@
         "descripcion": "",
         "precio": 1.2,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102879.jpg"
+        "imagen": "img/1000102879.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 125,
@@ -1230,7 +3048,16 @@
         "descripcion": "",
         "precio": 1.35,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102905.jpg"
+        "imagen": "img/1000102905.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 126,
@@ -1239,7 +3066,16 @@
         "descripcion": "",
         "precio": 2.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102926.jpg"
+        "imagen": "img/1000102926.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 259,
@@ -1248,7 +3084,16 @@
         "descripcion": "",
         "precio": 3.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107704.jpg"
+        "imagen": "img/1000107704.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 76,
@@ -1257,7 +3102,16 @@
         "descripcion": "",
         "precio": 2.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100601.jpg"
+        "imagen": "img/1000100601.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 75,
@@ -1266,7 +3120,16 @@
         "descripcion": "",
         "precio": 0.45,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100597.jpg"
+        "imagen": "img/1000100597.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 30,
@@ -1275,7 +3138,16 @@
         "descripcion": "",
         "precio": 0.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083628.png"
+        "imagen": "img/1000083628.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 83,
@@ -1284,7 +3156,16 @@
         "descripcion": "",
         "precio": 0.6,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100647.jpg"
+        "imagen": "img/1000100647.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 82,
@@ -1293,7 +3174,16 @@
         "descripcion": "",
         "precio": 0.3,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100640.jpg"
+        "imagen": "img/1000100640.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 98,
@@ -1302,7 +3192,16 @@
         "descripcion": "",
         "precio": 1.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100737.jpg"
+        "imagen": "img/1000100737.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 154,
@@ -1311,7 +3210,34 @@
         "descripcion": "",
         "precio": 0.2,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106318.jpg"
+        "imagen": "img/1000106318.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 323,
+        "codigo": "8833252640265",
+        "nombre": "LAPIZ DE MINAS INTERCAMBIABLES",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109515.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 69,
@@ -1320,7 +3246,16 @@
         "descripcion": "",
         "precio": 0.4,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000099586.jpg"
+        "imagen": "img/1000099586.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 31,
@@ -1329,7 +3264,16 @@
         "descripcion": "",
         "precio": 0.6,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083635.png"
+        "imagen": "img/1000083635.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 72,
@@ -1338,7 +3282,16 @@
         "descripcion": "",
         "precio": 0.3,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000099607.jpg"
+        "imagen": "img/1000099607.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 253,
@@ -1347,7 +3300,16 @@
         "descripcion": "",
         "precio": 0.15,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107677.jpg"
+        "imagen": "img/1000107677.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 254,
@@ -1356,7 +3318,16 @@
         "descripcion": "",
         "precio": 0.15,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107678.jpg"
+        "imagen": "img/1000107678.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 251,
@@ -1365,7 +3336,16 @@
         "descripcion": "",
         "precio": 0.15,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107660.jpg"
+        "imagen": "img/1000107660.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 252,
@@ -1374,7 +3354,34 @@
         "descripcion": "",
         "precio": 0.15,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107676.jpg"
+        "imagen": "img/1000107676.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 301,
+        "codigo": "7861084202123",
+        "nombre": "LIBRETA ESCRIBE CUADROS #1",
+        "descripcion": "",
+        "precio": 0.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109311.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 1,
@@ -1383,7 +3390,16 @@
         "descripcion": "",
         "precio": 0.8,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000075611.png"
+        "imagen": "img/1000075611.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 260,
@@ -1392,7 +3408,16 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107710.jpg"
+        "imagen": "img/1000107710.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 261,
@@ -1401,7 +3426,70 @@
         "descripcion": "",
         "precio": 2.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107711.jpg"
+        "imagen": "img/1000107711.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 335,
+        "codigo": "4895137997417",
+        "nombre": "LIMPIAPIPAS X100U",
+        "descripcion": "",
+        "precio": 2.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109622.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 307,
+        "codigo": "7750082003712",
+        "nombre": "LIMPIATIPOS ARTESCO 35GR",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109333.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 324,
+        "codigo": "6937635100239",
+        "nombre": "MARCADOR APILABLE",
+        "descripcion": "",
+        "precio": 0.8,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109531.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 89,
@@ -1410,7 +3498,16 @@
         "descripcion": "",
         "precio": 3.95,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100681.jpg"
+        "imagen": "img/1000100681.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 161,
@@ -1419,7 +3516,16 @@
         "descripcion": "",
         "precio": 4.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106346.jpg"
+        "imagen": "img/1000106346.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 19,
@@ -1428,7 +3534,16 @@
         "descripcion": "",
         "precio": 2.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000076046.png"
+        "imagen": "img/1000076046.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 25,
@@ -1437,7 +3552,16 @@
         "descripcion": "",
         "precio": 1.9,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000076303.png"
+        "imagen": "img/1000076303.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 22,
@@ -1446,7 +3570,16 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000076155.png"
+        "imagen": "img/1000076155.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 97,
@@ -1455,7 +3588,16 @@
         "descripcion": "",
         "precio": 2.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100733.jpg"
+        "imagen": "img/1000100733.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 145,
@@ -1464,7 +3606,16 @@
         "descripcion": "",
         "precio": 7.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000103002.jpg"
+        "imagen": "img/1000103002.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 151,
@@ -1473,7 +3624,16 @@
         "descripcion": "",
         "precio": 1.4,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106301.jpg"
+        "imagen": "img/1000106301.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 21,
@@ -1482,7 +3642,16 @@
         "descripcion": "",
         "precio": 1.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000076151.png"
+        "imagen": "img/1000076151.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 23,
@@ -1491,7 +3660,16 @@
         "descripcion": "",
         "precio": 2.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000076164.png"
+        "imagen": "img/1000076164.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 26,
@@ -1500,7 +3678,16 @@
         "descripcion": "",
         "precio": 3.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000078854.png"
+        "imagen": "img/1000078854.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 163,
@@ -1509,7 +3696,16 @@
         "descripcion": "",
         "precio": 4.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106351.jpg"
+        "imagen": "img/1000106351.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 162,
@@ -1518,7 +3714,16 @@
         "descripcion": "",
         "precio": 4.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106347.jpg"
+        "imagen": "img/1000106347.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 87,
@@ -1527,7 +3732,16 @@
         "descripcion": "",
         "precio": 2.4,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100672.jpg"
+        "imagen": "img/1000100672.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 88,
@@ -1536,7 +3750,16 @@
         "descripcion": "",
         "precio": 2.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100680.jpg"
+        "imagen": "img/1000100680.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 20,
@@ -1545,7 +3768,16 @@
         "descripcion": "",
         "precio": 2.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000076050.png"
+        "imagen": "img/1000076050.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 215,
@@ -1554,7 +3786,16 @@
         "descripcion": "",
         "precio": 0.6,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106955.jpg"
+        "imagen": "img/1000106955.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 217,
@@ -1563,7 +3804,16 @@
         "descripcion": "",
         "precio": 0.6,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106957.jpg"
+        "imagen": "img/1000106957.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 214,
@@ -1572,7 +3822,16 @@
         "descripcion": "",
         "precio": 0.6,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106950.jpg"
+        "imagen": "img/1000106950.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 216,
@@ -1581,7 +3840,16 @@
         "descripcion": "",
         "precio": 0.6,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106956.jpg"
+        "imagen": "img/1000106956.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 213,
@@ -1590,7 +3858,16 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106936.jpg"
+        "imagen": "img/1000106936.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 211,
@@ -1599,7 +3876,16 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106905_YgpdWbT.jpg"
+        "imagen": "img/1000106905_YgpdWbT.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 212,
@@ -1608,7 +3894,16 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106935.jpg"
+        "imagen": "img/1000106935.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 209,
@@ -1617,7 +3912,16 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106918.jpg"
+        "imagen": "img/1000106918.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 208,
@@ -1626,7 +3930,16 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106905.jpg"
+        "imagen": "img/1000106905.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 210,
@@ -1635,7 +3948,16 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106922.jpg"
+        "imagen": "img/1000106922.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 207,
@@ -1644,7 +3966,52 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106904.jpg"
+        "imagen": "img/1000106904.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 282,
+        "codigo": "4710609876833",
+        "nombre": "MARCADOR SIMBALION DORADO",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109127.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 281,
+        "codigo": "4710609876840",
+        "nombre": "MARCADOR SIMBALION PLATEADO",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109121.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 24,
@@ -1653,7 +4020,34 @@
         "descripcion": "",
         "precio": 3.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000076167.png"
+        "imagen": "img/1000076167.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 308,
+        "codigo": "7501015213483",
+        "nombre": "MARCATODO PELIKAN",
+        "descripcion": "",
+        "precio": 0.9,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109334.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 50,
@@ -1662,7 +4056,16 @@
         "descripcion": "",
         "precio": 0.95,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083799.png"
+        "imagen": "img/1000083799.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 44,
@@ -1671,7 +4074,16 @@
         "descripcion": "",
         "precio": 0.95,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083753.png"
+        "imagen": "img/1000083753.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 46,
@@ -1680,7 +4092,16 @@
         "descripcion": "",
         "precio": 0.95,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083769.png"
+        "imagen": "img/1000083769.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 45,
@@ -1689,7 +4110,16 @@
         "descripcion": "",
         "precio": 0.95,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083758.png"
+        "imagen": "img/1000083758.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 43,
@@ -1698,7 +4128,16 @@
         "descripcion": "",
         "precio": 0.95,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083751.png"
+        "imagen": "img/1000083751.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 48,
@@ -1707,7 +4146,16 @@
         "descripcion": "",
         "precio": 0.95,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083784.png"
+        "imagen": "img/1000083784.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 42,
@@ -1716,7 +4164,16 @@
         "descripcion": "",
         "precio": 0.95,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083747.png"
+        "imagen": "img/1000083747.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 47,
@@ -1725,7 +4182,16 @@
         "descripcion": "",
         "precio": 0.95,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083775.png"
+        "imagen": "img/1000083775.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 51,
@@ -1734,7 +4200,16 @@
         "descripcion": "",
         "precio": 0.95,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083806.png"
+        "imagen": "img/1000083806.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 52,
@@ -1743,7 +4218,16 @@
         "descripcion": "",
         "precio": 0.95,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083812.png"
+        "imagen": "img/1000083812.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 49,
@@ -1752,7 +4236,16 @@
         "descripcion": "",
         "precio": 0.95,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083791.png"
+        "imagen": "img/1000083791.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 256,
@@ -1761,7 +4254,16 @@
         "descripcion": "",
         "precio": 0.15,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107690.jpg"
+        "imagen": "img/1000107690.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 255,
@@ -1770,7 +4272,16 @@
         "descripcion": "",
         "precio": 0.15,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107691.jpg"
+        "imagen": "img/1000107691.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 173,
@@ -1779,7 +4290,16 @@
         "descripcion": "",
         "precio": 0.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106401.jpg"
+        "imagen": "img/1000106401.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 107,
@@ -1788,7 +4308,34 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102369.jpg"
+        "imagen": "img/1000102369.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 289,
+        "codigo": "6957990900091",
+        "nombre": "NOTAS ADHESIVAS CREATIV 100 SHEETS",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109225.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 238,
@@ -1797,7 +4344,16 @@
         "descripcion": "",
         "precio": 2.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107572.jpg"
+        "imagen": "img/1000107572.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 80,
@@ -1806,7 +4362,52 @@
         "descripcion": "",
         "precio": 1.3,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100638.jpg"
+        "imagen": "img/1000100638.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 291,
+        "codigo": "6973634322050",
+        "nombre": "NOTAS ADHESIVAS TRANSPARENTE 50 SHEETS",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109230.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 300,
+        "codigo": "60596140",
+        "nombre": "NOTAS MANY CHOICES *",
+        "descripcion": "",
+        "precio": 1.1,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109310.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 246,
@@ -1815,7 +4416,16 @@
         "descripcion": "",
         "precio": 1.3,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107618.jpg"
+        "imagen": "img/1000107618.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 179,
@@ -1824,7 +4434,16 @@
         "descripcion": "",
         "precio": 0.55,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106741.jpg"
+        "imagen": "img/1000106741.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 115,
@@ -1833,7 +4452,34 @@
         "descripcion": "",
         "precio": 2.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102411.jpg"
+        "imagen": "img/1000102411.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 331,
+        "codigo": "7861123906456",
+        "nombre": "PAPEL CONTACT CATEDRA BESTER",
+        "descripcion": "",
+        "precio": 2.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109571.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 77,
@@ -1842,7 +4488,16 @@
         "descripcion": "",
         "precio": 2.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/WhatsApp_Image_2026-07-24_at_6.02.40_PM.jpeg"
+        "imagen": "img/WhatsApp_Image_2026-07-24_at_6.02.40_PM.jpeg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 159,
@@ -1851,7 +4506,16 @@
         "descripcion": "",
         "precio": 4.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106342.jpg"
+        "imagen": "img/1000106342.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 265,
@@ -1860,7 +4524,16 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107743.jpg"
+        "imagen": "img/1000107743.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 104,
@@ -1869,7 +4542,16 @@
         "descripcion": "",
         "precio": 0.8,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102354.jpg"
+        "imagen": "img/1000102354.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 103,
@@ -1878,7 +4560,16 @@
         "descripcion": "",
         "precio": 3.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102351.jpg"
+        "imagen": "img/1000102351.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 38,
@@ -1887,7 +4578,16 @@
         "descripcion": "",
         "precio": 3.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083717.png"
+        "imagen": "img/1000083717.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 15,
@@ -1896,7 +4596,16 @@
         "descripcion": "",
         "precio": 4.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000075852.png"
+        "imagen": "img/1000075852.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 28,
@@ -1905,7 +4614,16 @@
         "descripcion": "",
         "precio": 3.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000078870.png"
+        "imagen": "img/1000078870.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 36,
@@ -1914,7 +4632,16 @@
         "descripcion": "",
         "precio": 1.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083709.png"
+        "imagen": "img/1000083709.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 9,
@@ -1923,7 +4650,16 @@
         "descripcion": "",
         "precio": 5.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000075772.png"
+        "imagen": "img/1000075772.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 8,
@@ -1932,7 +4668,16 @@
         "descripcion": "",
         "precio": 7.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000075760.png"
+        "imagen": "img/1000075760.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 13,
@@ -1941,7 +4686,16 @@
         "descripcion": "",
         "precio": 2.4,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000075834.png"
+        "imagen": "img/1000075834.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 11,
@@ -1950,7 +4704,16 @@
         "descripcion": "",
         "precio": 3.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000075828.png"
+        "imagen": "img/1000075828.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 14,
@@ -1959,7 +4722,16 @@
         "descripcion": "",
         "precio": 1.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000075837.png"
+        "imagen": "img/1000075837.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 33,
@@ -1968,7 +4740,16 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083669.png"
+        "imagen": "img/1000083669.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 12,
@@ -1977,7 +4758,16 @@
         "descripcion": "",
         "precio": 3.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000075831.png"
+        "imagen": "img/1000075831.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 150,
@@ -1986,7 +4776,16 @@
         "descripcion": "",
         "precio": 4.6,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106297.jpg"
+        "imagen": "img/1000106297.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 39,
@@ -1995,7 +4794,16 @@
         "descripcion": "",
         "precio": 3.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083721.png"
+        "imagen": "img/1000083721.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 153,
@@ -2004,7 +4812,16 @@
         "descripcion": "",
         "precio": 3.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106310.jpg"
+        "imagen": "img/1000106310.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 34,
@@ -2013,7 +4830,16 @@
         "descripcion": "",
         "precio": 1.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083672.png"
+        "imagen": "img/1000083672.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 35,
@@ -2022,7 +4848,16 @@
         "descripcion": "",
         "precio": 4.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083699.png"
+        "imagen": "img/1000083699.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 29,
@@ -2031,7 +4866,16 @@
         "descripcion": "",
         "precio": 5.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000078873.png"
+        "imagen": "img/1000078873.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 10,
@@ -2040,7 +4884,16 @@
         "descripcion": "",
         "precio": 7.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000075774.png"
+        "imagen": "img/1000075774.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 32,
@@ -2049,7 +4902,16 @@
         "descripcion": "",
         "precio": 1.2,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083644.png"
+        "imagen": "img/1000083644.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 27,
@@ -2058,7 +4920,16 @@
         "descripcion": "",
         "precio": 3.3,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000078865.png"
+        "imagen": "img/1000078865.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 37,
@@ -2067,7 +4938,16 @@
         "descripcion": "",
         "precio": 3.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000083714.png"
+        "imagen": "img/1000083714.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 243,
@@ -2076,7 +4956,16 @@
         "descripcion": "",
         "precio": 2.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107611.jpg"
+        "imagen": "img/1000107611.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 244,
@@ -2085,7 +4974,34 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107614.jpg"
+        "imagen": "img/1000107614.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 334,
+        "codigo": "6934578359175",
+        "nombre": "PINZAS DE MADERA X20PC",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109620.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 239,
@@ -2094,7 +5010,16 @@
         "descripcion": "",
         "precio": 5.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107583.jpg"
+        "imagen": "img/1000107583.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 241,
@@ -2103,7 +5028,16 @@
         "descripcion": "",
         "precio": 9.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107585.jpg"
+        "imagen": "img/1000107585.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 81,
@@ -2112,7 +5046,16 @@
         "descripcion": "",
         "precio": 4.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100639.jpg"
+        "imagen": "img/1000100639.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 133,
@@ -2121,7 +5064,16 @@
         "descripcion": "",
         "precio": 0.9,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102942.jpg"
+        "imagen": "img/1000102942.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 132,
@@ -2130,7 +5082,16 @@
         "descripcion": "",
         "precio": 0.95,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102941.jpg"
+        "imagen": "img/1000102941.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 18,
@@ -2139,7 +5100,16 @@
         "descripcion": "",
         "precio": 1.2,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000076043.png"
+        "imagen": "img/1000076043.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 235,
@@ -2148,7 +5118,16 @@
         "descripcion": "",
         "precio": 2.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107546.jpg"
+        "imagen": "img/1000107546.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 233,
@@ -2157,7 +5136,16 @@
         "descripcion": "",
         "precio": 1.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107543.jpg"
+        "imagen": "img/1000107543.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 234,
@@ -2166,7 +5154,16 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107545.jpg"
+        "imagen": "img/1000107545.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 157,
@@ -2175,7 +5172,16 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106329.jpg"
+        "imagen": "img/1000106329.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 79,
@@ -2184,7 +5190,34 @@
         "descripcion": "",
         "precio": 1.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100634.jpg"
+        "imagen": "img/1000100634.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 286,
+        "codigo": "7750082148574",
+        "nombre": "PORTAMINAS ARTESCO 0.7MM",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109161.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 113,
@@ -2193,7 +5226,16 @@
         "descripcion": "",
         "precio": 1.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102396.jpg"
+        "imagen": "img/1000102396.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 102,
@@ -2202,7 +5244,16 @@
         "descripcion": "",
         "precio": 1.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102348.jpg"
+        "imagen": "img/1000102348.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 191,
@@ -2211,7 +5262,16 @@
         "descripcion": "",
         "precio": 0.1,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106812.jpg"
+        "imagen": "img/1000106812.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 192,
@@ -2220,7 +5280,70 @@
         "descripcion": "",
         "precio": 0.3,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106824.jpg"
+        "imagen": "img/1000106824.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 285,
+        "codigo": "4710609884012",
+        "nombre": "RAPIDOGRAFO SIMBA #02",
+        "descripcion": "",
+        "precio": 1.2,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109157.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 283,
+        "codigo": "4710609884029",
+        "nombre": "RAPIDOGRAFO SIMBA #03",
+        "descripcion": "",
+        "precio": 1.2,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109137.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 284,
+        "codigo": "4710609884036",
+        "nombre": "RAPIDOGRAFO SIMBA #05",
+        "descripcion": "",
+        "precio": 1.2,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109146.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 2,
@@ -2229,7 +5352,16 @@
         "descripcion": "",
         "precio": 0.35,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000075615.png"
+        "imagen": "img/1000075615.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 93,
@@ -2238,7 +5370,70 @@
         "descripcion": "",
         "precio": 0.3,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100701.jpg"
+        "imagen": "img/1000100701.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 326,
+        "codigo": "6937635100260",
+        "nombre": "RESALTADOR APILABLE AVENGERS",
+        "descripcion": "",
+        "precio": 0.8,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109539.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 296,
+        "codigo": "7862108182292",
+        "nombre": "RESALTADOR CREATIV POWER NEON",
+        "descripcion": "",
+        "precio": 2.25,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109278.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 293,
+        "codigo": "6956825936595",
+        "nombre": "RESALTADOR DOBLE PUNTA",
+        "descripcion": "",
+        "precio": 2.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109238.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 66,
@@ -2247,7 +5442,34 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/371719.jpg"
+        "imagen": "img/371719.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 290,
+        "codigo": "7703064002692",
+        "nombre": "RESALTADOR PELIKAN 4COL.",
+        "descripcion": "",
+        "precio": 2.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109229.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 99,
@@ -2256,7 +5478,16 @@
         "descripcion": "",
         "precio": 9.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102315.jpg"
+        "imagen": "img/1000102315.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 100,
@@ -2265,7 +5496,16 @@
         "descripcion": "",
         "precio": 12.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102343.jpg"
+        "imagen": "img/1000102343.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 4,
@@ -2274,7 +5514,16 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000075622.png"
+        "imagen": "img/1000075622.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 7,
@@ -2283,7 +5532,16 @@
         "descripcion": "NOTA VERIFICAR EL CODIGO EN LA CAJA EL CODIGO ESCANEADO POR PRODUCTO",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000075637.png"
+        "imagen": "img/1000075637.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 5,
@@ -2292,7 +5550,16 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/WhatsApp_Image_2026-05-31_at_6.14.10_PM.jpeg"
+        "imagen": "img/WhatsApp_Image_2026-05-31_at_6.14.10_PM.jpeg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 6,
@@ -2301,7 +5568,16 @@
         "descripcion": "TOCA VERFICAR  CODIGO EN CAJA SOLO ESTA INGRESADO CODIGO DIRECTO DE PRODUCTO",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000075629.png"
+        "imagen": "img/1000075629.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 3,
@@ -2310,7 +5586,16 @@
         "descripcion": "",
         "precio": 0.7,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000075620.png"
+        "imagen": "img/1000075620.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 117,
@@ -2319,7 +5604,16 @@
         "descripcion": "",
         "precio": 2.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102425.jpg"
+        "imagen": "img/1000102425.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 92,
@@ -2328,7 +5622,70 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100697.jpg"
+        "imagen": "img/1000100697.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 318,
+        "codigo": "7750082812185",
+        "nombre": "SACAPUNTAS ARTESCO DE METAL",
+        "descripcion": "",
+        "precio": 0.35,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109402.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 317,
+        "codigo": "7750082006072",
+        "nombre": "SACAPUNTAS ARTESCO METAL DOBLE SERVICIO",
+        "descripcion": "",
+        "precio": 0.7,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109383.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 319,
+        "codigo": "6580901071315",
+        "nombre": "SACAPUNTAS CREATIV DOBLE SERVICIO",
+        "descripcion": "",
+        "precio": 0.6,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109416.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 91,
@@ -2337,7 +5694,34 @@
         "descripcion": "",
         "precio": 1.15,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100693.jpg"
+        "imagen": "img/1000100693.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 316,
+        "codigo": "6938247124422",
+        "nombre": "SACAPUNTAS HELICOPTERO *",
+        "descripcion": "",
+        "precio": 1.5,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109382.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 73,
@@ -2346,7 +5730,16 @@
         "descripcion": "",
         "precio": 1.2,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100586.jpg"
+        "imagen": "img/1000100586.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 78,
@@ -2355,7 +5748,16 @@
         "descripcion": "",
         "precio": 0.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100611.jpg"
+        "imagen": "img/1000100611.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 146,
@@ -2364,7 +5766,16 @@
         "descripcion": "",
         "precio": 0.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000103009.jpg"
+        "imagen": "img/1000103009.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 147,
@@ -2373,7 +5784,16 @@
         "descripcion": "",
         "precio": 0.8,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000103010.jpg"
+        "imagen": "img/1000103010.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 116,
@@ -2382,7 +5802,16 @@
         "descripcion": "",
         "precio": 2.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102421.jpg"
+        "imagen": "img/1000102421.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 68,
@@ -2391,7 +5820,16 @@
         "descripcion": "",
         "precio": 0.45,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000099576.jpg"
+        "imagen": "img/1000099576.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 144,
@@ -2400,7 +5838,16 @@
         "descripcion": "",
         "precio": 2.25,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102995.jpg"
+        "imagen": "img/1000102995.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 143,
@@ -2409,7 +5856,16 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102992.jpg"
+        "imagen": "img/1000102992.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 84,
@@ -2418,7 +5874,34 @@
         "descripcion": "",
         "precio": 1.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000100654.jpg"
+        "imagen": "img/1000100654.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 287,
+        "codigo": "6922396303784",
+        "nombre": "TIJERA CON SEGURIDAD PARA NIÑO",
+        "descripcion": "",
+        "precio": 0.75,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109168.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 165,
@@ -2427,7 +5910,16 @@
         "descripcion": "",
         "precio": 2.75,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106355.jpg"
+        "imagen": "img/1000106355.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 63,
@@ -2436,7 +5928,16 @@
         "descripcion": "",
         "precio": 1.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000099538.png"
+        "imagen": "img/1000099538.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 112,
@@ -2445,7 +5946,16 @@
         "descripcion": "",
         "precio": 1.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102390.jpg"
+        "imagen": "img/1000102390.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 65,
@@ -2454,7 +5964,16 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000099554.png"
+        "imagen": "img/1000099554.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 245,
@@ -2463,7 +5982,16 @@
         "descripcion": "",
         "precio": 1.0,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000107617.jpg"
+        "imagen": "img/1000107617.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 166,
@@ -2472,7 +6000,16 @@
         "descripcion": "",
         "precio": 1.95,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000106357.jpg"
+        "imagen": "img/1000106357.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 62,
@@ -2481,7 +6018,34 @@
         "descripcion": "",
         "precio": 0.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000099524.png"
+        "imagen": "img/1000099524.png",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
+    },
+    {
+        "id": 339,
+        "codigo": "7750082048263",
+        "nombre": "TIZAS ESCOLAR BLACAS X12U",
+        "descripcion": "",
+        "precio": 1.0,
+        "categoria": "PAPELERIA",
+        "imagen": "img/1000109631.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     },
     {
         "id": 118,
@@ -2490,6 +6054,15 @@
         "descripcion": "",
         "precio": 1.5,
         "categoria": "PAPELERIA",
-        "imagen": "img/1000102429.jpg"
+        "imagen": "img/1000102429.jpg",
+        "tiene_promocion": false,
+        "promocion": {},
+        "promociones": [],
+        "promocion_texto": "",
+        "tabla_precios_html": "",
+        "es_fraccionable": false,
+        "unidades_por_paquete": null,
+        "es_unidad_hija": false,
+        "codigo_padre": null
     }
 ]

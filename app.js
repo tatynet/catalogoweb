@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Ordenar inicialmente todos los productos por precio de menor a mayor
         allProducts.sort((a, b) => a.precio - b.precio);
-        currentFilteredProducts = [...allProducts];
+        currentFilteredProducts = allProducts.filter(p => !p.es_unidad_hija);
 
         // --- Detectar productos nuevos con localStorage ---
         detectNewProducts(allProducts);
@@ -295,14 +295,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     modalBuyBtn.innerHTML = '<i class="fas fa-shopping-cart"></i> Añadir al carrito';
                     modalBuyBtn.style.background = '';
                     modalBuyBtn.onclick = () => {
-                        const isNewItem = addToCart(p);
-                        if (isNewItem) {
-                            modalBuyBtn.innerHTML = '<i class="fas fa-check"></i> ¡Añadido!';
-                            modalBuyBtn.style.background = '#10b981';
-                        } else {
-                            modalBuyBtn.innerHTML = '<i class="fas fa-info-circle"></i> ¡Ya en carrito!';
-                            modalBuyBtn.style.background = '#f59e0b';
-                        }
+                        handleAddToCartWithModal(p, (isNewItem) => {
+                            if (isNewItem) {
+                                modalBuyBtn.innerHTML = '<i class="fas fa-check"></i> ¡Añadido!';
+                                modalBuyBtn.style.background = '#10b981';
+                            } else {
+                                modalBuyBtn.innerHTML = '<i class="fas fa-info-circle"></i> ¡Ya en carrito!';
+                                modalBuyBtn.style.background = '#f59e0b';
+                            }
+                        });
                     };
                 }
                 
@@ -465,14 +466,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         modalBuyBtn.innerHTML = '<i class="fas fa-shopping-cart"></i> Añadir al carrito';
                         modalBuyBtn.style.background = '';
                         modalBuyBtn.onclick = () => {
-                            const isNewItem = addToCart(product);
-                            if (isNewItem) {
-                                modalBuyBtn.innerHTML = '<i class="fas fa-check"></i> ¡Añadido!';
-                                modalBuyBtn.style.background = '#10b981';
-                            } else {
-                                modalBuyBtn.innerHTML = '<i class="fas fa-info-circle"></i> ¡Ya en carrito!';
-                                modalBuyBtn.style.background = '#f59e0b';
-                            }
+                            handleAddToCartWithModal(product, (isNewItem) => {
+                                if (isNewItem) {
+                                    modalBuyBtn.innerHTML = '<i class="fas fa-check"></i> ¡Añadido!';
+                                    modalBuyBtn.style.background = '#10b981';
+                                } else {
+                                    modalBuyBtn.innerHTML = '<i class="fas fa-info-circle"></i> ¡Ya en carrito!';
+                                    modalBuyBtn.style.background = '#f59e0b';
+                                }
+                            });
                         };
                     }
                     
@@ -494,28 +496,26 @@ document.addEventListener('DOMContentLoaded', () => {
             // Evento para añadir al carrito
             const buyBtn = card.querySelector('.btn-buy');
             buyBtn.addEventListener('click', () => {
-                const isNewItem = addToCart(product);
-                
-                // Animación de botón
                 const originalText = buyBtn.innerHTML;
                 const originalBg = buyBtn.style.background;
                 const originalColor = buyBtn.style.color;
                 
-                if (isNewItem) {
-                    buyBtn.innerHTML = '<i class="fas fa-check"></i> ¡Añadido!';
-                    buyBtn.style.background = '#10b981'; // Verde éxito
-                } else {
-                    buyBtn.innerHTML = '<i class="fas fa-info-circle"></i> ¡Ya agregado!';
-                    buyBtn.style.background = '#f59e0b'; // Naranja/Amarillo
-                }
-                
-                buyBtn.style.color = 'white';
-                
-                setTimeout(() => {
-                    buyBtn.innerHTML = originalText;
-                    buyBtn.style.background = originalBg;
-                    buyBtn.style.color = originalColor;
-                }, 1500);
+                handleAddToCartWithModal(product, (isNewItem) => {
+                    if (isNewItem) {
+                        buyBtn.innerHTML = '<i class="fas fa-check"></i> ¡Añadido!';
+                        buyBtn.style.background = '#10b981'; // Verde éxito
+                    } else {
+                        buyBtn.innerHTML = '<i class="fas fa-info-circle"></i> ¡Ya agregado!';
+                        buyBtn.style.background = '#f59e0b'; // Naranja/Amarillo
+                    }
+                    buyBtn.style.color = 'white';
+                    
+                    setTimeout(() => {
+                        buyBtn.innerHTML = originalText;
+                        buyBtn.style.background = originalBg;
+                        buyBtn.style.color = originalColor;
+                    }, 2000);
+                });
             });
 
             // Evento para consultar duda
@@ -800,6 +800,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const activeCategory = activeCategoryBtn ? activeCategoryBtn.dataset.category : 'Todos';
 
         currentFilteredProducts = allProducts.filter(product => {
+            if (product.es_unidad_hija) return false;
+
             const productName = normalizeString(product.nombre);
             const productCategory = normalizeString(product.categoria);
             const productDesc = normalizeString(product.descripcion);
@@ -920,6 +922,77 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (floatingCartBtn) {
         floatingCartBtn.addEventListener('click', openCart);
+    }
+
+    function getFinalPrice(product) {
+        let finalPrice = product.precio;
+        if (product.tiene_promocion && product.promocion) {
+            const promo = product.promocion;
+            const min = promo.cantidad_minima || 1;
+            if (min === 1) finalPrice = promo.precio_especial;
+        } else if (configData.promocion_activa && configData.promociones) {
+            const promo = configData.promociones.find(p => String(p.codigo_producto) === String(product.codigo) && p.activa !== false);
+            if (promo && !promo.solo_lista) {
+                finalPrice = promo.precio_promocional || product.precio;
+            }
+        }
+        return finalPrice;
+    }
+
+    function handleAddToCartWithModal(product, updateBtnCallback) {
+        if (product.es_fraccionable) {
+            const childProduct = allProducts.find(p => String(p.codigo_padre) === String(product.codigo) && p.es_unidad_hija);
+            if (childProduct) {
+                const fraccionModal = document.getElementById('fraccionModal');
+                const lblPrecioCaja = document.getElementById('lblPrecioCaja');
+                const lblPrecioUnidad = document.getElementById('lblPrecioUnidad');
+                let btnComprarCaja = document.getElementById('btnComprarCaja');
+                let btnComprarUnidad = document.getElementById('btnComprarUnidad');
+                const closeFraccionModal = document.getElementById('closeFraccionModal');
+
+                const parentPrice = getFinalPrice(product);
+                const childPrice = getFinalPrice(childProduct);
+
+                lblPrecioCaja.textContent = `$${parentPrice.toFixed(2)}`;
+                lblPrecioUnidad.textContent = `$${childPrice.toFixed(2)}`;
+
+                // Clonar botones para limpiar eventos previos
+                const newBtnCaja = btnComprarCaja.cloneNode(true);
+                const newBtnUnidad = btnComprarUnidad.cloneNode(true);
+                btnComprarCaja.parentNode.replaceChild(newBtnCaja, btnComprarCaja);
+                btnComprarUnidad.parentNode.replaceChild(newBtnUnidad, btnComprarUnidad);
+                btnComprarCaja = newBtnCaja;
+                btnComprarUnidad = newBtnUnidad;
+
+                fraccionModal.classList.add('active');
+
+                const closeModal = () => fraccionModal.classList.remove('active');
+
+                closeFraccionModal.onclick = closeModal;
+                fraccionModal.onclick = (e) => {
+                    if (e.target === fraccionModal) closeModal();
+                };
+
+                btnComprarCaja.addEventListener('click', () => {
+                    closeModal();
+                    const isNewItem = addToCart(product);
+                    if (updateBtnCallback) updateBtnCallback(isNewItem);
+                });
+
+                btnComprarUnidad.addEventListener('click', () => {
+                    closeModal();
+                    // Para que en el carrito se entienda que es la unidad
+                    const isNewItem = addToCart({...childProduct, nombre: product.nombre + " (UNIDAD)"});
+                    if (updateBtnCallback) updateBtnCallback(isNewItem);
+                });
+                
+                return; // Detener ejecución para esperar al modal
+            }
+        }
+        
+        // Comportamiento normal si no es fraccionable o no se encontró el hijo
+        const isNewItem = addToCart(product);
+        if (updateBtnCallback) updateBtnCallback(isNewItem);
     }
 
     function addToCart(product) {
