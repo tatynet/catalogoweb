@@ -21,6 +21,11 @@
     </script>
 </head>
 <body>
+    <!-- Top Announcement Banner -->
+    <div class="top-announcement-banner">
+        <p><i class="fas fa-bell fa-shake"></i> ¡Subimos nuevos productos y actualizamos el catálogo TODOS LOS DÍAS!</p>
+    </div>
+
     <!-- Animated Background Shapes -->
     <div class="background-shapes">
         <div class="shape shape-1"></div>
@@ -34,7 +39,7 @@
                 <img src="logo.jpeg" alt="Logo Tatynet" class="header-logo-img">
                 <div class="logo-brand">
                     <h1 class="logo-text">TATYNET</h1>
-                    <span class="logo-slogan">Todo en un solo lugar</span>
+                    <span class="logo-slogan">Todo en un solo lugar | Catálogo actualizado a diario</span>
                 </div>
             </div>
 
@@ -61,13 +66,16 @@
     <!-- Barra de Búsqueda Principal (debajo de la portada) -->
     <section class="main-search-section">
         <div class="main-search-container">
-            <i class="fas fa-search main-search-icon"></i>
-            <input type="text" id="searchInput" class="main-search-input" placeholder="🔍 ¿Qué producto estás buscando hoy?">
+            <i class="fas fa-box-open main-search-icon"></i>
+            <input type="text" id="searchInput" class="main-search-input" placeholder="Escribe el nombre del producto (ej. esfero, goma, etc)...">
             <button class="main-search-clear" id="clearSearch" style="display:none;" aria-label="Limpiar búsqueda">
                 <i class="fas fa-times"></i>
             </button>
         </div>
-        <div class="quick-actions" style="display: flex; justify-content: center; margin-top: 1rem; gap: 1rem;">
+        <div class="quick-actions" style="display: flex; justify-content: center; margin-top: 1rem; gap: 1rem; flex-wrap: wrap; align-items: center;">
+            <div class="daily-update-badge">
+                <i class="fas fa-sync-alt fa-spin-hover"></i> Catálogo actualizado hoy
+            </div>
             <button id="quickPromoBtn" class="btn-buy" style="background: linear-gradient(135deg, #f59e0b, #d97706); border: none; padding: 0.6rem 1.5rem; font-size: 1rem; border-radius: 50px; display: none; align-items: center; gap: 0.5rem; box-shadow: 0 4px 15px rgba(245,158,11,0.4); cursor: pointer; color: white; font-weight: bold;">
                 <i class="fas fa-tags"></i> ¡Ver Ofertas Especiales!
             </button>
@@ -78,8 +86,8 @@
         <aside class="sidebar-categories">
             <h3><i class="fas fa-list"></i> Categorías</h3>
             <div class="category-search-container">
-                <i class="fas fa-search"></i>
-                <input type="text" id="categorySearchInput" class="category-search-input" placeholder="Buscar categoría...">
+                <i class="fas fa-filter"></i>
+                <input type="text" id="categorySearchInput" class="category-search-input" placeholder="🔎 Filtrar menú...">
             </div>
             <div id="categoryFilters" class="category-filters-vertical">
                 <button class="filter-btn active" data-category="Todos">Todos</button>
@@ -96,7 +104,7 @@
         </section>
     </main>
 
-    <script src="app.js?v=20260805"></script>
+    <script src="app.js?v=20260806"></script>
 
     <!-- Shopping Cart Sidebar -->
     <div class="cart-overlay" id="cartOverlay"></div>

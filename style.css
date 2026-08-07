@@ -46,6 +46,47 @@ body {
     position: relative;
 }
 
+/* --- Top Announcement Banner --- */
+.top-announcement-banner {
+    background: linear-gradient(90deg, #dc2626, #ef4444);
+    color: white;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    z-index: 1000;
+    position: relative;
+}
+.top-announcement-banner p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+[data-theme="dark"] .top-announcement-banner {
+    background: linear-gradient(90deg, #991b1b, #b91c1c);
+}
+
+/* --- Daily Update Badge --- */
+.daily-update-badge {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: var(--shadow-sm);
+}
+.fa-spin-hover:hover {
+    animation: fa-spin 2s infinite linear;
+}
+
 /* Animaciones de Fondo (Micro-animaciones visuales) */
 .background-shapes {
     position: fixed;
@@ -287,6 +328,48 @@ body {
     align-items: center;
     justify-content: center;
     border: 2px solid var(--glass-bg);
+}
+
+/* Buscador Lateral de Categorías */
+.category-search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--glass-bg);
+    border: 2px dashed var(--accent-color);
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm);
+}
+
+.category-search-container:hover, .category-search-container:focus-within {
+    background: var(--card-hover);
+    border-style: solid;
+    box-shadow: 0 4px 12px rgba(168, 40, 40, 0.25);
+    transform: translateY(-2px);
+}
+
+.category-search-container i {
+    color: var(--accent-color);
+    margin-right: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.category-search-input {
+    border: none;
+    background: transparent;
+    outline: none;
+    color: var(--text-primary);
+    font-size: 1rem;
+    width: 100%;
+    font-weight: 500;
+}
+
+.category-search-input::placeholder {
+    color: var(--text-secondary);
 }
 
 /* Filtros por Categoría */

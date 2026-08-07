@@ -195,6 +195,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (newProductCodes.size > 0) {
             showNewProductsBanner(newProductCodes.size);
         }
+
+        // Toast de actualización diaria (Aviso a los clientes)
+        setTimeout(() => {
+            showToast('<i class="fas fa-sync-alt fa-spin"></i> <b>¡Catálogo actualizado!</b><br><span style="font-size:0.85rem">Nuevos productos añadidos hoy.</span>');
+        }, 1500);
     })
     .catch(error => {
         console.error('Error cargando los archivos JSON:', error);
@@ -629,6 +634,28 @@ document.addEventListener('DOMContentLoaded', () => {
         return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     }
 
+    function filterCategories() {
+        const term = normalizeString(categorySearchInput.value).trim();
+        const buttons = categoryFilters.querySelectorAll('.filter-btn');
+        
+        buttons.forEach(btn => {
+            const isEspecial = (btn.dataset.category === 'Todos' || btn.dataset.category === 'novedades' || btn.dataset.category === 'ofertas_especiales');
+            const catName = normalizeString(btn.querySelector('.cat-name')?.textContent || btn.textContent);
+            
+            if (isEspecial && term !== '') {
+                btn.style.display = catName.includes(term) ? 'flex' : 'none';
+            } else {
+                btn.style.display = (term === '' || catName.includes(term)) ? 'flex' : 'none';
+            }
+        });
+
+        const sidebarEl = categoryFilters.closest('.sidebar-categories');
+        if (sidebarEl) {
+            const canScrollDown = categoryFilters.scrollHeight > categoryFilters.clientHeight;
+            sidebarEl.classList.toggle('has-scroll-down', canScrollDown);
+        }
+    }
+
     // --- 5. Lógica de Filtrado (Búsqueda + Categoría) ---
     function filterProducts() {
         const searchTermStr = normalizeString(searchInput.value).trim();
@@ -655,20 +682,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Coincidencia exacta
                     if (searchableText.includes(term)) return true;
                     
-                    // Flexibilidad: ignorar última o dos últimas letras (género/plural) ej: plastico/plastica/plasticos
-                    if (term.length > 3 && searchableText.includes(term.slice(0, -1))) return true;
-                    if (term.length > 4 && searchableText.includes(term.slice(0, -2))) return true;
+                    // Flexibilidad para plurales (s, es)
+                    if (term.endsWith('es') && searchableText.includes(term.slice(0, -2))) return true;
+                    if (term.endsWith('s') && searchableText.includes(term.slice(0, -1))) return true;
 
-                    // Tolerancia a pequeños errores ("platico" en lugar de "plastico")
-                    if (term.length > 4) {
-                        const textWords = searchableText.split(/\s+/);
-                        for (let word of textWords) {
-                            // Si coinciden las primeras 3 letras y la diferencia de longitud es pequeña
-                            if (word.length >= 4 && word.startsWith(term.slice(0, 3)) && Math.abs(word.length - term.length) <= 2) {
-                                return true;
-                            }
-                        }
-                    }
                     return false;
                 });
             }
@@ -696,26 +713,21 @@ document.addEventListener('DOMContentLoaded', () => {
         renderProducts(currentFilteredProducts, true);
     }
 
-    // Event listeners para la búsqueda en tiempo real
-    searchInput.addEventListener('input', (e) => {
-        if (e.isTrusted && categorySearchInput && categorySearchInput.value !== '') {
-            categorySearchInput.value = '';
-            categorySearchInput.dispatchEvent(new Event('input'));
-        }
-
-        // UX: Búsqueda Global Automática
-        // Si el usuario empieza a buscar, cambiamos la categoría a "Todos" para que no le salgan 0 resultados por estar en una categoría restrictiva.
-        if (e.isTrusted && searchInput.value.trim() !== '') {
-            const currentActive = document.querySelector('#categoryFilters .filter-btn.active');
-            if (currentActive && currentActive.dataset.category !== 'Todos') {
-                currentActive.classList.remove('active');
-                const btnTodos = document.querySelector('#categoryFilters .filter-btn[data-category="Todos"]');
-                if (btnTodos) btnTodos.classList.add('active');
-            }
-        }
-
+    // Event listeners separados
+    searchInput.addEventListener('input', () => {
         filterProducts();
     });
+
+    if (categorySearchInput) {
+        // Remover cualquier listener viejo
+        const newCatSearch = categorySearchInput.cloneNode(true);
+        categorySearchInput.parentNode.replaceChild(newCatSearch, categorySearchInput);
+        
+        // Asignar el nuevo evento
+        document.getElementById('categorySearchInput').addEventListener('input', () => {
+            filterCategories();
+        });
+    }
 
     // --- 6. Lógica del Carrito de Compras ---
     function openCart() {

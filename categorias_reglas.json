@@ -51,6 +51,7 @@
 
     { "contiene": "ARENA MAGICA",    "categoria": "Arena Magica" },
     { "contiene": "CALCULADORA",     "categoria": "Calculadoras" },
+    { "contiene": "CARPETA",         "categoria": "Carpeta" },
     { "contiene": "CARTULINA",       "categoria": "Cartulinas" },
     { "contiene": "CARTON",          "categoria": "Carton" },
     { "contiene": "CRAYONES",        "categoria": "Crayones" },
