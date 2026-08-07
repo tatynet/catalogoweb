@@ -2754,16 +2754,13 @@ img {
 #expandedProductPrice {
     font-size: 1.5rem !important;
     font-weight: 900 !important;
-    color: var(--primary) !important;
+    color: #ef4444 !important; /* Rojo vibrante */
     margin: 0 !important;
-    background: -webkit-linear-gradient(135deg, var(--primary), var(--secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .btn-modal-buy {
     width: 100%;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: #ef4444; /* Rojo sólido para que resalte y no se pierda */
     color: white;
     border: none;
     padding: 1rem;
