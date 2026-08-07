@@ -56,24 +56,66 @@
         
     </header>
 
-    <!-- Store Cover / Portada -->
-    <section class="store-cover-container">
-        <div class="store-cover-wrapper">
-            <img src="portada.jpeg" alt="Portada Tatynet" class="store-cover-img">
+    <!-- Modern Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <span class="hero-badge" id="heroNewBadge" style="display: none; cursor: pointer;">Nuevos Productos Disponibles</span>
+            <h2 class="hero-title">Encuentra todo lo que necesitas <br><span class="highlight">en un solo lugar</span></h2>
+            <p class="hero-subtitle">Descubre nuestro amplio catálogo con los mejores precios del mercado. Actualizamos nuestras ofertas todos los días para ti.</p>
+            <div class="hero-actions">
+                <button class="btn-buy hero-cta-btn" onclick="document.getElementById('searchInput').focus(); window.scrollTo({top: document.querySelector('.main-search-section').offsetTop - 100, behavior: 'smooth'});">
+                    <i class="fas fa-search"></i> Buscar Productos
+                </button>
+                <button class="btn-secondary hero-cta-btn" id="heroPromoBtn">
+                    <i class="fas fa-tags"></i> Ver Promociones
+                </button>
+            </div>
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="portada.jpeg" alt="Portada Tatynet" class="hero-img">
+            <div class="hero-image-backdrop"></div>
+        </div>
+    </section>
+
+    <!-- Trust Signals / Benefits Section -->
+    <section class="trust-signals">
+        <div class="trust-container">
+            <div class="trust-item">
+                <div class="trust-icon"><i class="fas fa-store"></i></div>
+                <div class="trust-text">
+                    <h4>Local Físico</h4>
+                    <p>Visítanos en nuestra tienda</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon"><i class="fas fa-sync-alt"></i></div>
+                <div class="trust-text">
+                    <h4>Catálogo Actualizado</h4>
+                    <p>Subimos productos diariamente</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon"><i class="fas fa-headset"></i></div>
+                <div class="trust-text">
+                    <h4>Atención Personalizada</h4>
+                    <p>Asesoría directa por WhatsApp</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Barra de Búsqueda Principal (debajo de la portada) -->
     <section class="main-search-section">
-        <div class="main-search-container">
+        <div class="main-search-container" style="position: relative;">
             <i class="fas fa-box-open main-search-icon"></i>
             <input type="text" id="searchInput" class="main-search-input" placeholder="Escribe el nombre del producto (ej. esfero, goma, etc)...">
             <button class="main-search-clear" id="clearSearch" style="display:none;" aria-label="Limpiar búsqueda">
                 <i class="fas fa-times"></i>
             </button>
+            <div id="searchSuggestions" class="search-suggestions"></div>
         </div>
         <div class="quick-actions" style="display: flex; justify-content: center; margin-top: 1rem; gap: 1rem; flex-wrap: wrap; align-items: center;">
-            <div class="daily-update-badge">
+            <div class="daily-update-badge" id="dailyUpdateBadge" style="display: none;">
                 <i class="fas fa-sync-alt fa-spin-hover"></i> Catálogo actualizado hoy
             </div>
             <button id="quickPromoBtn" class="btn-buy" style="background: linear-gradient(135deg, #f59e0b, #d97706); border: none; padding: 0.6rem 1.5rem; font-size: 1rem; border-radius: 50px; display: none; align-items: center; gap: 0.5rem; box-shadow: 0 4px 15px rgba(245,158,11,0.4); cursor: pointer; color: white; font-weight: bold;">
@@ -108,35 +150,64 @@
 
     <!-- Shopping Cart Sidebar -->
     <div class="cart-overlay" id="cartOverlay"></div>
-    <aside class="cart-sidebar" id="cartSidebar">
+    <aside class="cart-modal" id="cartSidebar">
         <div class="cart-header">
-            <h2>Tu Carrito</h2>
+            <h2><i class="fas fa-shopping-bag"></i> Tu Carrito</h2>
             <button id="closeCart" class="close-btn"><i class="fas fa-times"></i></button>
         </div>
-        <div class="cart-items" id="cartItems">
-            <!-- Items del carrito irán aquí -->
-        </div>
-        <div class="cart-footer">
-            <div class="cart-form">
-                <input type="text" id="customerName" placeholder="Tu Nombre y Apellido" required>
-                <input type="text" id="customerID" placeholder="Tu Cédula" required>
-                <input type="tel" id="customerPhone" placeholder="Tu Teléfono" required>
-                <textarea id="customerAddress" placeholder="¿Tienes alguna preferencia de color, notas o indicaciones? Escríbelo aquí (Opcional)" rows="3"></textarea>
-                <label class="promo-checkbox-label">
-                    <input type="checkbox" id="isSchoolList">
-                    ☑ Mi compra es por una <b>Lista de Útiles</b>
-                </label>
-            </div>
-            <div class="cart-total" style="align-items: center;">
-                <div style="display: flex; flex-direction: column;">
-                    <span style="font-size: 1.2rem;">Total:</span>
-                    <span id="cartTotalItems" style="font-size: 0.85rem; color: var(--text-secondary); font-weight: normal; margin-top: 2px;">0 artículos</span>
+        
+        <div class="cart-content-wrapper">
+            <!-- Columna Izquierda: Productos (Scrolleable) -->
+            <div class="cart-body custom-scrollbar">
+                <div class="cart-items" id="cartItems">
+                    <!-- Items del carrito irán aquí -->
                 </div>
-                <span>$<span id="cartTotalValue">0.00</span></span>
             </div>
-            <button id="checkoutBtn" class="btn-checkout">
-                <i class="fab fa-whatsapp"></i> Enviar Pedido
-            </button>
+            
+            <!-- Columna Derecha: Formulario estático y Totales -->
+            <div class="cart-sidebar-panel">
+                <div class="cart-customer-section">
+                    <h3 class="section-title"><i class="fas fa-clipboard-list"></i> Datos del Pedido</h3>
+                    <div class="cart-form premium-form">
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="customerName" placeholder="Nombre y Apellido" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-id-card"></i>
+                            <input type="text" id="customerID" placeholder="Número de Cédula" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-phone-alt"></i>
+                            <input type="tel" id="customerPhone" placeholder="Teléfono Móvil" required>
+                        </div>
+                        <div class="input-group textarea-group">
+                            <i class="fas fa-comment-dots"></i>
+                            <textarea id="customerAddress" placeholder="Preferencias, notas (Opcional)" rows="2"></textarea>
+                        </div>
+                        <label class="promo-checkbox-label">
+                            <input type="checkbox" id="isSchoolList">
+                            <span class="checkbox-text"><i class="fas fa-book"></i> Compra por <b>Lista de Útiles</b></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="cart-footer">
+                    <div class="cart-summary-box">
+                        <div class="summary-details">
+                            <span class="summary-title">Total a Pagar</span>
+                            <span id="cartTotalItems" class="summary-items">0 artículos</span>
+                        </div>
+                        <div class="summary-total">
+                            $<span id="cartTotalValue">0.00</span>
+                        </div>
+                    </div>
+                    
+                    <button id="checkoutBtn" class="btn-checkout">
+                        <i class="fab fa-whatsapp"></i> Completar Pedido
+                    </button>
+                </div>
+            </div>
         </div>
     </aside>
 
@@ -166,12 +237,16 @@
                 <i class="fas fa-times"></i>
             </button>
             <div class="image-modal-img-wrap" style="position: relative;">
-                <div id="expandedWatermark" class="watermark-overlay" style="font-size: 3.5rem; opacity: 0.15; z-index: 10;"></div>
+                <div id="expandedWatermark" class="watermark-overlay" style="font-size: 3.5rem; z-index: 10;"></div>
                 <img class="image-modal-content" id="expandedImg" alt="Producto ampliado">
             </div>
             <div class="image-modal-footer">
                 <p class="image-modal-product-name" id="expandedProductName"></p>
                 <p class="image-modal-product-code" id="expandedProductCode"></p>
+            </div>
+            <div class="recommended-products-section" id="recommendedProductsSection">
+                <h4>Te sugerimos llevar también:</h4>
+                <div class="recommended-list" id="recommendedList"></div>
             </div>
         </div>
     </div>
@@ -203,6 +278,31 @@
             <button id="closeAlertBtn" class="btn-buy" style="width: 100%; justify-content: center;">Entendido</button>
         </div>
     </div>
+
+    <!-- Social Proof / Testimonials Section -->
+    <section class="social-proof">
+        <div class="social-proof-header">
+            <h2>Nuestros clientes lo confirman</h2>
+            <p>Únete a las cientos de familias y empresas que confían en nosotros.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="testimonial-text">"Encontré todo lo que necesitaba para la lista escolar a un precio excelente. La atención por WhatsApp fue muy rápida."</p>
+                <span class="testimonial-author">- María F.</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="testimonial-text">"Tienen un catálogo súper completo. Lo mejor es que actualizan los productos todos los días. Muy recomendado."</p>
+                <span class="testimonial-author">- Carlos R.</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                <p class="testimonial-text">"Compro los suministros para mi oficina aquí. Excelente asesoría y el proceso de compra es muy sencillo y rápido."</p>
+                <span class="testimonial-author">- Empresa Logis S.A.</span>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="site-footer">

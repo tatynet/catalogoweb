@@ -191,15 +191,38 @@ document.addEventListener('DOMContentLoaded', () => {
         generateCategoryButtons(allProducts);
         updateCartUI();
 
+
+
         // Mostrar banner si hay productos nuevos
         if (newProductCodes.size > 0) {
-            showNewProductsBanner(newProductCodes.size);
-        }
+            // Mostrar Badges de Marketing y Novedades
+            const heroNewBadge = document.getElementById('heroNewBadge');
+            if (heroNewBadge) {
+                heroNewBadge.style.display = 'inline-block';
+                heroNewBadge.addEventListener('click', () => {
+                    const novBtn = document.querySelector('.filter-btn[data-category="novedades"]');
+                    if (novBtn) {
+                        novBtn.click();
+                        // Scroll hacia la cuadrícula
+                        window.scrollTo({top: document.querySelector('.main-search-section').offsetTop - 50, behavior: 'smooth'});
+                    }
+                });
+            }
 
-        // Toast de actualización diaria (Aviso a los clientes)
-        setTimeout(() => {
-            showToast('<i class="fas fa-sync-alt fa-spin"></i> <b>¡Catálogo actualizado!</b><br><span style="font-size:0.85rem">Nuevos productos añadidos hoy.</span>');
-        }, 1500);
+            const dailyUpdateBadge = document.getElementById('dailyUpdateBadge');
+            if (dailyUpdateBadge) {
+                dailyUpdateBadge.style.display = 'flex';
+            }
+
+            if (typeof showNewProductsBanner === 'function') {
+                showNewProductsBanner(newProductCodes.size);
+            }
+
+            // Toast de actualización diaria (Aviso a los clientes)
+            setTimeout(() => {
+                showToast('<i class="fas fa-sync-alt fa-spin"></i> <b>¡Catálogo actualizado!</b><br><span style="font-size:0.85rem">Nuevos productos añadidos hoy.</span>');
+            }, 1500);
+        }
     })
     .catch(error => {
         console.error('Error cargando los archivos JSON:', error);
@@ -211,7 +234,70 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>`;
     });
 
-    // --- 3. Renderizado de Productos ---
+    // Función para renderizar productos recomendados en el modal
+    function renderRecommendedProducts(currentProduct) {
+        const recommendedList = document.getElementById('recommendedList');
+        const recommendedSection = document.getElementById('recommendedProductsSection');
+        if (!recommendedList || !recommendedSection) return;
+
+        // Filtrar productos de la misma categoría, excluyendo el actual
+        let related = allProducts.filter(p => p.categoria === currentProduct.categoria && p.codigo !== currentProduct.codigo);
+        
+        // Mezclar aleatoriamente
+        related.sort(() => 0.5 - Math.random());
+        
+        // Tomar hasta 4
+        related = related.slice(0, 4);
+
+        if (related.length === 0) {
+            recommendedSection.style.display = 'none';
+            return;
+        }
+
+        recommendedSection.style.display = 'block';
+        recommendedList.innerHTML = '';
+
+        related.forEach(p => {
+            const card = document.createElement('div');
+            card.className = 'mini-product-card';
+            
+            const pImg = p.imagen ? p.imagen : 'img/placeholder.png';
+            
+            // Check promo for price
+            let finalPrice = p.precio;
+            if (p.tiene_promocion && p.promocion) {
+                finalPrice = p.promocion.precio_especial;
+            } else if (configData.promocion_activa && configData.promociones) {
+                const promo = configData.promociones.find(promoItem => String(promoItem.codigo_producto) === String(p.codigo) && promoItem.activa !== false);
+                if (promo) {
+                    finalPrice = promo.precio_promocional || p.precio;
+                }
+            }
+
+            card.innerHTML = `
+                <img src="${pImg}" alt="${p.nombre}" loading="lazy">
+                <span class="mini-product-name" title="${p.nombre}">${p.nombre}</span>
+                <span class="mini-product-price">$${finalPrice.toFixed(2)}</span>
+            `;
+            
+            card.addEventListener('click', () => {
+                // Actualizar el modal con el nuevo producto
+                const expandedImg = document.getElementById('expandedImg');
+                const nameEl = document.getElementById('expandedProductName');
+                const codeEl = document.getElementById('expandedProductCode');
+                if (expandedImg) expandedImg.src = pImg;
+                if (nameEl) nameEl.textContent = p.nombre;
+                if (codeEl) codeEl.textContent = `CÓD: ${p.codigo}`;
+                
+                // Actualizar recomendaciones recursivamente
+                renderRecommendedProducts(p);
+            });
+            
+            recommendedList.appendChild(card);
+        });
+    }
+
+    // --- 4. Renderizado de Productos (Paginación tipo "Ver Más") ---
     function renderProducts(products, reset = true) {
         if (reset) {
             const hasCards = productsGrid.querySelector('.product-card');
@@ -363,6 +449,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         watermarkEl.style.transform = `translate(-50%, -50%) rotate(${rRotate}deg)`;
                     }
 
+                    // Llenar productos recomendados
+                    renderRecommendedProducts(product);
+
                     imageModal.classList.add('active');
                 }
             });
@@ -441,6 +530,19 @@ document.addEventListener('DOMContentLoaded', () => {
             btnContainer.appendChild(loadMoreBtn);
             productsGrid.appendChild(btnContainer);
         }
+    }
+
+    // Hero Promo Button
+    const heroPromoBtn = document.getElementById('heroPromoBtn');
+    if (heroPromoBtn) {
+        heroPromoBtn.addEventListener('click', () => {
+            const promoBtn = document.querySelector('.filter-btn[data-category="ofertas_especiales"]');
+            if (promoBtn) {
+                promoBtn.click();
+            } else {
+                showToast('<i class="fas fa-info-circle"></i> Actualmente no hay promociones activas.');
+            }
+        });
     }
 
     // --- 4. Generación de Botones de Categoría Dinámicos ---
@@ -714,8 +816,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Event listeners separados
-    searchInput.addEventListener('input', () => {
+    const searchSuggestionsContainer = document.getElementById('searchSuggestions');
+    searchInput.addEventListener('input', (e) => {
         filterProducts();
+        
+        // Autocomplete suggestions for categories
+        if (searchSuggestionsContainer) {
+            const query = e.target.value.toLowerCase().trim();
+            searchSuggestionsContainer.innerHTML = '';
+            
+            if (query.length > 1) {
+                const uniqueCategories = Array.from(new Set(allProducts.map(p => p.categoria)));
+                const matchedCategories = uniqueCategories.filter(cat => cat && cat.toLowerCase().includes(query));
+                
+                // Show up to 3 category suggestions
+                matchedCategories.slice(0, 3).forEach(cat => {
+                    const pill = document.createElement('button');
+                    pill.className = 'suggestion-pill';
+                    pill.innerHTML = `<i class="fas fa-search"></i> Explorar categoría: <b>${cat}</b>`;
+                    pill.onclick = (event) => {
+                        event.preventDefault();
+                        const catBtn = document.querySelector(`.filter-btn[data-category="${cat}"]`);
+                        if (catBtn) {
+                            catBtn.click();
+                            searchInput.value = '';
+                            searchInput.dispatchEvent(new Event('input'));
+                            searchSuggestionsContainer.innerHTML = '';
+                            const clearSearchBtn = document.getElementById('clearSearch');
+                            if(clearSearchBtn) clearSearchBtn.style.display = 'none';
+                            
+                            const productsSection = document.getElementById('productsGrid');
+                            if (productsSection) {
+                                const top = productsSection.getBoundingClientRect().top + window.scrollY - 120;
+                                window.scrollTo({ top, behavior: 'smooth' });
+                            }
+                        }
+                    };
+                    searchSuggestionsContainer.appendChild(pill);
+                });
+            }
+        }
     });
 
     if (categorySearchInput) {
@@ -754,23 +894,26 @@ document.addEventListener('DOMContentLoaded', () => {
             existingItem.quantity += 1;
             saveCart();
             updateCartUI();
-            showToast(`<i class="fas fa-info-circle" style="color: #3b82f6;"></i> Cantidad actualizada en carrito`);
+            showToast(`<i class="fas fa-shopping-basket" style="color: #3b82f6;"></i> ¡Añadiste otro <b>${product.nombre}</b>! Tienes excelente gusto.`);
             return false;
         } else {
             cart.push({ ...product, quantity: 1 });
             saveCart();
             updateCartUI();
-            showToast(`<i class="fas fa-check-circle" style="color: #4ade80;"></i> ${product.nombre} añadido`);
+            showToast(`<i class="fas fa-check-circle" style="color: #4ade80;"></i> ¡Excelente elección! <b>${product.nombre}</b> añadido a tu carrito.`);
             return true;
         }
     }
 
     function showToast(message) {
         toast.innerHTML = message;
+        toast.style.background = 'var(--card-bg)';
+        toast.style.border = '2px solid var(--accent-color)';
+        toast.style.boxShadow = 'var(--shadow-lg)';
         toast.classList.add('show');
         setTimeout(() => {
             toast.classList.remove('show');
-        }, 2500);
+        }, 3500);
     }
 
     function removeFromCart(productId) {
