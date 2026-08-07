@@ -285,9 +285,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const expandedImg = document.getElementById('expandedImg');
                 const nameEl = document.getElementById('expandedProductName');
                 const codeEl = document.getElementById('expandedProductCode');
+                const priceEl = document.getElementById('expandedProductPrice');
                 if (expandedImg) expandedImg.src = pImg;
                 if (nameEl) nameEl.textContent = p.nombre;
                 if (codeEl) codeEl.textContent = `CÓD: ${p.codigo}`;
+                if (priceEl) priceEl.textContent = `$${finalPrice.toFixed(2)}`;
                 
                 // Actualizar recomendaciones recursivamente
                 renderRecommendedProducts(p);
@@ -437,10 +439,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const expandedImg = document.getElementById('expandedImg');
                 const nameEl = document.getElementById('expandedProductName');
                 const codeEl = document.getElementById('expandedProductCode');
+                const priceEl = document.getElementById('expandedProductPrice');
                 if (imageModal && expandedImg) {
                     expandedImg.src = imgSrc;
                     if (nameEl) nameEl.textContent = product.nombre;
                     if (codeEl) codeEl.textContent = `CÓD: ${product.codigo}`;
+                    if (priceEl) priceEl.textContent = `$${finalPrice.toFixed(2)}`;
                     
                     const watermarkEl = document.getElementById('expandedWatermark');
                     if (watermarkEl) {

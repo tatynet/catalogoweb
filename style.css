@@ -1511,13 +1511,13 @@ img {
     transform: translate(-50%, -50%) rotate(-30deg);
     font-size: 2.2rem;
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.45);
     text-transform: uppercase;
     pointer-events: none; /* Muy importante para que no interfiera al hacer clic en el botón comprar */
     z-index: 5;
     width: 150%;
     text-align: center;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
     letter-spacing: 4px;
     user-select: none;
     -webkit-user-select: none;
