@@ -2852,3 +2852,110 @@ img {
     color: white;
     transform: rotate(90deg);
 }
+
+/* --- Premium Marketing Pricing Styles --- */
+.promo-badge-animated {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: white;
+    padding: 0.35rem 0.9rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    animation: pulseBadge 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+@keyframes pulseBadge {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.wholesale-badge { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+.discount-badge { background: linear-gradient(135deg, #ef4444, #b91c1c); }
+.list-badge { background: linear-gradient(135deg, #f59e0b, #d97706); }
+
+/* Wholesale Box */
+.promo-wholesale-box {
+    display: flex;
+    flex-direction: column;
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 8px;
+    padding: 0.5rem;
+    line-height: 1.3;
+}
+.promo-normal-price {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-decoration: line-through;
+}
+.promo-special-price {
+    font-size: 0.9rem;
+    color: #8b5cf6;
+    font-weight: 700;
+}
+.promo-special-price strong { font-size: 1.1rem; }
+
+/* Discount Box */
+.promo-discount-box {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(239, 68, 68, 0.05);
+    border-radius: 8px;
+    padding: 0.4rem;
+    border: 1px dashed rgba(239, 68, 68, 0.3);
+}
+.promo-price-wrapper {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+.promo-old-price {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+.promo-new-price {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #ef4444;
+}
+.promo-discount-tag {
+    background: #ef4444;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+}
+
+/* List Box */
+.promo-list-box {
+    display: flex;
+    flex-direction: column;
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 8px;
+    padding: 0.5rem;
+    line-height: 1.3;
+}
+.promo-regular-price {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-decoration: line-through;
+}
+.promo-list-price {
+    font-size: 0.9rem;
+    color: #d97706;
+    font-weight: 700;
+}
+.promo-list-price strong { font-size: 1.1rem; }

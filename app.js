@@ -113,6 +113,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Reset general al hacer clic en el logo ---
+    const mainLogo = document.getElementById('mainLogo');
+    if (mainLogo) {
+        mainLogo.style.cursor = 'pointer';
+        mainLogo.addEventListener('click', () => {
+            // Limpiar búsqueda
+            if (searchInput) {
+                searchInput.value = '';
+                if (clearSearchBtn) clearSearchBtn.style.display = 'none';
+            }
+            // Limpiar filtro de categoría
+            if (categorySearchInput) {
+                categorySearchInput.value = '';
+                categorySearchInput.dispatchEvent(new Event('input'));
+            }
+            // Seleccionar "Todos"
+            const todosBtn = document.querySelector('.filter-btn[data-category="Todos"]');
+            if (todosBtn) {
+                todosBtn.click();
+            }
+            // Scroll hacia arriba
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // --- Botón de Volver Rápido ---
+    const quickBackBtn = document.getElementById('quickBackBtn');
+    if (quickBackBtn) {
+        quickBackBtn.addEventListener('click', () => {
+            const todosBtn = document.querySelector('.filter-btn[data-category="Todos"]');
+            if (todosBtn) todosBtn.click();
+        });
+    }
+
     // --- 2. Carga de Datos desde JSON (Productos y Configuración) ---
     // Usamos getTime() para evitar que el navegador guarde los archivos en caché y siempre muestre los nuevos productos
     const cacheBuster = new Date().getTime();
@@ -378,15 +412,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 const min = promo.cantidad_minima || 1;
                 
                 if (min > 1) {
-                    promoBadge = `<div style="position: absolute; top: 12px; right: 12px; background: #8b5cf6; color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800; z-index: 10; box-shadow: 0 4px 10px rgba(139, 92, 246, 0.4);">¡MEGA OFERTA!</div>`;
-                    priceHtml = `<div style="display:flex; flex-direction:column; line-height: 1.3;">
-                                    <span style="font-size: 0.85rem; color: #64748b; text-decoration: line-through;">Normal: $${product.precio.toFixed(2)} c/u</span>
-                                    <span style="font-size: 0.85rem; color: #8b5cf6; font-weight: 800;">Desde ${min} unid: $${promo.precio_especial.toFixed(2)} c/u</span>
-                                 </div>`;
+                    promoBadge = `<div class="promo-badge-animated wholesale-badge"><i class="fas fa-layer-group"></i> MEGA OFERTA</div>`;
+                    if (promo.tipo === 'PACK' || (promo.precio_especial > product.precio)) {
+                        priceHtml = `<div class="promo-wholesale-box">
+                                        <span class="promo-normal-price">Normal: $${product.precio.toFixed(2)} c/u</span>
+                                        <span class="promo-special-price"><i class="fas fa-gift"></i> Lleva ${min} por: <strong>$${promo.precio_especial.toFixed(2)}</strong></span>
+                                     </div>`;
+                    } else {
+                        priceHtml = `<div class="promo-wholesale-box">
+                                        <span class="promo-normal-price">Normal: $${product.precio.toFixed(2)} c/u</span>
+                                        <span class="promo-special-price"><i class="fas fa-bolt"></i> Desde ${min} unid: <strong>$${promo.precio_especial.toFixed(2)} c/u</strong></span>
+                                     </div>`;
+                    }
                 } else {
                     finalPrice = promo.precio_especial;
-                    promoBadge = `<div style="position: absolute; top: 12px; right: 12px; background: #ef4444; color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800; z-index: 10; box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);">¡OFERTA!</div>`;
-                    priceHtml = `<span style="text-decoration: line-through; opacity: 0.5; font-size: 0.9rem; margin-right: 0.5rem;">$${product.precio.toFixed(2)}</span><span style="color: #ef4444;">$</span><span style="color: #ef4444;">${finalPrice.toFixed(2)}</span>`;
+                    const discount = Math.round((1 - (finalPrice / product.precio)) * 100);
+                    promoBadge = `<div class="promo-badge-animated discount-badge"><i class="fas fa-tag"></i> OFERTA</div>`;
+                    priceHtml = `<div class="promo-discount-box">
+                                    <div class="promo-price-wrapper">
+                                        <span class="promo-old-price">$${product.precio.toFixed(2)}</span>
+                                        <span class="promo-new-price">$${finalPrice.toFixed(2)}</span>
+                                    </div>
+                                    ${discount > 0 ? `<div class="promo-discount-tag">-${discount}% OFF</div>` : ''}
+                                 </div>`;
                 }
             } 
             // 2. Verificar promoción antigua de config.json
@@ -394,15 +442,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 const promo = configData.promociones.find(p => String(p.codigo_producto) === String(product.codigo) && p.activa !== false);
                 if (promo) {
                     if (promo.solo_lista) {
-                        promoBadge = `<div style="position: absolute; top: 12px; right: 12px; background: #f59e0b; color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800; z-index: 10; box-shadow: 0 4px 10px rgba(245, 158, 11, 0.4);">¡PROMO LISTA!</div>`;
-                        priceHtml = `<div style="display:flex; flex-direction:column; line-height: 1.2;">
-                                        <span>$${product.precio.toFixed(2)}</span>
-                                        <span style="font-size:0.75rem; color:#f59e0b; font-weight: 600;">(Por lista: $${promo.precio_promocional.toFixed(2)})</span>
+                        promoBadge = `<div class="promo-badge-animated list-badge"><i class="fas fa-list-check"></i> PROMO LISTA</div>`;
+                        priceHtml = `<div class="promo-list-box">
+                                        <span class="promo-regular-price">$${product.precio.toFixed(2)}</span>
+                                        <span class="promo-list-price"><i class="fas fa-star"></i> Por lista: <strong>$${promo.precio_promocional.toFixed(2)}</strong></span>
                                      </div>`;
                     } else {
                         finalPrice = promo.precio_promocional || product.precio;
-                        promoBadge = `<div style="position: absolute; top: 12px; right: 12px; background: #ef4444; color: white; padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800; z-index: 10; box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4);">¡PROMO!</div>`;
-                        priceHtml = `<span style="text-decoration: line-through; opacity: 0.5; font-size: 0.9rem; margin-right: 0.5rem;">$${product.precio.toFixed(2)}</span><span style="color: #ef4444;">$</span><span style="color: #ef4444;">${finalPrice.toFixed(2)}</span>`;
+                        const discount = Math.round((1 - (finalPrice / product.precio)) * 100);
+                        promoBadge = `<div class="promo-badge-animated discount-badge"><i class="fas fa-tag"></i> PROMO</div>`;
+                        priceHtml = `<div class="promo-discount-box">
+                                        <div class="promo-price-wrapper">
+                                            <span class="promo-old-price">$${product.precio.toFixed(2)}</span>
+                                            <span class="promo-new-price">$${finalPrice.toFixed(2)}</span>
+                                        </div>
+                                        ${discount > 0 ? `<div class="promo-discount-tag">-${discount}% OFF</div>` : ''}
+                                     </div>`;
                     }
                 }
             }
@@ -799,6 +854,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const activeCategoryBtn = document.querySelector('#categoryFilters .filter-btn.active');
         const activeCategory = activeCategoryBtn ? activeCategoryBtn.dataset.category : 'Todos';
 
+        // Lógica de botones rápidos
+        const quickPromoBtn = document.getElementById('quickPromoBtn');
+        const quickBackBtn = document.getElementById('quickBackBtn');
+        const promoFilterBtn = document.querySelector('.filter-btn[data-category="ofertas_especiales"]');
+        
+        if (quickPromoBtn && quickBackBtn) {
+            if (activeCategory === 'ofertas_especiales') {
+                quickPromoBtn.style.display = 'none';
+                quickBackBtn.style.display = 'flex';
+            } else {
+                quickPromoBtn.style.display = promoFilterBtn ? 'flex' : 'none';
+                quickBackBtn.style.display = 'none';
+            }
+        }
+
         currentFilteredProducts = allProducts.filter(product => {
             if (product.es_unidad_hija) return false;
 
@@ -1079,18 +1149,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Lógica de cálculo dinámico para el carrito
                 let finalItemPrice = item.precio;
-                let priceHtml = `$${item.precio.toFixed(2)}`;
+                let itemTotal = item.precio * item.quantity;
+                let priceHtml = `$${itemTotal.toFixed(2)}`;
                 let appliedPromo = false;
                 let promoColor = '#ef4444';
+                let promoDetailText = '';
 
                 // 1. Promoción Individual (nueva lógica JSON)
                 if (item.tiene_promocion && item.promocion) {
                     const promo = item.promocion;
                     const min = promo.cantidad_minima || 1;
                     if (item.quantity >= min) {
-                        finalItemPrice = promo.precio_especial;
                         appliedPromo = true;
-                        promoColor = min > 1 ? '#8b5cf6' : '#ef4444';
+                        if (promo.tipo === 'PACK' || (promo.precio_especial > item.precio)) {
+                            // Asumimos que si precio_especial > precio unitario, es el precio total de un combo.
+                            const numCombos = Math.floor(item.quantity / min);
+                            const remainder = item.quantity % min;
+                            itemTotal = (numCombos * promo.precio_especial) + (remainder * item.precio);
+                            promoColor = '#8b5cf6';
+                            promoDetailText = `Promo: ${numCombos}x Combo + ${remainder} ud. sueltas`;
+                        } else if (min > 1) {
+                            // Descuento mayorista por unidad
+                            finalItemPrice = promo.precio_especial;
+                            itemTotal = finalItemPrice * item.quantity;
+                            promoColor = '#8b5cf6';
+                            promoDetailText = `Descuento por volumen aplicado`;
+                        } else {
+                            finalItemPrice = promo.precio_especial;
+                            itemTotal = finalItemPrice * item.quantity;
+                            promoColor = '#ef4444';
+                        }
                     }
                 } 
                 // 2. Promoción Global (config.json)
@@ -1099,6 +1187,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (promo && promo.precio_promocional) {
                         if (!promo.solo_lista || (promo.solo_lista && isPromoList)) {
                             finalItemPrice = promo.precio_promocional;
+                            itemTotal = finalItemPrice * item.quantity;
                             appliedPromo = true;
                             promoColor = promo.solo_lista ? '#f59e0b' : '#ef4444';
                         }
@@ -1106,14 +1195,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 if (appliedPromo) {
-                    priceHtml = `<span style="text-decoration: line-through; opacity: 0.5; font-size: 0.8rem; margin-right: 0.3rem;">$${item.precio.toFixed(2)}</span><span style="color: ${promoColor}; font-weight: 800;">$${finalItemPrice.toFixed(2)}</span>`;
+                    priceHtml = `<span style="text-decoration: line-through; opacity: 0.5; font-size: 0.8rem; margin-right: 0.3rem;">$${(item.precio * item.quantity).toFixed(2)}</span><span style="color: ${promoColor}; font-weight: 800;">$${itemTotal.toFixed(2)}</span>`;
                     
-                    if (item.tiene_promocion && item.promocion && item.promocion.cantidad_minima > 1 && item.quantity >= item.promocion.cantidad_minima) {
-                        priceHtml += `<div style="font-size: 0.7rem; color: ${promoColor}; margin-top: 2px;"><i class="fas fa-tag"></i> Descuento por volumen aplicado</div>`;
+                    if (promoDetailText) {
+                        priceHtml += `<div style="font-size: 0.7rem; color: ${promoColor}; margin-top: 2px;"><i class="fas fa-tag"></i> ${promoDetailText}</div>`;
                     }
                 }
 
-                item.cartDisplayPrice = finalItemPrice; // Guardar para calcular total
+                item.cartItemTotal = itemTotal; // Guardar para calcular total
+                item.appliedPromoText = appliedPromo ? '(Promo aplicada)' : '';
 
                 div.innerHTML = `
                     <img src="${imgSrc}" class="cart-item-img" alt="${item.nombre}" onerror="this.onerror=null;this.src='https://placehold.co/400x400/eeeeee/999999?text=Sin+Imagen';">
@@ -1144,7 +1234,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Actualizar el total monetario
-        const total = cart.reduce((sum, item) => sum + ((item.cartDisplayPrice || item.precio) * item.quantity), 0);
+        const total = cart.reduce((sum, item) => sum + (item.cartItemTotal !== undefined ? item.cartItemTotal : (item.precio * item.quantity)), 0);
         cartTotalValue.textContent = total.toFixed(2);
 
         // Actualizar el texto de total de artículos
@@ -1199,15 +1289,12 @@ document.addEventListener('DOMContentLoaded', () => {
         message += `%0A*Detalle del Pedido:*%0A`;
         
         cart.forEach(item => {
-            const finalPrice = item.cartDisplayPrice || item.precio;
-            let qtyNote = "";
-            if (item.cartDisplayPrice && item.cartDisplayPrice < item.precio) {
-                qtyNote = " (Promo aplicada)";
-            }
-            message += `- ${item.quantity}x ${item.nombre} (CÓD: ${item.codigo}) [$${(finalPrice * item.quantity).toFixed(2)}]${qtyNote}%0A`;
+            const itemTotal = item.cartItemTotal !== undefined ? item.cartItemTotal : (item.precio * item.quantity);
+            const qtyNote = item.appliedPromoText ? ` ${item.appliedPromoText}` : '';
+            message += `- ${item.quantity}x ${item.nombre} (CÓD: ${item.codigo}) [$${itemTotal.toFixed(2)}]${qtyNote}%0A`;
         });
         
-        const total = cart.reduce((sum, item) => sum + ((item.cartDisplayPrice || item.precio) * item.quantity), 0);
+        const total = cart.reduce((sum, item) => sum + (item.cartItemTotal !== undefined ? item.cartItemTotal : (item.precio * item.quantity)), 0);
         message += `%0A*Total a Pagar: $${total.toFixed(2)}*`;
 
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
