@@ -308,9 +308,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+            // Nombre en formato legible (primera letra de cada palabra en mayúscula)
+            const nombreLegible = p.nombre.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+
             card.innerHTML = `
                 <img src="${pImg}" alt="${p.nombre}" loading="lazy">
-                <span class="mini-product-name" title="${p.nombre}">${p.nombre}</span>
+                <span class="mini-product-name" title="${p.nombre}">${nombreLegible}</span>
                 <span class="mini-product-price">$${finalPrice.toFixed(2)}</span>
             `;
             
@@ -322,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const priceEl = document.getElementById('expandedProductPrice');
                 const modalBuyBtn = document.getElementById('modalBuyBtn');
                 if (expandedImg) expandedImg.src = pImg;
-                if (nameEl) nameEl.textContent = p.nombre;
+                if (nameEl) nameEl.textContent = nombreLegible;
                 if (codeEl) codeEl.textContent = `CÓD: ${p.codigo}`;
                 if (priceEl) priceEl.textContent = `$${finalPrice.toFixed(2)}`;
                 if (modalBuyBtn) {
@@ -343,6 +346,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Actualizar recomendaciones recursivamente
                 renderRecommendedProducts(p);
+
+                // Scroll suave al inicio del modal para ver la imagen nueva
+                const imageModal = document.getElementById('imageModal');
+                if (imageModal) imageModal.querySelector('.image-modal-card')?.scrollTo({ top: 0, behavior: 'smooth' });
             });
             
             recommendedList.appendChild(card);
@@ -483,6 +490,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${promoBadge}
                     <div class="watermark-overlay" style="transform: translate(calc(-50% + ${randomX}px), calc(-50% + ${randomY}px)) rotate(${randomRotate}deg);">${configData.nombre_tienda || 'Tatynet'}</div>
                     <span class="product-category">${product.categoria}</span>
+                    <div class="zoom-indicator" title="Clic para ver detalles"><i class="fas fa-search-plus"></i></div>
                     <img src="${imgSrc}" loading="lazy" alt="${product.nombre}" class="product-image" onerror="this.onerror=null;this.src='https://placehold.co/400x400/eeeeee/999999?text=Sin+Imagen';">
                 </div>
                 <div class="product-info">
@@ -514,7 +522,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const modalBuyBtn = document.getElementById('modalBuyBtn');
                 if (imageModal && expandedImg) {
                     expandedImg.src = imgSrc;
-                    if (nameEl) nameEl.textContent = product.nombre;
+                    const nombreTitleCase = product.nombre.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+                    if (nameEl) nameEl.textContent = nombreTitleCase;
                     if (codeEl) codeEl.textContent = `CÓD: ${product.codigo}`;
                     if (priceEl) priceEl.textContent = `$${finalPrice.toFixed(2)}`;
                     if (modalBuyBtn) {

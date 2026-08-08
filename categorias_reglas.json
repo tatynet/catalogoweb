@@ -34,6 +34,14 @@
         },
         {
             "_nota": "CUADERNOS: plural y singular apuntan a la misma categoria",
+            "contiene": "CUADERNO UNIVERSITARIO",
+            "categoria": "Cuaderno Universitario"
+        },
+        {
+            "contiene": "CUADERNO COSIDO",
+            "categoria": "Cuaderno Cosido"
+        },
+        {
             "contiene": "CUADERNOS",
             "categoria": "Cuadernos"
         },
