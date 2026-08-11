@@ -842,10 +842,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const isEspecial = (btn.dataset.category === 'Todos' || btn.dataset.category === 'novedades' || btn.dataset.category === 'ofertas_especiales');
             const catName = normalizeString(btn.querySelector('.cat-name')?.textContent || btn.textContent);
             
+            let matches = catName.includes(term);
+            const sinonimos = { 'fomix': 'foamy', 'foamy': 'fomix' };
+            if (!matches && sinonimos[term] && catName.includes(sinonimos[term])) {
+                matches = true;
+            }
+
             if (isEspecial && term !== '') {
-                btn.style.display = catName.includes(term) ? 'flex' : 'none';
+                btn.style.display = matches ? 'flex' : 'none';
             } else {
-                btn.style.display = (term === '' || catName.includes(term)) ? 'flex' : 'none';
+                btn.style.display = (term === '' || matches) ? 'flex' : 'none';
             }
         });
 
@@ -899,6 +905,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Coincidencia exacta
                     if (searchableText.includes(term)) return true;
                     
+                    // Sinónimos (ej. fomix = foamy)
+                    const sinonimos = {
+                        'fomix': 'foamy',
+                        'foamy': 'fomix'
+                    };
+                    if (sinonimos[term] && searchableText.includes(sinonimos[term])) return true;
+
                     // Flexibilidad para plurales (s, es)
                     if (term.endsWith('es') && searchableText.includes(term.slice(0, -2))) return true;
                     if (term.endsWith('s') && searchableText.includes(term.slice(0, -1))) return true;
@@ -942,7 +955,14 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (query.length > 1) {
                 const uniqueCategories = Array.from(new Set(allProducts.map(p => p.categoria)));
-                const matchedCategories = uniqueCategories.filter(cat => cat && cat.toLowerCase().includes(query));
+                const sinonimos = { 'fomix': 'foamy', 'foamy': 'fomix' };
+                const matchedCategories = uniqueCategories.filter(cat => {
+                    if (!cat) return false;
+                    const c = cat.toLowerCase();
+                    if (c.includes(query)) return true;
+                    if (sinonimos[query] && c.includes(sinonimos[query])) return true;
+                    return false;
+                });
                 
                 // Show up to 3 category suggestions
                 matchedCategories.slice(0, 3).forEach(cat => {

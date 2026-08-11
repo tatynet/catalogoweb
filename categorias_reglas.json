@@ -113,6 +113,10 @@
             "categoria": "Gomas"
         },
         {
+            "contiene": "PISTOLA SILICONA",
+            "categoria": "Pistolas de Silicona"
+        },
+        {
             "contiene": "SILICONA",
             "categoria": "Silicona"
         },
@@ -189,6 +193,50 @@
         {
             "contiene": "FUNDA",
             "categoria": "Fundas de Regalo"
+        },
+        {
+            "contiene": "ESFERO",
+            "categoria": "Esferos"
+        },
+        {
+            "contiene": "FORRO",
+            "categoria": "Forros"
+        },
+        {
+            "contiene": "BORRADOR",
+            "categoria": "Borradores"
+        },
+        {
+            "contiene": "HOJAS",
+            "categoria": "Hojas"
+        },
+        {
+            "contiene": "FOMIX",
+            "categoria": "Foamy"
+        },
+        {
+            "contiene": "FOAMY",
+            "categoria": "Foamy"
+        },
+        {
+            "contiene": "PAPEL",
+            "categoria": "Papeles"
+        },
+        {
+            "contiene": "ROMPECABEZAS",
+            "categoria": "Rompecabezas"
+        },
+        {
+            "contiene": "DIARIO",
+            "categoria": "Diario Escolar"
+        },
+        {
+            "contiene": "DISCION",
+            "categoria": "Diccionarios"
+        },
+        {
+            "contiene": "DICCION",
+            "categoria": "Diccionarios"
         }
     ]
 }
