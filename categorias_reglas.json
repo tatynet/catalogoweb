@@ -50,6 +50,19 @@
             "categoria": "Cuadernos"
         },
         {
+            "_nota": "PINCELES: los especificos van ANTES del general 'PINCEL'",
+            "contiene": "PINCEL PLANO",
+            "categoria": "Pinceles Planos"
+        },
+        {
+            "contiene": "PINCEL REDONDO",
+            "categoria": "Pinceles Redondos"
+        },
+        {
+            "contiene": "PINCEL",
+            "categoria": "Pinceles"
+        },
+        {
             "_nota": "PINTURAS Y LAPICES",
             "contiene": "PINTURA",
             "categoria": "Pinturas"

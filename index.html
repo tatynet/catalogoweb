@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=20260812_v1">
+    <link rel="stylesheet" href="style.css?v=20260814_v7">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-K562E8V6ZP"></script>
@@ -124,6 +124,9 @@
             <button id="quickPromoBtn" class="btn-buy" style="background: linear-gradient(135deg, #f59e0b, #d97706); border: none; padding: 0.6rem 1.5rem; font-size: 1rem; border-radius: 50px; display: none; align-items: center; gap: 0.5rem; box-shadow: 0 4px 15px rgba(245,158,11,0.4); cursor: pointer; color: white; font-weight: bold;">
                 <i class="fas fa-tags"></i> ¡Ver Ofertas Especiales!
             </button>
+            <button id="quickCombosBtn" class="btn-buy" style="background: linear-gradient(135deg, #8b5cf6, #c084fc); border: none; padding: 0.6rem 1.5rem; font-size: 1rem; border-radius: 50px; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 15px rgba(139,92,246,0.4); cursor: pointer; color: white; font-weight: bold;">
+                <i class="fas fa-gift"></i> Combos Promoción
+            </button>
             <button id="quickBackBtn" class="btn-secondary" style="display: none; border-radius: 50px; padding: 0.6rem 1.5rem; font-size: 1rem; align-items: center; gap: 0.5rem; cursor: pointer; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--text-primary); box-shadow: var(--shadow-sm); font-weight: bold; transition: all 0.3s ease;">
                 <i class="fas fa-arrow-left"></i> Volver a Todos
             </button>
@@ -152,7 +155,7 @@
         </section>
     </main>
 
-    <script src="app.js?v=20260812_v1"></script>
+    <script src="app.js?v=20260814_v7"></script>
 
     <!-- Shopping Cart Sidebar -->
     <div class="cart-overlay" id="cartOverlay"></div>
@@ -382,6 +385,101 @@
                 <button id="btnComprarUnidad" class="btn-buy" style="font-size: 1.1rem; padding: 12px; border-radius: 50px;">
                     <i class="fas fa-pen"></i> Por Unidad (<span id="lblPrecioUnidad"></span>)
                 </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="colorVariantModal" class="modal-overlay">
+        <div class="modal-content color-modal" style="max-width: 600px; text-align: center; border-radius: 20px; padding: 30px;">
+            <button class="modal-close" id="closeColorModal"><i class="fas fa-times"></i></button>
+            <div style="margin-bottom: 20px;">
+                <h3 style="color: var(--accent-color); margin-bottom: 10px;"><i class="fas fa-palette"></i> Selecciona tus Colores</h3>
+                <p style="color: var(--text-secondary);">Elige las cantidades para los colores que deseas llevar.</p>
+            </div>
+            <div id="colorSwatchesContainer" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; margin-bottom: 20px; max-height: 50vh; overflow-y: auto; padding-right: 5px;">
+                <!-- Swatches will be generated here -->
+            </div>
+
+            <button id="btnConfirmColor" class="btn-buy" style="font-size: 1.1rem; padding: 12px; border-radius: 50px; width: 100%; display: none;">
+                <i class="fas fa-check"></i> Confirmar
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal para Armar Combo Mix -->
+    <div id="comboModal" class="promo-modal-overlay">
+        <div class="promo-modal-content combo-builder-modal">
+            <button class="close-promo-btn" id="closeComboModal"><i class="fas fa-times"></i></button>
+            <div class="promo-modal-header combo-builder-header">
+                <h2><i class="fas fa-gift" style="color:#8b5cf6;"></i> Arma tu <span style="color:#8b5cf6;">Combo Mix</span></h2>
+                <p id="comboModalName" class="combo-builder-subt"></p>
+            </div>
+            <div class="combo-builder-body">
+                <div class="combo-builder-summary">
+                    <div class="combo-summary-item" id="comboSummarySelected"><i class="fas fa-boxes"></i> Agregados: <b>0</b></div>
+                    <div class="combo-summary-price" id="comboSummaryPrice">Elige tus productos</div>
+                </div>
+                <div id="comboSavingsHint" class="combo-savings-hint"></div>
+                <div id="comboProductsList" class="combo-products-list"></div>
+            </div>
+            <div class="combo-builder-footer">
+                <button id="comboAddBtn" class="btn-buy combo-builder-add" style="width:100%; justify-content:center; background:linear-gradient(135deg,#8b5cf6,#c084fc); opacity:0.5;" disabled>
+                    <i class="fas fa-gift"></i> Elige tus productos
+                </button>
+                <p class="combo-urgency"><i class="fas fa-bolt"></i> Descuento garantizado: arma tu combo ahora y paga menos.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Promoción Pack (Combo/Pack) -->
+    <div id="packPromoModal" class="promo-modal-overlay">
+        <div class="promo-modal-content" style="max-width: 480px;">
+            <button class="close-promo-btn" id="closePackPromoModal"><i class="fas fa-times"></i></button>
+            <div class="promo-modal-header">
+                <h2><i class="fas fa-tags" style="color:#f59e0b;"></i> ¡Oferta Combo Pack!</h2>
+            </div>
+            <div class="promo-modal-body">
+                <div style="display:flex; align-items:center; gap:15px; margin-bottom:16px;">
+                    <img id="ppkWebImg" src="" alt="" style="width:70px; height:70px; object-fit:cover; border-radius:12px; border:1px solid rgba(0,0,0,0.1); display:none;">
+                    <div>
+                        <div id="ppkWebNombre" style="font-weight:700; font-size:1.05rem;"></div>
+                        <div style="color: var(--text-secondary); font-size:0.85rem;">Precio normal: <span id="ppkWebUnitario">$0.00</span> c/u</div>
+                    </div>
+                </div>
+                <div style="padding:16px; margin-bottom:16px; border-radius:12px; background: linear-gradient(135deg,#fff8e1,#ffecb3); border:1px solid #fcd34d;">
+                    <div id="ppkWebDesc" style="font-weight:700; margin-bottom:6px; color:#333;">Combo Pack</div>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="color:#333;"><span id="ppkWebPackMin">3</span> unidades por</span>
+                        <span style="font-size:1.4rem; font-weight:800; color:#16a34a;">$<span id="ppkWebPackPrecio">0.00</span></span>
+                    </div>
+                    <div style="font-size:0.85rem; color:#16a34a; margin-top:4px;"><i class="fas fa-piggy-bank"></i> Ahorras <span id="ppkWebAhorro">$0.00</span> por cada pack</div>
+                </div>
+                <div id="ppkWebOpciones" style="display:flex; flex-direction:column; gap:10px; margin-bottom:8px;">
+                    <button id="ppkWebPorUnidad" class="btn-buy" style="background:transparent; border:2px solid #16a34a; color:#16a34a; padding:12px; border-radius:50px; justify-content:center;">
+                        <i class="fas fa-pen"></i> Por Unidad <span style="font-size:0.85rem; opacity:0.8;">($<span id="ppkWebUnitario2">0.00</span> c/u)</span>
+                    </button>
+                    <button id="ppkWebPorCombo" class="btn-buy" style="padding:12px; border-radius:50px; justify-content:center;">
+                        <i class="fas fa-boxes"></i> Por Combo <span style="font-size:0.85rem;">(<span id="ppkWebPackMin2">3</span> x $<span id="ppkWebPackPrecio2">0.00</span>)</span>
+                    </button>
+                </div>
+                <div id="ppkWebPicker" style="display:none;">
+                    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+                        <span style="font-weight:600;">Cantidad de packs</span>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <button id="ppkWebMinus" class="btn-buy" style="padding:6px 14px; background:transparent; border:1px solid var(--accent-color); color:var(--accent-color);"><i class="fas fa-minus"></i></button>
+                            <span id="ppkWebQty" style="font-weight:800; font-size:1.2rem; min-width:30px; text-align:center;">1</span>
+                            <button id="ppkWebPlus" class="btn-buy" style="padding:6px 14px;"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div id="ppkWebBreakdown" style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:12px;">1 pack de 3 unidades</div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; background:var(--card-bg); border:1px solid var(--glass-border); border-radius:12px; padding:14px; margin-bottom:14px;">
+                        <span style="color:var(--text-secondary); font-size:0.9rem;">Total</span>
+                        <span style="font-weight:800; font-size:1.2rem; color:var(--accent-color);" id="ppkWebTotal">$0.00</span>
+                    </div>
+                    <button id="ppkWebAdd" class="btn-buy" style="width:100%; justify-content:center; padding:14px; background:#16a34a;">
+                        <i class="fas fa-shopping-cart"></i> Agregar al Pedido
+                    </button>
+                </div>
             </div>
         </div>
     </div>
