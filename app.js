@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let allProducts = [];
     let currentFilteredProducts = [];
+    let combosMixtos = [];
     let configData = {};
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let newProductCodes = new Set(); // Códigos de productos detectados como nuevos
@@ -151,8 +152,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Usamos getTime() para evitar que el navegador guarde los archivos en caché y siempre muestre los nuevos productos
     const cacheBuster = new Date().getTime();
     
-    // Función: asigna categoría usando reglas primero, luego primera palabra como fallback
-    function getCategoriaConReglas(nombreProducto, reglas) {
+    function getCategoriaConReglas(nombreProducto, reglas, originalCategory) {
+        if (originalCategory && originalCategory.toUpperCase().includes('COMBO')) {
+            return 'COMBOS PROMOCIÓN';
+        }
+        
         const nombreUpper = nombreProducto.toUpperCase();
         if (reglas && reglas.length > 0) {
             for (const regla of reglas) {
@@ -164,6 +168,54 @@ document.addEventListener('DOMContentLoaded', () => {
         // Fallback: primera palabra del nombre
         let primeraPalabra = nombreProducto.trim().split(/\s+/)[0];
         return primeraPalabra.charAt(0).toUpperCase() + primeraPalabra.slice(1).toLowerCase();
+    }
+
+    // Agrupar los combos mixtos únicos (definidos en productos.json) junto con sus productos participantes
+    function buildCombosMixtos(products) {
+        const map = new Map();
+        products.forEach(p => {
+            (p.combos_mixtos || []).forEach(combo => {
+                const key = String(combo.id);
+                if (!map.has(key)) {
+                    map.set(key, {
+                        ...combo,
+                        productos: []
+                    });
+                }
+                // Evitar duplicar el mismo producto en el combo
+                const target = map.get(key);
+                if (!target.productos.some(pp => String(pp.id) === String(p.id))) {
+                    target.productos.push(p);
+                }
+            });
+        });
+        return Array.from(map.values()).map(combo => {
+            combo.productos.sort((a, b) => a.precio - b.precio);
+            return combo;
+        });
+    }
+
+    // Precio de referencia para mostrar en la tarjeta (combinación mínima)
+    function getComboReferencePrice(combo) {
+        const qty = typeof combo.cantidad_requerida === 'number' && combo.cantidad_requerida > 0 ? combo.cantidad_requerida : 1;
+        let sum = 0;
+        if (combo.exigir_productos_distintos) {
+            const sliced = combo.productos.slice(0, qty);
+            sum = sliced.reduce((acc, p) => acc + p.precio, 0);
+        } else {
+            for (let i = 0; i < qty; i++) {
+                sum += (combo.productos[0] && combo.productos[0].precio) || 0;
+            }
+        }
+        if (combo.tipo_descuento === 'PORCENTAJE') {
+            sum = sum * (1 - (combo.descuento_porcentaje || 0) / 100);
+        }
+        return sum;
+    }
+
+    function isComboMixView() {
+        const active = document.querySelector('#categoryFilters .filter-btn.active');
+        return active && active.dataset.category === 'combos_mixtos';
     }
 
     Promise.all([
@@ -186,9 +238,21 @@ document.addEventListener('DOMContentLoaded', () => {
         
         allProducts = products.map(product => {
             // Asignar categoría usando reglas; si no coincide, usa la primera palabra (fallback)
-            const categoriaAsignada = getCategoriaConReglas(product.nombre, reglasCategoria);
+            const categoriaAsignada = getCategoriaConReglas(product.nombre, reglasCategoria, product.categoria);
+
+            // Sanear ofertas: si "tiene_promocion" pero el objeto promocion esta vacio o sin precio,
+            // NO es una oferta real (evita errores de render y productos fantasma en la pagina de Promociones).
+            let tienePromoValida = product.tiene_promocion;
+            let promoObj = product.promocion || {};
+            if (tienePromoValida && (promoObj.precio_especial === undefined || promoObj.precio_especial === null || promoObj.precio_especial === '')) {
+                tienePromoValida = false;
+                promoObj = {};
+            }
+
             return {
                 ...product,
+                tiene_promocion: tienePromoValida,
+                promocion: promoObj,
                 categoria_original: product.categoria,
                 categoria: categoriaAsignada
             };
@@ -197,6 +261,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Ordenar inicialmente todos los productos por precio de menor a mayor
         allProducts.sort((a, b) => a.precio - b.precio);
         currentFilteredProducts = allProducts.filter(p => !p.es_unidad_hija);
+
+        // Agrupar los combos mixtos definidos en productos.json
+        combosMixtos = buildCombosMixtos(allProducts);
 
         // --- Detectar productos nuevos con localStorage ---
         detectNewProducts(allProducts);
@@ -350,10 +417,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Scroll suave al inicio del modal para ver la imagen nueva
                 const imageModal = document.getElementById('imageModal');
                 if (imageModal) imageModal.querySelector('.image-modal-card')?.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-            
-            recommendedList.appendChild(card);
+});
+
+        recommendedList.appendChild(card);
         });
+    }
+
+    // Vista ampliada de la imagen de una variante (cartucheras, modelos, etc.)
+    function openVariantImagePreview(variantLabel, imgSrc, product, price) {
+        const imageModal = document.getElementById('imageModal');
+        const expandedImg = document.getElementById('expandedImg');
+        const nameEl = document.getElementById('expandedProductName');
+        const codeEl = document.getElementById('expandedProductCode');
+        const priceEl = document.getElementById('expandedProductPrice');
+        const modalBuyBtn = document.getElementById('modalBuyBtn');
+        const recommendedSection = document.getElementById('recommendedProductsSection');
+        if (!imageModal || !expandedImg) return;
+
+        expandedImg.src = imgSrc;
+        if (nameEl) nameEl.textContent = `${product.nombre} — ${variantLabel}`;
+        if (codeEl) codeEl.textContent = `CÓD: ${product.codigo}`;
+        if (priceEl) priceEl.textContent = `$${(price || product.precio).toFixed(2)}`;
+        // Vista de solo lectura: ocultar botón de compra y recomendados
+        if (modalBuyBtn) modalBuyBtn.style.display = 'none';
+        if (recommendedSection) recommendedSection.style.display = 'none';
+
+        const watermarkEl = document.getElementById('expandedWatermark');
+        if (watermarkEl) {
+            const rRotate = Math.floor(Math.random() * 30) - 45;
+            watermarkEl.textContent = configData.nombre_tienda || 'Tatynet';
+            watermarkEl.style.transform = `translate(-50%, -50%) rotate(${rRotate}deg)`;
+        }
+
+        imageModal.classList.add('active');
+    }
+
+    function restoreImageModalDefaults() {
+        const modalBuyBtn = document.getElementById('modalBuyBtn');
+        const recommendedSection = document.getElementById('recommendedProductsSection');
+        if (modalBuyBtn) modalBuyBtn.style.display = '';
+        if (recommendedSection) recommendedSection.style.display = '';
     }
 
     // --- 4. Renderizado de Productos (Paginación tipo "Ver Más") ---
@@ -392,9 +495,74 @@ document.addEventListener('DOMContentLoaded', () => {
         const endIndex = startIndex + itemsPerPage;
         const productsToRender = products.slice(startIndex, endIndex);
 
+        // Encabezado de la vista "Combos Mix"
+        if (isComboMixView() && !productsGrid.querySelector('.combo-mix-header')) {
+            const hdr = document.createElement('div');
+            hdr.className = 'combo-mix-header';
+            hdr.innerHTML = `<div class="combo-mix-header-icon"><i class="fas fa-gift"></i></div>
+                <div>
+                    <span class="combo-mix-hot"><i class="fas fa-fire"></i> Oferta de temporada · Precios que enamoran</span>
+                    <h2>Combos Mix <span class="combo-mix-gradient">¡Ahorra en grande!</span></h2>
+                    <p>Arma tu combo como quieras y llévate más por menos. Descuentos reales, todo en un solo lugar. ¡Tu bolsillo lo va a agradecer!</p>
+                </div>`;
+            productsGrid.appendChild(hdr);
+        }
+
         productsToRender.forEach((product, index) => {
             const card = document.createElement('div');
             card.classList.add('product-card');
+
+            if (product.es_combo_cerrado) {
+                card.classList.add('combo-card');
+                card.style.animationDelay = `${(index % itemsPerPage) * 0.05}s`;
+                
+                const imgSrc = product.imagen ? product.imagen : 'https://placehold.co/400x400/eeeeee/999999?text=Sin+Imagen';
+                
+                let itemsHtml = '';
+                if (product.productos_incluidos && product.productos_incluidos.length > 0) {
+                    itemsHtml = '<div class="combo-items-list"><ul>' + product.productos_incluidos.map(item => `<li>${item}</li>`).join('') + '</ul></div>';
+                }
+
+                card.innerHTML = `
+                    <div class="combo-badge"><i class="fas fa-gift"></i> COMBO ESPECIAL</div>
+                    <div class="combo-banner-container">
+                        <img src="${imgSrc}" alt="${product.nombre}" loading="lazy">
+                        <div class="combo-overlay-text">${product.nombre}</div>
+                    </div>
+                    <div class="product-info" style="padding-top: 5px;">
+                        <div class="product-title" style="font-size: 1.1rem; color: #8b5cf6;">${product.nombre}</div>
+                        ${itemsHtml}
+                        <div class="product-price" style="font-size: 1.3rem; margin-top: 10px;">$${product.precio.toFixed(2)}</div>
+                        <button class="btn-buy" style="margin-top: 10px; width: 100%; background: linear-gradient(135deg, #8b5cf6, #c084fc);"><i class="fas fa-shopping-cart"></i> Añadir Combo</button>
+                    </div>
+                `;
+
+                const bannerImg = card.querySelector('.combo-banner-container');
+                const buyBtn = card.querySelector('.btn-buy');
+                
+                const addCombo = () => {
+                    handleAddToCartWithModal(product, () => {
+                        buyBtn.innerHTML = '<i class="fas fa-check"></i> ¡Añadido!';
+                        buyBtn.style.background = '#10b981';
+                        setTimeout(() => {
+                            buyBtn.innerHTML = '<i class="fas fa-shopping-cart"></i> Añadir Combo';
+                            buyBtn.style.background = 'linear-gradient(135deg, #8b5cf6, #c084fc)';
+                        }, 2000);
+                    });
+                };
+
+                bannerImg.addEventListener('click', addCombo);
+                buyBtn.addEventListener('click', addCombo);
+
+                productsGrid.appendChild(card);
+                return;
+            }
+
+            // Tarjeta de Combo Mix (construido a partir de productos.json)
+            if (product.productos && Array.isArray(product.productos) && product.tipo_descuento) {
+                _renderComboMixCard(product, productsGrid, index);
+                return;
+            }
             
             // Animación escalonada
             card.style.animationDelay = `${(index % itemsPerPage) * 0.05}s`;
@@ -412,15 +580,18 @@ document.addEventListener('DOMContentLoaded', () => {
             let finalPrice = product.precio;
             let promoBadge = '';
             let priceHtml = `<span>$</span>${product.precio.toFixed(2)}`;
+            let esPack = false;
 
             // 1. Verificar promoción individual del producto (nueva lógica JSON)
-            if (product.tiene_promocion && product.promocion) {
+            const promoTienePrecio = product.promocion && product.promocion.precio_especial !== undefined && product.promocion.precio_especial !== null && product.promocion.precio_especial !== '';
+            if (product.tiene_promocion && product.promocion && promoTienePrecio) {
                 const promo = product.promocion;
                 const min = promo.cantidad_minima || 1;
                 
                 if (min > 1) {
                     promoBadge = `<div class="promo-badge-animated wholesale-badge"><i class="fas fa-layer-group"></i> MEGA OFERTA</div>`;
                     if (promo.tipo === 'PACK' || (promo.precio_especial > product.precio)) {
+                        esPack = true;
                         priceHtml = `<div class="promo-wholesale-box">
                                         <span class="promo-normal-price">Normal: $${product.precio.toFixed(2)} c/u</span>
                                         <span class="promo-special-price"><i class="fas fa-gift"></i> Lleva ${min} por: <strong>$${promo.precio_especial.toFixed(2)}</strong></span>
@@ -510,10 +681,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
             
+            // Promo Pack: la caja de oferta es clicable y abre el modal de packs
+            if (esPack && !(product.variantes && product.variantes.length > 0) && !product.es_fraccionable) {
+                const box = card.querySelector('.promo-wholesale-box');
+                if (box) {
+                    box.style.cursor = 'pointer';
+                    box.title = 'Clic para elegir cuántos packs agregar';
+                    box.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        abrirPackModalWeb(product);
+                    });
+                }
+            }
+
             // Evento para visualizar la imagen en grande
             const imgContainerEl = card.querySelector('.product-image-container');
             imgContainerEl.style.cursor = 'zoom-in';
             imgContainerEl.addEventListener('click', () => {
+                // Si el producto tiene variantes, abrir directamente el modal de variantes
+                if (product.variantes && product.variantes.length > 0 && !product.color_seleccionado) {
+                    handleAddToCartWithModal(product);
+                    return;
+                }
                 const imageModal = document.getElementById('imageModal');
                 const expandedImg = document.getElementById('expandedImg');
                 const nameEl = document.getElementById('expandedProductName');
@@ -521,6 +710,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const priceEl = document.getElementById('expandedProductPrice');
                 const modalBuyBtn = document.getElementById('modalBuyBtn');
                 if (imageModal && expandedImg) {
+                    restoreImageModalDefaults();
                     expandedImg.src = imgSrc;
                     const nombreTitleCase = product.nombre.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
                     if (nameEl) nameEl.textContent = nombreTitleCase;
@@ -560,6 +750,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Evento para añadir al carrito
             const buyBtn = card.querySelector('.btn-buy');
             buyBtn.addEventListener('click', () => {
+                // Promo Pack: abrir modal para elegir packs en vez de añadir 1 unidad
+                if (esPack && !(product.variantes && product.variantes.length > 0) && !product.es_fraccionable) {
+                    abrirPackModalWeb(product);
+                    return;
+                }
                 const originalText = buyBtn.innerHTML;
                 const originalBg = buyBtn.style.background;
                 const originalColor = buyBtn.style.color;
@@ -596,6 +791,304 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         manageLoadMoreButton(products);
+    }
+
+    function _renderComboMixCard(combo, grid, index) {
+        const card = document.createElement('div');
+        card.classList.add('product-card', 'combo-card', 'combo-mix-card');
+        card.style.animationDelay = `${(index % itemsPerPage) * 0.05}s`;
+
+        const imgSrc = combo.imagen || 'https://placehold.co/400x400/8b5cf6/ffffff?text=COMBO';
+        const req = combo.cantidad_requerida || 1;
+        const isClosed = combo.tipo_descuento === 'PRECIO_FIJO';
+
+        let priceInfo = '';
+        if (isClosed) {
+            const raw = combo.productos.reduce((s, p) => s + p.precio, 0);
+            const savings = Math.max(0, raw - combo.precio_total);
+            priceInfo = `<div class="combo-mix-price">Lleva ${req} x <strong>$${combo.precio_total.toFixed(2)}</strong></div>
+                <div class="combo-mix-save"><i class="fas fa-piggy-bank"></i> ${savings > 0 ? `Ahorras <b>$${savings.toFixed(2)}</b> al llevarlo completo` : 'Precio súper especial, ¡no lo dejes pasar!'}</div>`;
+        } else {
+            const ref = getComboReferencePrice(combo);
+            priceInfo = `<div class="combo-mix-price">Lleva ${req} - <strong>${combo.descuento_porcentaje || 0}% OFF</strong><br><span class="combo-mix-from">desde $${ref.toFixed(2)}</span></div>
+                <div class="combo-mix-save"><i class="fas fa-bolt"></i> Elige tú mismo y paga menos al instante</div>`;
+        }
+
+        const productosHtml = combo.productos.map(p => `<li>${p.nombre} — <b>$${p.precio.toFixed(2)}</b></li>`).join('');
+        const noteHtml = isClosed
+            ? `<div class="combo-mix-note"><i class="fas fa-lock"></i> Combo cerrado: se añade todo de una vez</div>`
+            : (combo.exigir_productos_distintos
+                ? `<div class="combo-mix-note"><i class="fas fa-th-list"></i> Mezcla y elige los que quieras</div>`
+                : '');
+        const tagline = isClosed
+            ? `<div class="combo-mix-tagline"><i class="fas fa-star"></i> El favorito de los estudiantes</div>`
+            : `<div class="combo-mix-tagline"><i class="fas fa-hand-point-up"></i> Tú decides, tú ahorras</div>`;
+
+        card.innerHTML = `
+            <div class="combo-badge"><i class="fas fa-gift"></i> COMBO MIX</div>
+            <div class="combo-banner-container combo-mix-banner">
+                <img src="${imgSrc}" alt="${combo.nombre}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x400/8b5cf6/ffffff?text=Combo';">
+                <div class="combo-overlay-text">${combo.nombre}</div>
+            </div>
+            <div class="product-info" style="padding-top: 5px;">
+                ${tagline}
+                <div class="combo-mix-title">${combo.nombre}</div>
+                <div class="combo-mix-meta"><i class="fas fa-box"></i> ${req} producto${req !== 1 ? 's' : ''}</div>
+                ${noteHtml}
+                <div class="combo-items-list combo-mix-products"><ul>${productosHtml}</ul></div>
+                ${priceInfo}
+                <button class="btn-buy combo-mix-btn">
+                    ${isClosed ? '<i class="fas fa-shopping-cart"></i> ¡Llévatelo!' : '<i class="fas fa-gift"></i> Armar mi Combo'}
+                </button>
+            </div>
+        `;
+
+        const buyBtn = card.querySelector('.combo-mix-btn');
+        const banner = card.querySelector('.combo-banner-container');
+        if (isClosed) {
+            const closedHandler = () => addClosedComboToCart(combo, buyBtn);
+            buyBtn.addEventListener('click', closedHandler);
+            banner.addEventListener('click', () => addClosedComboToCart(combo));
+        } else {
+            buyBtn.addEventListener('click', () => openComboBuilder(combo));
+            banner.addEventListener('click', () => openComboBuilder(combo));
+        }
+
+        grid.appendChild(card);
+    }
+
+    // Añade al carrito un combo cerrado (PRECIO_FIJO): sin selección, todo de una vez
+    function addClosedComboToCart(combo, btn) {
+        const items = combo.productos.map(p => ({ nombre: p.nombre, cantidad: 1, precio: p.precio, codigo: p.codigo }));
+        const raw = combo.productos.reduce((s, p) => s + p.precio, 0);
+        const comboItem = {
+            id: `combo_mix_${combo.id}_${Date.now()}`,
+            codigo: `COMBO${combo.id}`,
+            nombre: `COMBO MIX: ${combo.nombre}`,
+            imagen: combo.imagen,
+            precio: combo.precio_total,
+            quantity: 1,
+            es_combo_mix: true,
+            combo_items: items,
+            _rawSum: raw
+        };
+        addToCart(comboItem);
+        if (btn) {
+            btn.innerHTML = '<i class="fas fa-check"></i> ¡En el carrito!';
+            btn.style.background = '#10b981';
+            setTimeout(() => {
+                const isClosed = combo.tipo_descuento === 'PRECIO_FIJO';
+                btn.innerHTML = isClosed ? '<i class="fas fa-shopping-cart"></i> ¡Llévatelo!' : '<i class="fas fa-gift"></i> Armar mi Combo';
+                btn.style.background = 'linear-gradient(135deg, #8b5cf6, #c084fc)';
+            }, 2000);
+        }
+    }
+
+    function openComboBuilder(combo) {
+        const modal = document.getElementById('comboModal');
+        const nameEl = document.getElementById('comboModalName');
+        const listEl = document.getElementById('comboProductsList');
+        const summarySel = document.getElementById('comboSummarySelected');
+        const summaryPrice = document.getElementById('comboSummaryPrice');
+        const savingsHint = document.getElementById('comboSavingsHint');
+        const addBtn = document.getElementById('comboAddBtn');
+        if (!modal || !listEl || !combo.productos || combo.productos.length === 0) return;
+
+        const req = combo.cantidad_requerida || 1;
+        const selection = {};
+        combo.productos.forEach(p => { selection[String(p.id)] = 0; });
+
+        nameEl.textContent = combo.nombre;
+        listEl.innerHTML = '';
+        if (savingsHint) {
+            savingsHint.innerHTML = '';
+            savingsHint.className = 'combo-savings-hint';
+        }
+
+        const getSelectionSum = () => {
+            let s = 0;
+            Object.entries(selection).forEach(([id, qty]) => {
+                const p = combo.productos.find(pp => String(pp.id) === id);
+                if (p) s += p.precio * qty;
+            });
+            return s;
+        };
+
+        const updateSummary = () => {
+            const total = Object.values(selection).reduce((a, b) => a + b, 0);
+            summarySel.innerHTML = `<i class="fas fa-boxes"></i> Agregados: <b>${total}</b> / ${req}`;
+
+            if (total === req) {
+                const raw = getSelectionSum();
+                let final;
+                if (combo.tipo_descuento === 'PRECIO_FIJO') {
+                    final = combo.precio_total;
+                    summaryPrice.innerHTML = `<span class="old">$${raw.toFixed(2)}</span> Paga <b>$${combo.precio_total.toFixed(2)}</b>`;
+                } else {
+                    const disc = combo.descuento_porcentaje || 0;
+                    final = raw * (1 - disc / 100);
+                    summaryPrice.innerHTML = `<span class="old">$${raw.toFixed(2)}</span> <b>$${final.toFixed(2)}</b> <span class="save">(-${disc}%)</span>`;
+                }
+                const savings = Math.max(0, raw - final);
+                if (savingsHint) {
+                    savingsHint.innerHTML = `<i class="fas fa-star"></i> ¡Perfecto! Estás ahorrando <b>$${savings.toFixed(2)}</b>. <strong>No lo pienses más, llévatelo.</strong>`;
+                    savingsHint.className = 'combo-savings-hint ready';
+                }
+                addBtn.disabled = false;
+                addBtn.style.opacity = '1';
+                addBtn.innerHTML = `<i class="fas fa-shopping-cart"></i> ¡Añadir y Ahorrar!`;
+            } else {
+                const remaining = req - total;
+                summaryPrice.innerHTML = `Selecciona <b>${remaining}</b> producto${remaining !== 1 ? 's' : ''} más`;
+                if (savingsHint) {
+                    if (total > 0) {
+                        savingsHint.innerHTML = `<i class="fas fa-fire"></i> Te faltan <b>${remaining}</b> para activar tu ahorro garantizado. ¡Vamos!`;
+                    } else {
+                        savingsHint.innerHTML = `<i class="fas fa-lightbulb"></i> Combina <b>${req}</b> producto${req !== 1 ? 's' : ''} y descubre tu descuento al instante.`;
+                    }
+                    savingsHint.className = 'combo-savings-hint';
+                }
+                addBtn.disabled = true;
+                addBtn.style.opacity = '0.5';
+                addBtn.innerHTML = `<i class="fas fa-gift"></i> Elige ${req} producto${req !== 1 ? 's' : ''}`;
+            }
+        };
+
+        combo.productos.forEach(p => {
+            const key = String(p.id);
+            const img = p.imagen || 'https://placehold.co/400x400/eeeeee/999999?text=Sin+Imagen';
+            const row = document.createElement('div');
+            row.classList.add('combo-product-row');
+            row.innerHTML = `
+                <img src="${img}" alt="${p.nombre}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x400/eeeeee/999999?text=Sin+Imagen';">
+                <div class="combo-product-info">
+                    <div class="combo-product-name">${p.nombre}</div>
+                    <div class="combo-product-price">$${p.precio.toFixed(2)}</div>
+                </div>
+                <div class="combo-qty-controls">
+                    <button class="combo-qty-btn minus" data-id="${key}"><i class="fas fa-minus"></i></button>
+                    <input type="number" class="combo-qty-val" data-id="${key}" value="0" readonly>
+                    <button class="combo-qty-btn plus" data-id="${key}"><i class="fas fa-plus"></i></button>
+                </div>
+            `;
+            listEl.appendChild(row);
+
+            const valInput = row.querySelector('.combo-qty-val');
+            row.querySelector('.minus').addEventListener('click', () => {
+                if (selection[key] > 0) {
+                    selection[key]--;
+                    valInput.value = selection[key];
+                    row.classList.toggle('selected', selection[key] > 0);
+                    updateSummary();
+                }
+            });
+            row.querySelector('.plus').addEventListener('click', () => {
+                const totalSelected = Object.values(selection).reduce((a, b) => a + b, 0);
+                if (totalSelected >= req) return;
+                if (combo.exigir_productos_distintos && selection[key] >= 1) return;
+                selection[key]++;
+                valInput.value = selection[key];
+                row.classList.add('selected');
+                updateSummary();
+            });
+        });
+
+        addBtn.onclick = () => {
+            const total = Object.values(selection).reduce((a, b) => a + b, 0);
+            if (total !== req) return;
+
+            const items = [];
+            let raw = 0;
+            Object.entries(selection).forEach(([id, qty]) => {
+                const p = combo.productos.find(pp => String(pp.id) === id);
+                if (p && qty > 0) {
+                    items.push({ nombre: p.nombre, cantidad: qty, precio: p.precio, codigo: p.codigo });
+                    raw += p.precio * qty;
+                }
+            });
+            let final = raw;
+            if (combo.tipo_descuento === 'PRECIO_FIJO') {
+                final = combo.precio_total;
+            } else {
+                final = raw * (1 - (combo.descuento_porcentaje || 0) / 100);
+            }
+
+            const comboItem = {
+                id: `combo_mix_${combo.id}_${Date.now()}`,
+                codigo: `COMBO${combo.id}`,
+                nombre: `COMBO MIX: ${combo.nombre}`,
+                imagen: combo.imagen,
+                precio: final,
+                quantity: 1,
+                es_combo_mix: true,
+                combo_items: items,
+                _rawSum: raw
+            };
+            addToCart(comboItem);
+            modal.classList.remove('active');
+        };
+
+        modal.classList.add('active');
+        updateSummary();
+    }
+
+    function closeComboBuilder() {
+        const modal = document.getElementById('comboModal');
+        if (modal) modal.classList.remove('active');
+    }
+
+    // --- Modal de Promoción Pack (Combo/Pack) ---
+    let packWebProducto = null;
+    let packWebCantidad = 1;
+
+    function abrirPackModalWeb(product) {
+        const promo = product.promocion;
+        const modal = document.getElementById('packPromoModal');
+        if (!modal || !promo) return;
+        packWebProducto = product;
+        packWebCantidad = 1;
+
+        document.getElementById('ppkWebNombre').textContent = product.nombre;
+        const img = document.getElementById('ppkWebImg');
+        const imgSrc = product.imagen ? product.imagen : 'https://placehold.co/400x400/eeeeee/999999?text=Sin+Imagen';
+        if (product.imagen) { img.src = imgSrc; img.style.display = 'block'; } else { img.style.display = 'none'; }
+        document.getElementById('ppkWebUnitario').textContent = '$' + (product.precio || 0).toFixed(2);
+        document.getElementById('ppkWebUnitario2').textContent = (product.precio || 0).toFixed(2);
+        document.getElementById('ppkWebDesc').textContent = promo.descripcion || 'Combo Pack';
+        document.getElementById('ppkWebPackMin').textContent = promo.cantidad_minima || 3;
+        document.getElementById('ppkWebPackMin2').textContent = promo.cantidad_minima || 3;
+        document.getElementById('ppkWebPackPrecio').textContent = (promo.precio_especial || 0).toFixed(2);
+        document.getElementById('ppkWebPackPrecio2').textContent = (promo.precio_especial || 0).toFixed(2);
+        const ahorro = (product.precio * (promo.cantidad_minima || 3)) - (promo.precio_especial || 0);
+        document.getElementById('ppkWebAhorro').textContent = '$' + (ahorro > 0 ? ahorro : 0).toFixed(2);
+        document.getElementById('ppkWebOpciones').style.display = 'flex';
+        document.getElementById('ppkWebPicker').style.display = 'none';
+        actualizarPackWebUI();
+        modal.classList.add('active');
+    }
+
+    function actualizarPackWebUI() {
+        if (!packWebProducto) return;
+        const promo = packWebProducto.promocion;
+        const min = promo.cantidad_minima || 3;
+        const precio = promo.precio_especial || 0;
+        const q = packWebCantidad;
+        document.getElementById('ppkWebQty').textContent = q;
+        document.getElementById('ppkWebTotal').textContent = '$' + (q * precio).toFixed(2);
+        document.getElementById('ppkWebBreakdown').textContent = q + ' pack(s) de ' + min + ' unidades (' + (q * min) + ' en total)';
+        const minusBtn = document.getElementById('ppkWebMinus');
+        const plusBtn = document.getElementById('ppkWebPlus');
+        minusBtn.disabled = q <= 1;
+        plusBtn.disabled = q >= 3;
+        minusBtn.style.opacity = minusBtn.disabled ? '0.4' : '1';
+        plusBtn.style.opacity = plusBtn.disabled ? '0.4' : '1';
+        minusBtn.style.pointerEvents = minusBtn.disabled ? 'none' : 'auto';
+        plusBtn.style.pointerEvents = plusBtn.disabled ? 'none' : 'auto';
+    }
+
+    function cerrarPackModalWeb() {
+        const modal = document.getElementById('packPromoModal');
+        if (modal) modal.classList.remove('active');
     }
 
     function manageLoadMoreButton(products) {
@@ -639,6 +1132,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 promoBtn.click();
             } else {
                 showToast('<i class="fas fa-info-circle"></i> Actualmente no hay promociones activas.');
+            }
+        });
+    }
+
+    const quickCombosBtn = document.getElementById('quickCombosBtn');
+    if (quickCombosBtn) {
+        quickCombosBtn.addEventListener('click', () => {
+            const combosBtn = document.querySelector('.filter-btn[data-category="combos_mixtos"]');
+            const combosPromoBtn = document.querySelector('.filter-btn[data-category="COMBOS PROMOCIÓN"]');
+            if (combosBtn) {
+                combosBtn.click();
+                window.scrollTo({top: document.querySelector('.main-search-section').offsetTop - 100, behavior: 'smooth'});
+            } else if (combosPromoBtn) {
+                combosPromoBtn.click();
+                window.scrollTo({top: document.querySelector('.main-search-section').offsetTop - 100, behavior: 'smooth'});
+            } else {
+                showToast('<i class="fas fa-info-circle"></i> Actualmente no hay combos disponibles.');
             }
         });
     }
@@ -788,6 +1298,40 @@ document.addEventListener('DOMContentLoaded', () => {
             if (quickPromoBtn) quickPromoBtn.style.display = 'none';
         }
 
+        // --- Botón especial de Combos Mix (desde productos.json) ---
+        if (combosMixtos.length > 0) {
+            const cbBtn = document.createElement('button');
+            cbBtn.classList.add('filter-btn');
+            cbBtn.dataset.category = 'combos_mixtos';
+            cbBtn.innerHTML = `<span class="cat-name"><i class="fas fa-gift" style="color:#8b5cf6; margin-right:4px;"></i> Combos Mix</span><span class="cat-count" style="background:#8b5cf6; color:white;">${combosMixtos.length}</span>`;
+            cbBtn.style.fontWeight = 'bold';
+
+            cbBtn.addEventListener('click', () => {
+                const searchInput = document.getElementById('searchInput');
+                const clearSearchBtn = document.getElementById('clearSearch');
+                if (searchInput && searchInput.value !== '') {
+                    searchInput.value = '';
+                    if (clearSearchBtn) clearSearchBtn.style.display = 'none';
+                }
+
+                document.querySelectorAll('#categoryFilters .filter-btn').forEach(b => b.classList.remove('active'));
+                cbBtn.classList.add('active');
+                filterProducts();
+                const productsSection = document.getElementById('productsGrid');
+                if (productsSection) {
+                    const top = productsSection.getBoundingClientRect().top + window.scrollY - 120;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+
+            // Insertar justo después del botón "Todos"
+            if (categoryFilters.children.length > 1) {
+                categoryFilters.insertBefore(cbBtn, categoryFilters.children[1]);
+            } else {
+                categoryFilters.appendChild(cbBtn);
+            }
+        }
+
         // Indicador de scroll: mostrar/ocultar degradado según posición
         const filterList = categoryFilters;
         const sidebarEl = filterList.closest('.sidebar-categories');
@@ -843,7 +1387,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const catName = normalizeString(btn.querySelector('.cat-name')?.textContent || btn.textContent);
             
             let matches = catName.includes(term);
-            const sinonimos = { 'fomix': 'foamy', 'foamy': 'fomix' };
+            const sinonimos = {
+                // Foamy / Fomix
+                'fomix': 'foamy', 'foamy': 'fomix',
+                // Goma y sinónimos
+                'pegamento': 'goma', 'pegameto': 'goma', 'pega': 'goma',
+                'pegante': 'goma', 'pegapel': 'goma', 'adhesivo': 'goma',
+                'gomo': 'goma', 'gomas': 'goma', 'encolar': 'goma'
+            };
             if (!matches && sinonimos[term] && catName.includes(sinonimos[term])) {
                 matches = true;
             }
@@ -875,13 +1426,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const promoFilterBtn = document.querySelector('.filter-btn[data-category="ofertas_especiales"]');
         
         if (quickPromoBtn && quickBackBtn) {
-            if (activeCategory === 'ofertas_especiales') {
+            if (activeCategory === 'ofertas_especiales' || activeCategory === 'combos_mixtos') {
                 quickPromoBtn.style.display = 'none';
                 quickBackBtn.style.display = 'flex';
             } else {
                 quickPromoBtn.style.display = promoFilterBtn ? 'flex' : 'none';
                 quickBackBtn.style.display = 'none';
             }
+        }
+
+        // Vista especial de Combos Mix (usa la lista agrupada de productos.json, no los productos individuales)
+        if (activeCategory === 'combos_mixtos') {
+            currentFilteredProducts = combosMixtos.slice();
+            renderProducts(currentFilteredProducts, true);
+            return;
         }
 
         currentFilteredProducts = allProducts.filter(product => {
@@ -905,10 +1463,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Coincidencia exacta
                     if (searchableText.includes(term)) return true;
                     
-                    // Sinónimos (ej. fomix = foamy)
+                    // Sinónimos de búsqueda
                     const sinonimos = {
+                        // Foamy / Fomix
                         'fomix': 'foamy',
-                        'foamy': 'fomix'
+                        'foamy': 'fomix',
+                        // Goma / Pegamento y variantes
+                        'pegamento': 'goma',
+                        'pegameto': 'goma',
+                        'pegamento': 'goma',
+                        'pega': 'goma',
+                        'pegante': 'goma',
+                        'pegapel': 'goma',
+                        'adhesivo': 'goma',
+                        'adhesi': 'goma',
+                        'gomo': 'goma',
+                        'gomas': 'goma',
+                        'silicona': 'goma',
+                        'encolar': 'goma',
                     };
                     if (sinonimos[term] && searchableText.includes(sinonimos[term])) return true;
 
@@ -1038,9 +1610,276 @@ document.addEventListener('DOMContentLoaded', () => {
         return finalPrice;
     }
 
-    function handleAddToCartWithModal(product, updateBtnCallback) {
+    // Modal de fraccionamiento para varios colores seleccionados de un producto fraccionable
+    function abrirFraccionConColores(parentProduct, childProduct, coloresSeleccionados, updateBtnCallback) {
+        const fraccionModal = document.getElementById('fraccionModal');
+        const lblPrecioCaja = document.getElementById('lblPrecioCaja');
+        const lblPrecioUnidad = document.getElementById('lblPrecioUnidad');
+        let btnComprarCaja = document.getElementById('btnComprarCaja');
+        let btnComprarUnidad = document.getElementById('btnComprarUnidad');
+        const closeFraccionModal = document.getElementById('closeFraccionModal');
+
+        const parentPrice = getFinalPrice(parentProduct);
+        const childPrice = typeof childProduct.precio === 'number' ? childProduct.precio : parseFloat(childProduct.precio) || parentPrice;
+
+        lblPrecioCaja.textContent = `$${parentPrice.toFixed(2)}`;
+        lblPrecioUnidad.textContent = `$${childPrice.toFixed(2)}`;
+
+        // Clonar botones para limpiar eventos previos
+        const newBtnCaja = btnComprarCaja.cloneNode(true);
+        const newBtnUnidad = btnComprarUnidad.cloneNode(true);
+        btnComprarCaja.parentNode.replaceChild(newBtnCaja, btnComprarCaja);
+        btnComprarUnidad.parentNode.replaceChild(newBtnUnidad, btnComprarUnidad);
+        btnComprarCaja = newBtnCaja;
+        btnComprarUnidad = newBtnUnidad;
+
+        fraccionModal.classList.add('active');
+
+        const closeModal = () => fraccionModal.classList.remove('active');
+
+        closeFraccionModal.onclick = closeModal;
+        fraccionModal.onclick = (e) => {
+            if (e.target === fraccionModal) closeModal();
+        };
+
+        btnComprarCaja.addEventListener('click', () => {
+            closeModal();
+            let wasAdded = false;
+            coloresSeleccionados.forEach(({ product, qty }) => {
+                const isNewItem = addToCart(product, qty);
+                wasAdded = wasAdded || isNewItem;
+            });
+            if (updateBtnCallback) updateBtnCallback(wasAdded);
+        });
+
+        btnComprarUnidad.addEventListener('click', () => {
+            closeModal();
+            let wasAdded = false;
+            coloresSeleccionados.forEach(({ product, qty, colorName, varianteId }) => {
+                const unidadConColor = {
+                    ...childProduct,
+                    id: `${product.id}-UNIDAD-${colorName}`,
+                    codigo: childProduct.codigo,
+                    nombre: product.nombre + " (UNIDAD)",
+                    precio: childPrice,
+                    color_seleccionado: colorName,
+                    variante_id: varianteId
+                };
+                const isNewItem = addToCart(unidadConColor, qty);
+                wasAdded = wasAdded || isNewItem;
+            });
+            if (updateBtnCallback) updateBtnCallback(wasAdded);
+        });
+    }
+
+    function handleAddToCartWithModal(product, updateBtnCallback, qtyToAdd = 1) {
+        if (product.variantes && product.variantes.length > 0 && !product.color_seleccionado) {
+            const colorModal = document.getElementById('colorVariantModal');
+            const swatchesContainer = document.getElementById('colorSwatchesContainer');
+            let btnConfirmColor = document.getElementById('btnConfirmColor');
+            const closeColorModal = document.getElementById('closeColorModal');
+            // Detectar variantes de imagen (cartucheras, modelos, etc.) vs. variantes de color
+            const hasImageVariants = product.variantes.some(v => typeof v === 'object' && v.imagen);
+            
+            // Adaptar textos del modal según el tipo de variante
+            const modalTitle = colorModal.querySelector('h3');
+            const modalSubtitle = colorModal.querySelector('p');
+            if (modalTitle) {
+                modalTitle.innerHTML = hasImageVariants
+                    ? '<i class="fas fa-box-open"></i> Selecciona tu Modelo'
+                    : '<i class="fas fa-palette"></i> Selecciona tus Colores';
+            }
+            if (modalSubtitle) {
+                modalSubtitle.textContent = hasImageVariants
+                    ? 'Elige la cantidad de cada modelo que deseas llevar.'
+                    : 'Elige las cantidades para los colores que deseas llevar.';
+            }
+
+            swatchesContainer.innerHTML = '';
+            let selectedQuantities = {};
+            const variantByName = {}; // Mapa nombre -> variante para recuperar su imagen
+            
+            btnConfirmColor.style.display = 'block';
+            btnConfirmColor.style.opacity = '0.5';
+            btnConfirmColor.style.pointerEvents = 'none';
+
+            const commonColors = {
+                "rojo": "#ef4444", "azul": "#3b82f6", "amarillo": "#eab308", 
+                "verde": "#22c55e", "naranja": "#f97316", "morado": "#a855f7", 
+                "rosa": "#ec4899", "negro": "#000000", "blanco": "#ffffff", "gris": "#6b7280",
+                "celeste": "#0ea5e9", "cafe": "#78350f", "marrón": "#78350f"
+            };
+
+            const updateConfirmButton = () => {
+                const total = Object.values(selectedQuantities).reduce((a, b) => a + b, 0);
+                if (total > 0) {
+                    btnConfirmColor.style.opacity = '1';
+                    btnConfirmColor.style.pointerEvents = 'all';
+                    btnConfirmColor.innerHTML = `<i class="fas fa-check"></i> Añadir ${total} al carrito`;
+                } else {
+                    btnConfirmColor.style.opacity = '0.5';
+                    btnConfirmColor.style.pointerEvents = 'none';
+                    btnConfirmColor.innerHTML = `<i class="fas fa-check"></i> Confirmar`;
+                }
+            };
+
+            product.variantes.forEach(variant => {
+                const colorName = typeof variant === 'object' ? (variant.nombre || variant.color || 'Variante') : variant;
+                let hexCode = (typeof variant === 'object' && variant.hex) ? variant.hex : '';
+                const variantImg = (typeof variant === 'object' && variant.imagen) ? variant.imagen : '';
+                
+                if (!hexCode) {
+                    const normalizedColor = colorName.toLowerCase().trim();
+                    if (commonColors[normalizedColor]) {
+                        hexCode = commonColors[normalizedColor];
+                    }
+                }
+                selectedQuantities[colorName] = 0;
+                variantByName[colorName] = variant;
+                
+                const row = document.createElement('div');
+                row.style.display = 'flex';
+                row.style.alignItems = 'center';
+                row.style.justifyContent = 'space-between';
+                row.style.background = 'var(--card-bg)';
+                row.style.border = '1px solid var(--glass-border)';
+                row.style.padding = '10px';
+                row.style.borderRadius = '12px';
+                
+                const labelDiv = document.createElement('div');
+                labelDiv.style.display = 'flex';
+                labelDiv.style.alignItems = 'center';
+                labelDiv.style.gap = '10px';
+                labelDiv.style.fontWeight = '600';
+                
+                let maxQty = typeof variant === 'object' ? (variant.stock_visual ?? variant.cantidad ?? variant.stock ?? Infinity) : Infinity;
+                if (maxQty === null) maxQty = Infinity; // Handle explicit null in JSON
+                
+                let stockText = maxQty !== Infinity ? `<span style="font-size: 0.75rem; color: var(--text-secondary); margin-left: 5px;">(Disp: ${maxQty})</span>` : '';
+                
+                if (variantImg) {
+                    labelDiv.innerHTML = `<span class="variant-thumb-wrap"><img src="${variantImg}" class="variant-thumb" title="Clic para ver ampliado" loading="lazy" onerror="this.onerror=null;this.closest('.variant-thumb-wrap').style.display='none';"><i class="fas fa-search-plus variant-thumb-zoom" aria-hidden="true"></i></span> ${colorName} ${stockText}`;
+                } else if (hexCode) {
+                    labelDiv.innerHTML = `<div style="width: 20px; height: 20px; border-radius: 50%; background-color: ${hexCode}; border: 1px solid rgba(0,0,0,0.1);"></div> ${colorName} ${stockText}`;
+                } else {
+                    labelDiv.innerHTML = `${colorName} ${stockText}`;
+                }
+                
+                const controlsDiv = document.createElement('div');
+                controlsDiv.style.display = 'flex';
+                controlsDiv.style.alignItems = 'center';
+                controlsDiv.style.gap = '10px';
+                
+                const btnMinus = document.createElement('button');
+                btnMinus.innerHTML = '<i class="fas fa-minus"></i>';
+                btnMinus.style.cssText = 'width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--accent-color); cursor: pointer; display: flex; justify-content: center; align-items: center;';
+                
+                const inputQty = document.createElement('input');
+                inputQty.type = 'number';
+                inputQty.value = '0';
+                inputQty.min = '0';
+                inputQty.style.cssText = 'width: 50px; text-align: center; border: 1px solid var(--glass-border); background: transparent; color: var(--text-primary); font-weight: bold; font-size: 1rem;';
+                inputQty.readOnly = true;
+
+                const btnPlus = document.createElement('button');
+                btnPlus.innerHTML = '<i class="fas fa-plus"></i>';
+                btnPlus.style.cssText = 'width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--glass-border); background: var(--glass-bg); color: var(--accent-color); cursor: pointer; display: flex; justify-content: center; align-items: center;';
+
+                btnMinus.onclick = () => {
+                    if (selectedQuantities[colorName] > 0) {
+                        selectedQuantities[colorName]--;
+                        inputQty.value = selectedQuantities[colorName];
+                        updateConfirmButton();
+                    }
+                };
+                
+                btnPlus.onclick = () => {
+                    if (selectedQuantities[colorName] < maxQty) {
+                        selectedQuantities[colorName]++;
+                        inputQty.value = selectedQuantities[colorName];
+                        updateConfirmButton();
+                    }
+                };
+
+                controlsDiv.appendChild(btnMinus);
+                controlsDiv.appendChild(inputQty);
+                controlsDiv.appendChild(btnPlus);
+                
+                row.appendChild(labelDiv);
+                row.appendChild(controlsDiv);
+                swatchesContainer.appendChild(row);
+
+                // Clic en la imagen/icono de la variante para verla ampliada
+                if (variantImg) {
+                    const thumbWrap = row.querySelector('.variant-thumb-wrap');
+                    if (thumbWrap) {
+                        thumbWrap.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            openVariantImagePreview(colorName, variantImg, product, getFinalPrice(product));
+                        });
+                    }
+                }
+            });
+
+            colorModal.classList.add('active');
+
+            const closeModal = () => colorModal.classList.remove('active');
+            closeColorModal.onclick = closeModal;
+            colorModal.onclick = (e) => {
+                if (e.target === colorModal) closeModal();
+            };
+
+            const newBtnConfirm = btnConfirmColor.cloneNode(true);
+            btnConfirmColor.parentNode.replaceChild(newBtnConfirm, btnConfirmColor);
+            btnConfirmColor = newBtnConfirm;
+            
+            btnConfirmColor.addEventListener('click', () => {
+                closeModal();
+                const coloresSeleccionados = [];
+                for (const [colorName, qty] of Object.entries(selectedQuantities)) {
+                    if (qty > 0) {
+                        const chosenVariant = variantByName[colorName] || {};
+                        const chosenImg = (typeof chosenVariant === 'object' && chosenVariant.imagen) ? chosenVariant.imagen : product.imagen;
+                        const varianteId = (typeof chosenVariant === 'object' && chosenVariant.id) ? chosenVariant.id : null;
+                        const productWithColor = { 
+                            ...product, 
+                            color_seleccionado: colorName, 
+                            nombre: `${product.nombre} (${colorName})`, 
+                            id: `${product.id}-${colorName}`,
+                            variante_id: varianteId,
+                            imagen: chosenImg || product.imagen
+                        };
+                        coloresSeleccionados.push({ product: productWithColor, qty, colorName, varianteId });
+                    }
+                }
+                if (coloresSeleccionados.length === 0) return;
+
+                // Si el producto es fraccionable, abrir UNA sola vez el modal de fraccionamiento
+                // y añadir TODOS los colores elegidos (por paquete o por unidad).
+                if (product.es_fraccionable) {
+                    const childProduct = product.hijo ? { ...product.hijo } : allProducts.find(p => String(p.codigo_padre) === String(product.codigo) && p.es_unidad_hija);
+                    if (childProduct) {
+                        abrirFraccionConColores(product, childProduct, coloresSeleccionados, updateBtnCallback);
+                        return;
+                    }
+                }
+
+                // Producto normal (no fraccionable): añadir cada color directamente
+                let wasAdded = false;
+                coloresSeleccionados.forEach(({ product: pc, qty }) => {
+                    const isNew = addToCart(pc, qty);
+                    wasAdded = wasAdded || isNew;
+                });
+                if (wasAdded && updateBtnCallback) updateBtnCallback(true);
+            });
+
+            return;
+        }
+
+
         if (product.es_fraccionable) {
-            const childProduct = allProducts.find(p => String(p.codigo_padre) === String(product.codigo) && p.es_unidad_hija);
+            // La unidad suelta (hijo) viaja dentro del campo "hijo" del padre en productos.json
+            const childProduct = product.hijo ? { ...product.hijo } : allProducts.find(p => String(p.codigo_padre) === String(product.codigo) && p.es_unidad_hija);
             if (childProduct) {
                 const fraccionModal = document.getElementById('fraccionModal');
                 const lblPrecioCaja = document.getElementById('lblPrecioCaja');
@@ -1050,7 +1889,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const closeFraccionModal = document.getElementById('closeFraccionModal');
 
                 const parentPrice = getFinalPrice(product);
-                const childPrice = getFinalPrice(childProduct);
+                const childPrice = typeof childProduct.precio === 'number' ? childProduct.precio : parseFloat(childProduct.precio) || parentPrice;
 
                 lblPrecioCaja.textContent = `$${parentPrice.toFixed(2)}`;
                 lblPrecioUnidad.textContent = `$${childPrice.toFixed(2)}`;
@@ -1074,14 +1913,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 btnComprarCaja.addEventListener('click', () => {
                     closeModal();
-                    const isNewItem = addToCart(product);
+                    const isNewItem = addToCart(product, qtyToAdd);
                     if (updateBtnCallback) updateBtnCallback(isNewItem);
                 });
 
                 btnComprarUnidad.addEventListener('click', () => {
                     closeModal();
                     // Para que en el carrito se entienda que es la unidad
-                    const isNewItem = addToCart({...childProduct, nombre: product.nombre + " (UNIDAD)"});
+                    const unidadConColor = { ...childProduct, nombre: product.nombre + " (UNIDAD)", precio: childPrice };
+                    const isNewItem = addToCart(unidadConColor, qtyToAdd);
                     if (updateBtnCallback) updateBtnCallback(isNewItem);
                 });
                 
@@ -1090,20 +1930,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         // Comportamiento normal si no es fraccionable o no se encontró el hijo
-        const isNewItem = addToCart(product);
+        const isNewItem = addToCart(product, qtyToAdd);
         if (updateBtnCallback) updateBtnCallback(isNewItem);
     }
 
-    function addToCart(product) {
+    function addToCart(product, qtyToAdd = 1) {
         const existingItem = cart.find(item => item.id === product.id);
         if (existingItem) {
-            existingItem.quantity += 1;
+            existingItem.quantity += qtyToAdd;
             saveCart();
             updateCartUI();
-            showToast(`<i class="fas fa-shopping-basket" style="color: #3b82f6;"></i> ¡Añadiste otro <b>${product.nombre}</b>! Tienes excelente gusto.`);
+            showToast(`<i class="fas fa-shopping-basket" style="color: #3b82f6;"></i> ¡Añadiste ${qtyToAdd > 1 ? qtyToAdd + ' más de' : 'otro'} <b>${product.nombre}</b>! Tienes excelente gusto.`);
             return false;
         } else {
-            cart.push({ ...product, quantity: 1 });
+            cart.push({ ...product, quantity: qtyToAdd });
             saveCart();
             updateCartUI();
             showToast(`<i class="fas fa-check-circle" style="color: #4ade80;"></i> ¡Excelente elección! <b>${product.nombre}</b> añadido a tu carrito.`);
@@ -1114,6 +1954,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function showToast(message) {
         toast.innerHTML = message;
         toast.style.background = 'var(--card-bg)';
+        toast.style.color = 'var(--text-primary)';
         toast.style.border = '2px solid var(--accent-color)';
         toast.style.boxShadow = 'var(--shadow-lg)';
         toast.classList.add('show');
@@ -1123,13 +1964,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function removeFromCart(productId) {
-        cart = cart.filter(item => item.id !== productId);
+        cart = cart.filter(item => String(item.id) !== String(productId));
         saveCart();
         updateCartUI();
     }
 
     function changeQuantity(productId, delta) {
-        const item = cart.find(i => i.id === productId);
+        const item = cart.find(i => String(i.id) === String(productId));
         if (item) {
             item.quantity += delta;
             if (item.quantity <= 0) {
@@ -1223,6 +2064,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
 
+                // 3. Combo Mix (construido con varios productos)
+                if (item.es_combo_mix) {
+                    itemTotal = item.precio * item.quantity;
+                    const detail = (item.combo_items || []).map(ci => `${ci.cantidad}x ${ci.nombre}`).join(', ');
+                    let oldPrice = '';
+                    if (item._rawSum && item._rawSum > item.precio + 0.001) {
+                        oldPrice = `<span style="text-decoration: line-through; opacity: 0.5; font-size: 0.8rem; margin-right: 0.3rem;">$${(item._rawSum * item.quantity).toFixed(2)}</span>`;
+                    }
+                    priceHtml = `${oldPrice}<span style="color: #8b5cf6; font-weight: 800;">$${itemTotal.toFixed(2)}</span>`;
+                    if (detail) {
+                        priceHtml += `<div class="combo-cart-detail"><i class="fas fa-gift"></i> ${detail}</div>`;
+                    }
+                    item.comboNoteText = '(Combo Mix)';
+                }
+
                 if (appliedPromo) {
                     priceHtml = `<span style="text-decoration: line-through; opacity: 0.5; font-size: 0.8rem; margin-right: 0.3rem;">$${(item.precio * item.quantity).toFixed(2)}</span><span style="color: ${promoColor}; font-weight: 800;">$${itemTotal.toFixed(2)}</span>`;
                     
@@ -1232,7 +2088,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 item.cartItemTotal = itemTotal; // Guardar para calcular total
-                item.appliedPromoText = appliedPromo ? '(Promo aplicada)' : '';
+                item.appliedPromoText = item.es_combo_mix ? '' : (appliedPromo ? '(Promo aplicada)' : '');
 
                 div.innerHTML = `
                     <img src="${imgSrc}" class="cart-item-img" alt="${item.nombre}" onerror="this.onerror=null;this.src='https://placehold.co/400x400/eeeeee/999999?text=Sin+Imagen';">
@@ -1252,13 +2108,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Asignar eventos a los botones de + y - y eliminar
             cartItemsContainer.querySelectorAll('.minus').forEach(btn => {
-                btn.addEventListener('click', (e) => changeQuantity(parseInt(e.target.dataset.id), -1));
+                btn.addEventListener('click', (e) => changeQuantity(e.target.dataset.id, -1));
             });
             cartItemsContainer.querySelectorAll('.plus').forEach(btn => {
-                btn.addEventListener('click', (e) => changeQuantity(parseInt(e.target.dataset.id), 1));
+                btn.addEventListener('click', (e) => changeQuantity(e.target.dataset.id, 1));
             });
             cartItemsContainer.querySelectorAll('.cart-item-remove').forEach(btn => {
-                btn.addEventListener('click', (e) => removeFromCart(parseInt(e.currentTarget.dataset.id)));
+                btn.addEventListener('click', (e) => removeFromCart(e.currentTarget.dataset.id));
             });
         }
 
@@ -1319,8 +2175,14 @@ document.addEventListener('DOMContentLoaded', () => {
         
         cart.forEach(item => {
             const itemTotal = item.cartItemTotal !== undefined ? item.cartItemTotal : (item.precio * item.quantity);
-            const qtyNote = item.appliedPromoText ? ` ${item.appliedPromoText}` : '';
-            message += `- ${item.quantity}x ${item.nombre} (CÓD: ${item.codigo}) [$${itemTotal.toFixed(2)}]${qtyNote}%0A`;
+            let qtyNote = item.appliedPromoText ? ` ${item.appliedPromoText}` : '';
+            let comboDetail = '';
+            if (item.es_combo_mix && item.combo_items) {
+                // Incluir el código de cada componente para que el importador del sistema los reconstruya
+                comboDetail = ` (${item.combo_items.map(ci => `${ci.cantidad}x ${ci.codigo ? ci.codigo + ' ' + ci.nombre : ci.nombre}`).join(', ')})`;
+                qtyNote = qtyNote || (item.comboNoteText ? ` ${item.comboNoteText}` : '');
+            }
+            message += `- ${item.quantity}x ${item.nombre}${comboDetail} (CÓD: ${item.codigo}) [$${itemTotal.toFixed(2)}]${qtyNote}%0A`;
         });
         
         const total = cart.reduce((sum, item) => sum + (item.cartItemTotal !== undefined ? item.cartItemTotal : (item.precio * item.quantity)), 0);
@@ -1473,6 +2335,49 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target === imageModal) {
                 imageModal.classList.remove('active');
             }
+        });
+    }
+
+    // --- 11b. Combo Builder Modal ---
+    const comboModal = document.getElementById('comboModal');
+    const closeComboModalBtn = document.getElementById('closeComboModal');
+    if (comboModal && closeComboModalBtn) {
+        closeComboModalBtn.addEventListener('click', closeComboBuilder);
+        comboModal.addEventListener('click', (e) => {
+            if (e.target === comboModal) closeComboBuilder();
+        });
+    }
+
+    // --- 11c. Modal de Promoción Pack (Combo/Pack) ---
+    const packPromoModalEl = document.getElementById('packPromoModal');
+    const closePackPromoBtn = document.getElementById('closePackPromoModal');
+    if (packPromoModalEl && closePackPromoBtn) {
+        closePackPromoBtn.addEventListener('click', cerrarPackModalWeb);
+        packPromoModalEl.addEventListener('click', (e) => {
+            if (e.target === packPromoModalEl) cerrarPackModalWeb();
+        });
+        document.getElementById('ppkWebPorUnidad').addEventListener('click', () => {
+            if (!packWebProducto) return;
+            addToCart(packWebProducto, 1);
+            cerrarPackModalWeb();
+        });
+        document.getElementById('ppkWebPorCombo').addEventListener('click', () => {
+            packWebCantidad = 1;
+            document.getElementById('ppkWebOpciones').style.display = 'none';
+            document.getElementById('ppkWebPicker').style.display = 'block';
+            actualizarPackWebUI();
+        });
+        document.getElementById('ppkWebMinus').addEventListener('click', () => {
+            if (packWebCantidad > 1) { packWebCantidad--; actualizarPackWebUI(); }
+        });
+        document.getElementById('ppkWebPlus').addEventListener('click', () => {
+            if (packWebCantidad < 3) { packWebCantidad++; actualizarPackWebUI(); }
+        });
+        document.getElementById('ppkWebAdd').addEventListener('click', () => {
+            if (!packWebProducto) return;
+            const units = packWebCantidad * (packWebProducto.promocion.cantidad_minima || 3);
+            addToCart(packWebProducto, units);
+            cerrarPackModalWeb();
         });
     }
 

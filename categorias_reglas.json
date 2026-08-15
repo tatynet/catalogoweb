@@ -115,11 +115,11 @@
         {
             "_nota": "GOMAS: los especificos 'EN BARRA' y 'LIQUIDA' van ANTES del general 'GOMA'",
             "contiene": "GOMA EN BARRA",
-            "categoria": "Gomas"
+            "categoria": "Goma en Barra"
         },
         {
             "contiene": "GOMA LIQUIDA",
-            "categoria": "Gomas"
+            "categoria": "Goma Líquida"
         },
         {
             "contiene": "GOMA",
