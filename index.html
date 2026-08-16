@@ -23,16 +23,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=20260816_v10">
+    <link rel="stylesheet" href="style.css?v=20260816_v12">
     
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K562E8V6ZP"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      // --- SISTEMA SECRETO DE INVISIBILIDAD ---
+      if (window.location.search.includes('admin=tatynet')) {
+          localStorage.setItem('es_admin_tatynet', 'true');
+          alert('✅ MODO INVISIBLE ACTIVADO: Google Analytics ya no contará tus visitas en este dispositivo.');
+      }
 
-      gtag('config', 'G-K562E8V6ZP');
+      // Solo cargamos Google Analytics si NO es el administrador
+      if (localStorage.getItem('es_admin_tatynet') !== 'true') {
+          var gaScript = document.createElement('script');
+          gaScript.async = true;
+          gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-K562E8V6ZP";
+          document.head.appendChild(gaScript);
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-K562E8V6ZP');
+      } else {
+          // Si es admin, creamos una función vacía para que el código no falle si app.js intenta enviar algo
+          window.gtag = function() {};
+      }
     </script>
 </head>
 <body>
@@ -167,7 +182,7 @@
         </section>
     </main>
 
-    <script src="app.js?v=20260816_v10"></script>
+    <script src="app.js?v=20260816_v12"></script>
 
     <!-- Shopping Cart Sidebar -->
     <div class="cart-overlay" id="cartOverlay"></div>
