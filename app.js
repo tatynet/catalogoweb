@@ -698,6 +698,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const imgContainerEl = card.querySelector('.product-image-container');
             imgContainerEl.style.cursor = 'zoom-in';
             imgContainerEl.addEventListener('click', () => {
+                // Tracking para Google Analytics (Sin impacto en rendimiento)
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'view_item', {
+                        item_id: product.codigo,
+                        item_name: product.nombre,
+                        item_category: product.categoria
+                    });
+                }
+                
                 // Si el producto tiene variantes, abrir directamente el modal de variantes
                 if (product.variantes && product.variantes.length > 0 && !product.color_seleccionado) {
                     handleAddToCartWithModal(product);
