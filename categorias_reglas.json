@@ -250,6 +250,84 @@
         {
             "contiene": "DICCION",
             "categoria": "Diccionarios"
+        },
+        {
+            "_nota": "CORRECTORES",
+            "contiene": "CORRECTO",
+            "categoria": "Correctores"
+        },
+        {
+            "contiene": "CORRECTOR",
+            "categoria": "Correctores"
+        },
+        {
+            "_nota": "CINTAS ADHESIVAS",
+            "contiene": "MASKING",
+            "categoria": "Cintas Adhesivas"
+        },
+        {
+            "contiene": "TAIPE",
+            "categoria": "Cintas Adhesivas"
+        },
+        {
+            "contiene": "CINTA",
+            "categoria": "Cintas Adhesivas"
+        },
+        {
+            "_nota": "LIBRETAS Y LIBRETINES",
+            "contiene": "LIBRETA",
+            "categoria": "Libretas y Libretines"
+        },
+        {
+            "contiene": "LIBRETIN",
+            "categoria": "Libretas y Libretines"
+        },
+        {
+            "_nota": "REGLAS Y GEOMETRIA",
+            "contiene": "ESCUADRA",
+            "categoria": "Reglas y Geometría"
+        },
+        {
+            "contiene": "GRADUADOR",
+            "categoria": "Reglas y Geometría"
+        },
+        {
+            "contiene": "NORMOGRAFO",
+            "categoria": "Reglas y Geometría"
+        },
+        {
+            "contiene": "REGLA",
+            "categoria": "Reglas y Geometría"
+        },
+        {
+            "_nota": "GRAPADORAS Y PERFORADORAS",
+            "contiene": "GRAPADORA",
+            "categoria": "Grapadoras y Perforadoras"
+        },
+        {
+            "contiene": "PERFORADORA",
+            "categoria": "Grapadoras y Perforadoras"
+        },
+        {
+            "_nota": "OTROS MATERIALES",
+            "contiene": "ESCARCHA",
+            "categoria": "Escarchas"
+        },
+        {
+            "contiene": "RAPIDOGRAFO",
+            "categoria": "Rapidografos"
+        },
+        {
+            "contiene": "PORTAMINAS",
+            "categoria": "Minas y Portaminas"
+        },
+        {
+            "contiene": "MINAS",
+            "categoria": "Minas y Portaminas"
+        },
+        {
+            "contiene": "ESTILETE",
+            "categoria": "Estiletes"
         }
     ]
 }

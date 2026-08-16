@@ -1378,6 +1378,99 @@ document.addEventListener('DOMContentLoaded', () => {
         return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     }
 
+    // --- Búsqueda Difusa (Levenshtein) ---
+    function levenshteinDistance(a, b) {
+        if (a.length === 0) return b.length;
+        if (b.length === 0) return a.length;
+        const matrix = [];
+        for (let i = 0; i <= b.length; i++) { matrix[i] = [i]; }
+        for (let j = 0; j <= a.length; j++) { matrix[0][j] = j; }
+        for (let i = 1; i <= b.length; i++) {
+            for (let j = 1; j <= a.length; j++) {
+                if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                    matrix[i][j] = matrix[i - 1][j - 1];
+                } else {
+                    matrix[i][j] = Math.min(
+                        matrix[i - 1][j - 1] + 1,
+                        Math.min(matrix[i][j - 1] + 1, matrix[i - 1][j] + 1)
+                    );
+                }
+            }
+        }
+        return matrix[b.length][a.length];
+    }
+
+    function sonSimilares(palabra1, palabra2) {
+        if (palabra1.length <= 3 || palabra2.length <= 3) return palabra1 === palabra2;
+        const distancia = levenshteinDistance(palabra1, palabra2);
+        const maxErrores = palabra1.length > 5 ? 2 : 1;
+        return distancia <= maxErrores;
+    }
+
+    // --- Diccionario de Sinónimos Global (Agrupado) ---
+    const gruposSinonimos = [
+        // Foamy / Fomix
+        ['fomix', 'foamy', 'fomi', 'foami', 'goma eva'],
+        // Goma / Pegamento
+        ['goma', 'pegamento', 'pegameto', 'pega', 'pegante', 'pegapel', 'adhesivo', 'adhesi', 'gomo', 'gomas', 'silicona', 'silicon', 'encolar'],
+        // Esferos / Bolígrafos
+        ['esfero', 'esferos', 'boligrafo', 'boligrafos', 'pluma', 'plumas', 'lapicero', 'lapiceros'],
+        // Corrector
+        ['corrector', 'correcto', 'correctores', 'liquid', 'liquid paper', 'tipex', 'blanco'],
+        // Cuadernos
+        ['cuaderno', 'cuadernos', 'libreta', 'libretas', 'diario', 'libretin'],
+        // Marcadores
+        ['marcador', 'marcadores', 'plumon', 'plumones', 'marcatodo'],
+        // Resaltadores
+        ['resaltador', 'resaltadores', 'fosforescente', 'fluorescente', 'destacador'],
+        // Sacapuntas
+        ['sacapuntas', 'tajador', 'tajadores', 'afilalapices', 'cortalapices'],
+        // Borrador
+        ['borrador', 'borradores', 'goma de borrar', 'queso'],
+        // Estilete
+        ['estilete', 'estiletes', 'cutter', 'exacto', 'cuchilla', 'bisturi'],
+        // Carpeta
+        ['carpeta', 'carpetas', 'folder', 'folderes', 'archivador'],
+        // Grapadora
+        ['grapadora', 'engrapadora', 'grapadoras', 'engrapadoras'],
+        // Cintas
+        ['cinta', 'cintas', 'scotch', 'masking', 'taipe', 'adhesiva'],
+        // Diccionario (con error ortográfico común)
+        ['diccionario', 'dicionario'],
+        // Cartulina (con error ortográfico común)
+        ['cartulina', 'cartulinas', 'cartilina'],
+        // Lápices
+        ['lapiz', 'lapices', 'lapis', 'lapises', 'carboncillo'],
+        // Perforadora
+        ['perforadora', 'perforadoras', 'huequeadora', 'abrecuecos'],
+        // Crayones
+        ['crayones', 'crayola', 'crayolas', 'pinturas de cera'],
+        // Escarcha
+        ['escarcha', 'escarchas', 'purpurina', 'brillantina'],
+        // Tijeras
+        ['tijera', 'tijeras', 'piquete'],
+        // Notas Adhesivas
+        ['notas', 'banderitas', 'post it', 'post-it', 'postit', 'stickers'],
+        // Plastilina
+        ['plastilina', 'plastilinas', 'masa', 'masas', 'play doh'],
+        // Clips
+        ['clips', 'clip', 'clics', 'clic'],
+        // Tachuelas
+        ['tachuelas', 'chinches', 'chinchetas'],
+        // Juegos
+        ['juego', 'juegos', 'juguete', 'juguetes', 'didactico', 'didacticos', 'entretenimiento'],
+        // Libros y Cuentos
+        ['cuento', 'cuentos', 'libro', 'libros', 'historia', 'historias', 'lectura'],
+        // Manualidades (Mullos, Lentejuelas)
+        ['lentejuela', 'lentejuelas', 'mullo', 'mullos', 'pepa', 'pepas', 'cuenta', 'cuentas'],
+        // Cuerdas y Hilos
+        ['hilo', 'hilos', 'cuerda', 'cuerdas', 'lana', 'lanas', 'soga', 'sogas', 'piola', 'piolas'],
+        // Pinceles
+        ['pincel', 'pinceles', 'brocha', 'brochas'],
+        // Pinturas
+        ['pintura', 'pinturas', 'acuarela', 'acuarelas', 'tempera', 'temperas', 'oleo', 'acrilico']
+    ];
+
     function filterCategories() {
         const term = normalizeString(categorySearchInput.value).trim();
         const buttons = categoryFilters.querySelectorAll('.filter-btn');
@@ -1386,17 +1479,29 @@ document.addEventListener('DOMContentLoaded', () => {
             const isEspecial = (btn.dataset.category === 'Todos' || btn.dataset.category === 'novedades' || btn.dataset.category === 'ofertas_especiales');
             const catName = normalizeString(btn.querySelector('.cat-name')?.textContent || btn.textContent);
             
+            const catWords = catName.split(/\s+/);
             let matches = catName.includes(term);
-            const sinonimos = {
-                // Foamy / Fomix
-                'fomix': 'foamy', 'foamy': 'fomix',
-                // Goma y sinónimos
-                'pegamento': 'goma', 'pegameto': 'goma', 'pega': 'goma',
-                'pegante': 'goma', 'pegapel': 'goma', 'adhesivo': 'goma',
-                'gomo': 'goma', 'gomas': 'goma', 'encolar': 'goma'
-            };
-            if (!matches && sinonimos[term] && catName.includes(sinonimos[term])) {
-                matches = true;
+            
+            if (!matches && term !== '') {
+                const singular1 = term.endsWith('es') ? term.slice(0, -2) : null;
+                const singular2 = term.endsWith('s') ? term.slice(0, -1) : null;
+                const terminosAVerificar = [term, singular1, singular2].filter(Boolean);
+                
+                // Sinónimos (con tolerancia a errores de tipeo)
+                for (let t of terminosAVerificar) {
+                    const grupoEncontrado = gruposSinonimos.find(grupo => grupo.some(s => sonSimilares(t, s)));
+                    if (grupoEncontrado && grupoEncontrado.some(sinonimo => catName.includes(sinonimo))) {
+                        matches = true;
+                        break;
+                    }
+                }
+                
+                // Fuzzy Search
+                if (!matches) {
+                    if (terminosAVerificar.some(t => catWords.some(cw => sonSimilares(t, cw)))) {
+                        matches = true;
+                    }
+                }
             }
 
             if (isEspecial && term !== '') {
@@ -1463,30 +1568,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Coincidencia exacta
                     if (searchableText.includes(term)) return true;
                     
-                    // Sinónimos de búsqueda
-                    const sinonimos = {
-                        // Foamy / Fomix
-                        'fomix': 'foamy',
-                        'foamy': 'fomix',
-                        // Goma / Pegamento y variantes
-                        'pegamento': 'goma',
-                        'pegameto': 'goma',
-                        'pegamento': 'goma',
-                        'pega': 'goma',
-                        'pegante': 'goma',
-                        'pegapel': 'goma',
-                        'adhesivo': 'goma',
-                        'adhesi': 'goma',
-                        'gomo': 'goma',
-                        'gomas': 'goma',
-                        'silicona': 'goma',
-                        'encolar': 'goma',
-                    };
-                    if (sinonimos[term] && searchableText.includes(sinonimos[term])) return true;
+                    const singular1 = term.endsWith('es') ? term.slice(0, -2) : null;
+                    const singular2 = term.endsWith('s') ? term.slice(0, -1) : null;
+                    const terminosAVerificar = [term, singular1, singular2].filter(Boolean);
 
-                    // Flexibilidad para plurales (s, es)
-                    if (term.endsWith('es') && searchableText.includes(term.slice(0, -2))) return true;
-                    if (term.endsWith('s') && searchableText.includes(term.slice(0, -1))) return true;
+                    // 1. Coincidencia exacta o plural
+                    if (terminosAVerificar.some(t => searchableText.includes(t))) return true;
+                    
+                    // 2. Sinónimos global (con tolerancia a errores de tipeo en la búsqueda)
+                    for (let t of terminosAVerificar) {
+                        const grupo = gruposSinonimos.find(g => g.some(s => sonSimilares(t, s)));
+                        if (grupo && grupo.some(sinonimo => searchableText.includes(sinonimo))) return true;
+                    }
+
+                    // 3. Búsqueda Difusa (Errores de tipeo)
+                    const productWords = searchableText.split(/\s+/);
+                    if (terminosAVerificar.some(t => productWords.some(pw => sonSimilares(t, pw)))) return true;
 
                     return false;
                 });
@@ -1522,22 +1619,34 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Autocomplete suggestions for categories
         if (searchSuggestionsContainer) {
-            const query = e.target.value.toLowerCase().trim();
+            const query = normalizeString(e.target.value).trim();
             searchSuggestionsContainer.innerHTML = '';
             
             if (query.length > 1) {
                 const uniqueCategories = Array.from(new Set(allProducts.map(p => p.categoria)));
-                const sinonimos = { 'fomix': 'foamy', 'foamy': 'fomix' };
                 const matchedCategories = uniqueCategories.filter(cat => {
                     if (!cat) return false;
-                    const c = cat.toLowerCase();
+                    const c = normalizeString(cat);
+                    
                     if (c.includes(query)) return true;
-                    if (sinonimos[query] && c.includes(sinonimos[query])) return true;
+                    
+                    const singular1 = query.endsWith('es') ? query.slice(0, -2) : null;
+                    const singular2 = query.endsWith('s') ? query.slice(0, -1) : null;
+                    const terminosQuery = [query, singular1, singular2].filter(Boolean);
+
+                    for (let t of terminosQuery) {
+                        const grupoEncontrado = gruposSinonimos.find(grupo => grupo.some(s => sonSimilares(t, s)));
+                        if (grupoEncontrado && grupoEncontrado.some(sinonimo => c.includes(sinonimo))) return true;
+                    }
+                    
+                    const cWords = c.split(/\s+/);
+                    if (terminosQuery.some(t => cWords.some(cw => sonSimilares(t, cw)))) return true;
+                    
                     return false;
                 });
                 
-                // Show up to 3 category suggestions
-                matchedCategories.slice(0, 3).forEach(cat => {
+                // Show up to 8 category suggestions
+                matchedCategories.slice(0, 8).forEach(cat => {
                     const pill = document.createElement('button');
                     pill.className = 'suggestion-pill';
                     pill.innerHTML = `<i class="fas fa-search"></i> Explorar categoría: <b>${cat}</b>`;
