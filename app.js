@@ -2469,3 +2469,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+// =========================================
+// PROTECCIÓN ANTI-COPIA Y CLONACIÓN
+// =========================================
+
+// 1. Bloquear el clic derecho (menú contextual)
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+// 2. Bloquear atajos de teclado de desarrolladores
+document.addEventListener('keydown', function(event) {
+    // Bloquea F12 (Herramientas de desarrollador)
+    if (event.key === 'F12' || event.keyCode === 123) {
+        event.preventDefault();
+    }
+    
+    // Bloquea Ctrl+U (Ver código fuente), Ctrl+S (Guardar página), Ctrl+C (Copiar)
+    if (event.ctrlKey && (event.key === 'u' || event.key === 'U' || 
+                          event.key === 's' || event.key === 'S' || 
+                          event.key === 'c' || event.key === 'C')) {
+        event.preventDefault();
+    }
+    
+    // Bloquea Ctrl+Shift+I / J / C (Inspeccionar elemento)
+    if (event.ctrlKey && event.shiftKey && 
+       (event.key === 'I' || event.key === 'i' || 
+        event.key === 'J' || event.key === 'j' || 
+        event.key === 'C' || event.key === 'c')) {
+        event.preventDefault();
+    }
+});

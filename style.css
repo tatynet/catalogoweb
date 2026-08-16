@@ -3619,6 +3619,201 @@ img {
     font-weight: 600;
     color: var(--text-secondary);
 }
+}
+
+.variant-thumb-wrap:hover .variant-thumb {
+    transform: scale(1.1);
+}
+
+.variant-thumb-wrap:hover .variant-thumb-zoom {
+    background: #8b5cf6;
+}
+
+.combo-product-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.combo-product-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.combo-product-price {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #8b5cf6;
+}
+
+.combo-qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.combo-qty-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    color: #8b5cf6;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.combo-qty-btn:hover {
+    background: #8b5cf6;
+    color: white;
+    border-color: #8b5cf6;
+}
+
+.combo-qty-val {
+    width: 38px;
+    text-align: center;
+    border: 1px solid var(--glass-border);
+    background: transparent;
+    color: var(--text-primary);
+    font-weight: 800;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    padding: 4px 0;
+}
+
+.combo-builder-footer {
+    margin-top: 1rem;
+}
+
+.combo-builder-add:disabled {
+    cursor: not-allowed;
+}
+
+.combo-cart-detail {
+    font-size: 0.7rem;
+    color: #8b5cf6;
+    margin-top: 3px;
+    line-height: 1.35;
+}
+
+@media (max-width: 520px) {
+    .combo-builder-modal {
+        padding: 1.2rem;
+        width: 95%;
+    }
+    .combo-product-row {
+        gap: 0.6rem;
+    }
+    .combo-product-row img {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+    }
+    .combo-summary-price {
+        text-align: left;
+        width: 100%;
+    }
+}
+
+/* Marketing Copy Combos Mix */
+.combo-mix-hot {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 50px;
+    margin-bottom: 6px;
+    box-shadow: 0 3px 8px rgba(245, 158, 11, 0.35);
+    width: fit-content;
+}
+
+.combo-mix-header h2 .combo-mix-gradient {
+    background: linear-gradient(135deg, #8b5cf6, #c084fc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.combo-mix-tagline {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #b45309;
+    background: rgba(245, 158, 11, 0.12);
+    border-radius: 50px;
+    padding: 4px 10px;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: fit-content;
+    margin-bottom: 6px;
+}
+
+.combo-mix-save {
+    margin-top: 6px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #10b981;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.combo-mix-save b {
+    color: #10b981;
+}
+
+.combo-savings-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: var(--card-bg);
+    border: 1px dashed var(--glass-border);
+    border-radius: 12px;
+    padding: 0.6rem 0.9rem;
+    margin-bottom: 0.8rem;
+    animation: fadeInUp 0.3s ease;
+}
+
+.combo-savings-hint i {
+    color: #f59e0b;
+}
+
+.combo-savings-hint.ready {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: var(--text-primary);
+}
+
+.combo-savings-hint.ready i {
+    color: #10b981;
+}
+
+.combo-savings-hint.ready b {
+    color: #10b981;
+}
+
+.combo-urgency {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
 
 .combo-urgency i {
     color: #f59e0b;
@@ -3627,4 +3822,17 @@ img {
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(6px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   PROTECCIÓN ANTI-COPIA
+========================================= */
+body {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
+    user-select: none; /* Standard syntax */
+}
+
+img {
+    -webkit-user-drag: none; /* Evita arrastrar imágenes */
 }
